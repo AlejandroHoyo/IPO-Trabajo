@@ -22,8 +22,8 @@ namespace Lab_IPO
     {
         private BitmapImage imagCheck = new BitmapImage(new Uri("/Assets/Icons/correct.png", UriKind.Relative));
         private BitmapImage imagCross = new BitmapImage(new Uri("/Assets/Icons/incorrect.png", UriKind.Relative));
-        private string usuario = "admin";
-        private string password = "ipo1";
+        private string usuario = "Jane";
+        private string password = "1234";
         public MainWindow()
         {
             InitializeComponent();
@@ -80,28 +80,50 @@ Control componenteEntrada, Image imagenFeedBack)
             ComprobarEntrada(passContrasena.Password, password,
             passContrasena, ImgCheckPassword))
             {
-                MainMenu menu = new MainMenu(); ;
+                MainMenu menu = new MainMenu();
                 menu.Show();
+                if (RembemberMe.IsChecked.Value == true)
+                    Application.Current.Resources["current_user"] = txtUsuario.Text;
+                else
+                {
+                    Application.Current.Resources["current_user"] = "";
+                }
                 this.Hide();
             }
 
         }
         public void Update() // Call whenever the menu logs out
         {
-            if (RembemberMe.IsChecked.HasValue && RembemberMe.IsChecked.Value)
+            if (RembemberMe.IsChecked.HasValue)
             {
                 txtUsuario.Text = (string)Application.Current.FindResource("current_user");
-                RembemberMe.IsChecked = true;
+                Application.Current.Resources["current_user"] = txtUsuario.Text;
             }
-            else
-            {
-                txtUsuario.Clear();
-                RembemberMe.IsChecked = false;
-            }
-            passContrasena.Clear();
+
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                Helper.ShowHelp(
+                    "Poner vídeo y algunas instrucciones.");
+            }
+        }
+        private void btnInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Helper.ShowInfo("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
+                "Versión 0.1.0\n\n" +
+                "Es simplemente un prototipo para una clínica fisioterapeútica ");
+        }
+
     }
 }
+    
 
 
 

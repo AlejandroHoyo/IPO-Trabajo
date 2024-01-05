@@ -24,14 +24,14 @@ namespace Lab_IPO
             InitializeComponent();
         }
 
-       private void Logout_Click(object sender, RoutedEventArgs e)  // Close all windows and show the login screen again
+        private void Logout_Click(object sender, RoutedEventArgs e)  // Close all windows and show the login screen again
         {
             MainWindow main = new MainWindow();
             main.Show();
             main.Update();
             foreach (Window window in Application.Current.Windows)
             {
-               if (window != main)
+                if (window != main)
                 {
                     window.Close();
                 }
