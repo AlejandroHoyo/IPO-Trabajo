@@ -1,0 +1,46 @@
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\bin\Debug\Lab IPO.exe.config
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\bin\Debug\Lab IPO.exe
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\bin\Debug\Lab IPO.pdb
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO.csproj.AssemblyReference.cache
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\MainWindow.g.cs
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\App.g.cs
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO_MarkupCompile.cache
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO_MarkupCompile.lref
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\MainWindow.baml
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO.g.resources
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab_IPO.Properties.Resources.resources
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO.csproj.GenerateResource.cache
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO.csproj.CoreCompileInputs.cache
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO.exe
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Lab IPO.pdb
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\MainMenu.g.cs
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\MainMenu.baml
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Citas.g.cs
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Patients.g.cs
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Staff.g.cs
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Citas.baml
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Patients.baml
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\Staff.baml
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\bin\Debug\Lab IPO.exe.config
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\bin\Debug\Lab IPO.exe
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\bin\Debug\Lab IPO.pdb
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO.csproj.AssemblyReference.cache
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Citas.g.cs
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\MainMenu.g.cs
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\MainWindow.g.cs
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Patients.g.cs
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Staff.g.cs
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\App.g.cs
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO_MarkupCompile.cache
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO_MarkupCompile.lref
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Citas.baml
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\MainMenu.baml
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\MainWindow.baml
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Patients.baml
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Staff.baml
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO.g.resources
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab_IPO.Properties.Resources.resources
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO.csproj.GenerateResource.cache
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO.exe
+C:\Users\Alex\Desktop\Lab IPO\Lab IPO\obj\Debug\Lab IPO.pdb

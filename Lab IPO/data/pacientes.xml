@@ -1,0 +1,4 @@
+﻿<Pacientes>
+	<Paciente Nombre="Emily" Apellidos="García" Edad="32" Sexo="Mujer" CorreoElectronico="emily.garcia@jmail.com" Direccion="123 Avenida Principal, Ciudad Falsa" Telefono="669531698" FotoPerfil="Assets/Faces/randomface3.jpeg"/>
+	<Paciente Nombre="Ramiro" Apellidos="Asuna" Edad="48" Sexo="Hombre" CorreoElectronico="ramiro.asuna@jmail.com" Direccion="123 Avenida Principal, Ciudad Falsa" Telefono="659613269" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
+</Pacientes>
