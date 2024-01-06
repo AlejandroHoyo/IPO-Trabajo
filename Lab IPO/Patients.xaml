@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_IPO"
         mc:Ignorable="d"
-        Title="Patients" Height="750" Width="1300" ResizeMode="NoResize">
+        Title="Patients" Height="780" Width="1300" ResizeMode="NoResize">
     <Window.Background>
         <SolidColorBrush Color="#c3facc"/>
     </Window.Background>

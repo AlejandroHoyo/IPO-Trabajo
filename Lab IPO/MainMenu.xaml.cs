@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,10 +21,46 @@ namespace Lab_IPO
     /// </summary>
     public partial class MainMenu : Window
     {
+        // Public windows
+        Citas dates = new Citas();
+        Patients patients = new Patients();
+        Staff staff = new Staff();
+
+
         public MainMenu()
         {
             InitializeComponent();
         }
+
+
+        private bool isClosing = false;
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            if (!isClosing)
+            {
+                e.Cancel = true;
+                isClosing = true;
+
+                Dispatcher.BeginInvoke((Action)(() =>  // Call me Gordon Ramsay because im cooking some spaguetti
+                {
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                    main.Update();
+
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        if (window != main || window == this)
+                        {
+                            window.Close();
+                        }
+                    }
+
+                    isClosing = false;
+                }));
+            }
+        }
+
 
         private void Logout_Click(object sender, RoutedEventArgs e)  // Close all windows and show the login screen again
         {
@@ -38,7 +76,8 @@ namespace Lab_IPO
             }
         }
 
-        protected override void OnInitialized(EventArgs e)  // Update information when the window is oppened
+
+        protected override void OnInitialized(EventArgs e)  // Update information when the window is opened
         {
             base.OnInitialized(e);
             Update();
@@ -46,23 +85,23 @@ namespace Lab_IPO
 
         private void Dates_Click(object sender, RoutedEventArgs e)
         {
-            Citas dates = new Citas();  // I know everithing is in english inside beside this window but renaming it requires to redo it again
             dates.Show();
             dates.Update();  // TODO: Implement the Update() method in Citas
+            dates.Focus();
         }
 
         private void Patients_Click(Object sender, RoutedEventArgs e)
         {
-            Patients patients = new Patients();
             patients.Show();
             patients.Update();  // TODO: Implement the Update() method in Patients 
+            patients.Focus();
         }
 
         private void Staff_Click(object sender, RoutedEventArgs e)
         {
-            Staff staff = new Staff();
             staff.Show();
             staff.Update();  // TODO: Implement the Update() method in Staff
+            staff.Focus();
         }
 
         public void Update()  // TODO: Find user and update information accordingly

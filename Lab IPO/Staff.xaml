@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_IPO"
         mc:Ignorable="d"
-        Title="Patients" Height="610" Width="850" ResizeMode="NoResize">
+        Title="Patients" Height="650" Width="850" ResizeMode="NoResize">
     <Window.Background>
         <SolidColorBrush Color="#c3facc"/>
     </Window.Background>
@@ -67,13 +67,16 @@
                 <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/cake.png" Grid.Row="2"/>
                 <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/phone.png" Grid.Row="3"/>
                 <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/suitcase.png" Grid.Row="4"/>
+                <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/clock.png" Grid.Row="5"/>
                 <Label x:Name="Nombre" Content="Mike" HorizontalAlignment="Right" Margin="0,0,483,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold"/>
                 <Label x:Name="Apellidos" Content="Simon" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="1"/>
                 <Label x:Name="Edad" Content="53" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="2"/>
                 <Label x:Name="Telefono" Content="+34 701 220 181" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="3"/>
                 <Label x:Name="Rol" Content="Personal sanitario" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="4"/>
+                <Label x:Name="Ult_acceso" Content="Ultimo acceso:" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="5"/>
+                <Label x:Name="Ult_acceso_fecha" Content="30/10/2023" HorizontalAlignment="Left" Margin="220,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="5"/>
             </Grid>
-            <ComboBox x:Name="User" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="300" Height="30" SelectionChanged="User_SelectionChanged"/>
+            <ComboBox x:Name="User" Grid.Column="1" HorizontalAlignment="Right" Margin="0,45,45,0" VerticalAlignment="Top" Width="300" Height="30" SelectionChanged="User_SelectionChanged"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="3">
             <Grid.ColumnDefinitions>

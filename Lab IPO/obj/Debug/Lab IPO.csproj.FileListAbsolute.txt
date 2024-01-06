@@ -68,3 +68,4 @@ C:\Users\Alex\Desktop\Lab IPO - Login\Lab IPO\obj\Debug\Lab IPO.csproj.CoreCompi
 C:\Users\Alex\Desktop\Lab IPO - Login\Lab IPO\obj\Debug\Lab IPO.exe
 C:\Users\Alex\Desktop\Lab IPO - Login\Lab IPO\obj\Debug\Lab IPO.pdb
 C:\Users\Alex\Desktop\Lab IPO - Login\Lab IPO\obj\Debug\App.baml
+C:\Users\pozue\source\repos\Lab IPO\Lab IPO\obj\Debug\App.baml

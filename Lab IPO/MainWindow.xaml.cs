@@ -70,6 +70,7 @@ Control componenteEntrada, Image imagenFeedBack)
                 }
             }
         }
+
         private void btnLogin_Enter(object sender, RoutedEventArgs e)
         {
             // La comprobación ya lleva implícita que las entradas
