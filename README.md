@@ -2,4 +2,4 @@
 
 Trabajo de IPO 
 
-Esto se termina durante estas semanas. A espabilar hostias
+Mañana se queda practicamente hecho el frontent. 
