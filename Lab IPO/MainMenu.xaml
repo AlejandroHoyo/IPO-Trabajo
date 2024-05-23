@@ -5,28 +5,125 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_IPO"
         mc:Ignorable="d"
-        Title="MainMenu" Height="425" Width="754" ResizeMode="NoResize">
+        Title="MainMenu" Height="778" Width="1366" ResizeMode="NoResize"
+        Icon="Assets/Logo green.png">
     <Window.Background>
         <SolidColorBrush Color="#c3facc"/>
     </Window.Background>
-
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="15"/>
-            <ColumnDefinition Width="723*"/>
-            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="15"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="573*"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <Button x:Name="Ayuda" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="40" Width="110" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3">
+
+        <TabControl Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" TabStripPlacement="Left" FontFamily="Bahnschrift"
+                    Padding="0" Grid.RowSpan="2">
+            <TabControl.Template>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid>
+                        <DockPanel LastChildFill="True">
+                            <TabPanel
+                                Name="HeaderPanel"
+                                DockPanel.Dock="Left"
+                                VerticalAlignment="Center"
+                                IsItemsHost="True"
+                                Background="Transparent"
+                                Margin="0,100,10,0"
+                                Panel.ZIndex="1">
+                            </TabPanel>
+                            <Border 
+                                Name="Border" 
+                                BorderThickness="3" 
+                                Padding="0" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="black" 
+                                CornerRadius="3">
+                                <ContentPresenter 
+                                    Name="PART_SelectedContentHost" 
+                                    ContentSource="SelectedContent" 
+                                    Margin="{TemplateBinding Padding}" 
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                            </Border>
+                        </DockPanel>
+                    </Grid>
+                </ControlTemplate>
+            </TabControl.Template>
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Padding" Value="0,0"/>
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="Width" Value="250"/>
+                    <Setter Property="Height" Value="65"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid Margin="0,5,0,5">
+                                    <Border Name="Border" Background="#2ba13f" BorderBrush="Black" BorderThickness="3" CornerRadius="2">
+                                        <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header"/>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="#86df95"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True" SourceName="Border">
+                                        <Setter TargetName="Border" Property="Background" Value="#FFBEE6FD"/>
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FF3C7FB1"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            <TabItem IsSelected="True" Cursor="Hand">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Assets/Icons/patients.png" Width="30" Height="30"/>
+                        <TextBlock Text="Pacientes" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid> <!-- Pacientes -->
+
+                </Grid>
+            </TabItem>
+            <TabItem Cursor="Hand">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Assets/Icons/staff.png" Width="30" Height="30"/>
+                        <TextBlock Text="Personal" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid> <!-- Personal -->
+                    <Frame x:Name="framePersonal" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Cursor="Arrow"/>
+                </Grid>
+            </TabItem>
+            <TabItem Cursor="Hand">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Assets/Icons/calendar.png" Width="30" Height="30"/>
+                        <TextBlock Text="Citas" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid> <!-- Citas -->
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="Ayuda" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,140" Grid.Row="2" VerticalAlignment="Bottom" Height="60" Width="250" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnAyuda_Click" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Assets/Icons/help.png" Height="32" HorizontalAlignment="Center"/>
-                <TextBlock Text="Ayuda" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,0,0,0"/>
+                <TextBlock Text="Ayuda" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0"/>
             </StackPanel>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -34,10 +131,10 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Info" Grid.Column="1" HorizontalAlignment="Left" Margin="120,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="40" Width="150" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3">
+        <Button x:Name="Info" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,70" Grid.Row="2" VerticalAlignment="Bottom" Height="60" Width="250" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnInfo_Click" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Assets/Icons/info.png" Height="32" HorizontalAlignment="Center"/>
-                <TextBlock Text="Acerca de" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,0,0,0"/>
+                <TextBlock Text="Acerca de" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0"/>
             </StackPanel>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -45,10 +142,10 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="CerrarSesion" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="40" Width="200" Background="Red" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="Logout_Click">
+        <Button x:Name="Salir" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Bottom" Height="60" Width="250" Background="#FFF11E1E" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnClose_Click" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Assets/Icons/padlock.png" Height="25" Width="25"/>
-                <TextBlock Text="Cerrar Sesion" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="5,0,0,0" Foreground="White"/>
+                <Image Source="Assets/Icons/padlock.png" Height="32" HorizontalAlignment="Center"/>
+                <TextBlock Text="Cerrar sesión" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0" Foreground="white"/>
             </StackPanel>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -56,72 +153,20 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Citas" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="70" Width="230" Background="#54bf66" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="Dates_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Assets/Icons/calendar.png" Height="40" Width="40"/>
-                <TextBlock Text="Citas" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" Margin="5,0,0,0" Foreground="Black" FontWeight="Bold"/>
-            </StackPanel>
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button x:Name="Pacientes" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="70" Width="230" Background="#54bf66" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="Patients_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Assets/Icons/patients.png" Height="40" Width="40"/>
-                <TextBlock Text="Pacientes" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" Margin="5,0,0,0" Foreground="Black" FontWeight="Bold"/>
-            </StackPanel>
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button x:Name="Personal" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="70" Width="230" Background="#54bf66" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="Staff_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Assets/Icons/staff.png" Height="40" Width="40"/>
-                <TextBlock Text="Personal" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" Margin="5,0,0,0" Foreground="Black" FontWeight="Bold"/>
-            </StackPanel>
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Grid Grid.Column="1" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="240"/>
-
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <Border BorderThickness="5" BorderBrush="black" Height="200" Width="200" CornerRadius="5">
-                <Image HorizontalAlignment="Left" Height="195" Margin="0,0,0,0" VerticalAlignment="Top" Width="195" Source="Assets/Faces/randomface1.jpeg"/>
-            </Border>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="10*"/>
-                    <RowDefinition Height="10*"/>
-                    <RowDefinition Height="10*"/>
-                    <RowDefinition Height="10*"/>
-                    <RowDefinition Height="10*"/>
-                    <RowDefinition Height="10*"/>
-                </Grid.RowDefinitions>
-                <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/id.png" Grid.Row="0"/>
-                <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/id.png" Grid.Row="1"/>
-                <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/cake.png" Grid.Row="2"/>
-                <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/phone.png" Grid.Row="3"/>
-                <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/suitcase.png" Grid.Row="4"/>
-                <Image HorizontalAlignment="Left" Height="30" Width="30" Margin="5,5,0,0" VerticalAlignment="Top" Source="Assets/Icons/clock.png" Grid.Row="5"/>
-                <Label x:Name="Nombre" Content="Jane" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="0"/>
-                <Label x:Name="Apellidos" Content="Doe" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="1"/>
-                <Label x:Name="Edad" Content="42" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="2"/>
-                <Label x:Name="Telefono" Content="+34 555 234 244" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="3"/>
-                <Label x:Name="Rol" Content="Personal de limpieza" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="4"/>
-                <Label x:Name="Ultimo_acceso" Content="Último acceso:" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="5"/>
-                <Label x:Name="Fecha_acceso" Content="Activo actualmente" HorizontalAlignment="Left" Margin="230,0,0,0" VerticalAlignment="Center" FontSize="27" FontFamily="Bahnschrift" FontWeight="Bold" Grid.Row="5"/>
-            </Grid>
-        </Grid>
-        <Image RenderTransformOrigin="0,0" HorizontalAlignment="Right" Height="150" Width="150" Margin="0,0,0,0" VerticalAlignment="Top" Source="Assets/logo green.png" Grid.Row="2" Grid.Column="1"/>
+        <Border Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="174" BorderThickness="3" BorderBrush="Black" Grid.RowSpan="2" CornerRadius="5" Margin="0,130,0,0">
+            <Image Source="Assets/Faces/randomface1.jpeg"/>
+        </Border>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" Orientation="Horizontal" Panel.ZIndex="1">
+            <Image Source="Assets/Icons/id.png" Height="32" HorizontalAlignment="Center"/>
+            <Label FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" Content="Marta"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,40,0,0" Orientation="Horizontal" Panel.ZIndex="1">
+            <Image Source="Assets/Icons/id.png" Height="32" HorizontalAlignment="Center"/>
+            <Label FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" Content="García Ordóñez"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,80,0,0" Orientation="Horizontal" Panel.ZIndex="1">
+            <Image Source="Assets/Icons/clock.png" Height="32" HorizontalAlignment="Center"/>
+            <Label FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" Content="Activo actualmente"/>
+        </StackPanel>
     </Grid>
 </Window>

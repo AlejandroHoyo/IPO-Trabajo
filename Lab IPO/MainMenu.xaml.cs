@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace Lab_IPO
 {
     /// <summary>
@@ -21,20 +20,35 @@ namespace Lab_IPO
     /// </summary>
     public partial class MainMenu : Window
     {
-        // Public windows
-        Citas dates = new Citas();
-        Patients patients = new Patients();
-        Staff staff = new Staff();
-
-
+        public Personal personalPage;
         public MainMenu()
         {
             InitializeComponent();
+            personalPage = new Personal(this);
+
+            framePersonal.Content = personalPage;
         }
 
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                Helper.ShowHelp(
+                    "Poner vídeo y algunas instrucciones.");
+            }
+        }
+        private void btnInfo_Click(object sender, RoutedEventArgs e)
+        {
+            Helper.ShowInfo("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
+                "Versión 0.1.0\n\n" +
+                "Es simplemente un prototipo para una clínica fisioterapeútica ");
+        }
 
         private bool isClosing = false;
-
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             if (!isClosing)
@@ -44,6 +58,13 @@ namespace Lab_IPO
 
                 Dispatcher.BeginInvoke((Action)(() =>  // Call me Gordon Ramsay because im cooking some spaguetti
                 {
+                    var result = Helper.ShowWarning("¿Está seguro de que desea cerrar sesión?", "Cerrar Sesión");
+
+                    if (result != System.Windows.Forms.DialogResult.OK)
+                    {
+                        isClosing = false;
+                        return;
+                    }
                     MainWindow main = new MainWindow();
                     main.Show();
                     main.Update();
@@ -55,58 +76,9 @@ namespace Lab_IPO
                             window.Close();
                         }
                     }
-
                     isClosing = false;
                 }));
             }
-        }
-
-
-        private void Logout_Click(object sender, RoutedEventArgs e)  // Close all windows and show the login screen again
-        {
-            MainWindow main = new MainWindow();
-            main.Show();
-            main.Update();
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window != main)
-                {
-                    window.Close();
-                }
-            }
-        }
-
-
-        protected override void OnInitialized(EventArgs e)  // Update information when the window is opened
-        {
-            base.OnInitialized(e);
-            Update();
-        }
-
-        private void Dates_Click(object sender, RoutedEventArgs e)
-        {
-            dates.Show();
-            dates.Update();  // TODO: Implement the Update() method in Citas
-            dates.Focus();
-        }
-
-        private void Patients_Click(Object sender, RoutedEventArgs e)
-        {
-            patients.Show();
-            patients.Update();  // TODO: Implement the Update() method in Patients 
-            patients.Focus();
-        }
-
-        private void Staff_Click(object sender, RoutedEventArgs e)
-        {
-            staff.Show();
-            staff.Update();  // TODO: Implement the Update() method in Staff
-            staff.Focus();
-        }
-
-        public void Update()  // TODO: Find user and update information accordingly
-        {
-
         }
     }
 }

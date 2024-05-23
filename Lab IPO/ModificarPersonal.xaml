@@ -1,0 +1,113 @@
+﻿<Page x:Class="Lab_IPO.ModificarPersonal"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lab_IPO"
+      mc:Ignorable="d" 
+      d:DesignHeight="725" d:DesignWidth="1086"
+      Title="Modificar Personal"
+      Background="#a1f7af">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="4" BorderBrush="black" Height="400" Width="400" CornerRadius="20" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,75,0,0">
+                <Image Source="Assets/Icons/user.png"/>
+            </Border>
+            <Button x:Name="cambiarFotoButton" HorizontalAlignment="Center" Margin="0,450,0,0" VerticalAlignment="center" Height="60" Width="250" Background="#86df95" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnCambiarFotoPersonal_Click" Cursor="Hand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Assets/Icons/camera.png" Height="32" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Cambiar foto" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0"/>
+                </StackPanel>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <GroupBox Grid.Column="1" Header="Información" FontFamily="Banshrifht" FontWeight="Bold" FontSize="20" Margin="5,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="black" BorderThickness="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Image Source="Assets/Icons/id.png" Width="50" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <Label Content="Nombre: " VerticalAlignment="Center" FontSize="32" FontFamily="Bahnschrift" FontWeight="Normal"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Image Source="Assets/Icons/id.png" Width="50" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <Label Content="Apellidos: " VerticalAlignment="Center" FontSize="32" FontFamily="Bahnschrift" FontWeight="Normal"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Image Source="Assets/Icons/phone.png" Width="50" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <Label Content="Teléfono: " VerticalAlignment="Center" FontSize="32" FontFamily="Bahnschrift" FontWeight="Normal"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Image Source="Assets/Icons/cake.png" Width="50" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <Label Content="Edad: " VerticalAlignment="Center" FontSize="32" FontFamily="Bahnschrift" FontWeight="Normal"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Image Source="Assets/Icons/suitcase.png" Width="50" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <Label Content="Tipo: " VerticalAlignment="Center" FontSize="32" FontFamily="Bahnschrift" FontWeight="Normal"/>
+                    </StackPanel>
+                    <TextBox x:Name="nombreModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <TextBox x:Name="apellidosModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <TextBox x:Name="telefonoModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <TextBox x:Name="edadModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <ComboBox x:Name="tipoModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center">
+                        <ComboBoxItem Content="Personal de Sanitario" IsSelected="True"/>
+                        <ComboBoxItem Content="Personal de Limpieza"/>
+                    </ComboBox>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Button x:Name="confirmarModificarPersonalButton" HorizontalAlignment="Center" Margin="0,0,375,0" VerticalAlignment="center" Height="60" Width="350" Background="#2ba13f" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnConfirmarCambiosPersonal_Click" Cursor="Hand" Grid.Row="2" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Assets/Icons/save.png" Height="32" HorizontalAlignment="Center"/>
+                <TextBlock Text="Confirmar cambios" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0"/>
+            </StackPanel>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="cancelarModificarPersonalButton" HorizontalAlignment="Center" Margin="375,0,0,0" VerticalAlignment="center" Height="60" Width="350" Background="Darkred" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnBorrarCambiosPersonal_Click" Cursor="Hand" Grid.Row="2" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Assets/Icons/delete.png" Height="32" HorizontalAlignment="Center"/>
+                <TextBlock Text="Borrar cambios" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0" Foreground="white"/>
+            </StackPanel>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Page>

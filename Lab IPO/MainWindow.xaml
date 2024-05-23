@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_IPO"
         mc:Ignorable="d"
-        Title="MainWindow" Height="425" Width="754" ResizeMode="NoResize">
+        Title="MainWindow" Height="425" Width="754" ResizeMode="NoResize"
+        Icon="Assets/Logo green.png">
     <Window.Background>
         <SolidColorBrush Color="#c3facc"/>
     </Window.Background>
@@ -34,7 +35,7 @@
             <Label x:Name="Descripcion" Content="''Unlock your body's potential''" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="20" FontFamily="Frank Ruehl CLM MediumOblique" Height="30"/>
 
         </Grid>
-        <Button x:Name="Salir" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Row="0" VerticalAlignment="Center" Height="40" Width="100" Background="#FFF11E1E" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnClose_Click">
+        <Button x:Name="Salir" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,0,0" Grid.Row="0" VerticalAlignment="Center" Height="40" Width="100" Background="#FFF11E1E" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnClose_Click" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Assets/Icons/exit.png" Height="32" HorizontalAlignment="Center"/>
                 <TextBlock Text="Salir" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,0,0,0"/>
@@ -46,7 +47,7 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="Ayuda" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="0" VerticalAlignment="Center" Height="40" Width="110" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnAyuda_Click">
+        <Button x:Name="Ayuda" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="0" VerticalAlignment="Center" Height="40" Width="110" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnAyuda_Click" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Assets/Icons/help.png" Height="32" HorizontalAlignment="Center"/>
                 <TextBlock Text="Ayuda" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,0,0,0"/>
@@ -57,7 +58,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Info" Grid.Column="1" HorizontalAlignment="Left" Margin="120,0,0,0" Grid.Row="0" VerticalAlignment="Center" Height="40" Width="150" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnInfo_Click">
+        <Button x:Name="Info" Grid.Column="1" HorizontalAlignment="Left" Margin="120,0,0,0" Grid.Row="0" VerticalAlignment="Center" Height="40" Width="150" Background="White" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnInfo_Click" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Assets/Icons/info.png" Height="32" HorizontalAlignment="Center"/>
                 <TextBlock Text="Acerca de" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Margin="0,0,0,0"/>
@@ -92,17 +93,17 @@
                 <PasswordBox x:Name="passContrasena" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="275" Height="30" FontSize="24" FontFamily="Bahnschrift" IsEnabled="False" KeyDown="txtUsuario_KeyDown"/>
                 <Image HorizontalAlignment="Right" Height="25" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="25" Grid.Column="0" Source="/Assets/Icons/password.png" IsEnabled="False"/>
             </StackPanel>
-            <CheckBox x:Name="RembemberMe" Grid.Column="1" Content="Recuérdame" HorizontalAlignment="Left" Margin="5,0,0,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Bahnschrift" FontWeight="Bold" IsChecked="False" FontSize="16">
+            <CheckBox x:Name="RembemberMe" Grid.Column="1" Content="Recuérdame" HorizontalAlignment="Left" Margin="5,0,0,0" Grid.Row="2" VerticalAlignment="Top" FontFamily="Bahnschrift" FontWeight="Bold" IsChecked="False" FontSize="16" Cursor="Hand">
                 <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-            <CheckBox x:Name="KeepSesionOpen" Grid.Column="1" Content="Mantener sesión iniciada" HorizontalAlignment="Left" Margin="5,0,0,0" Grid.Row="4" VerticalAlignment="Top" FontFamily="Bahnschrift" FontWeight="Bold" IsChecked="False" FontSize="16">
+            <CheckBox x:Name="KeepSesionOpen" Grid.Column="1" Content="Mantener sesión iniciada" HorizontalAlignment="Left" Margin="5,0,0,0" Grid.Row="4" VerticalAlignment="Top" FontFamily="Bahnschrift" FontWeight="Bold" IsChecked="False" FontSize="16" Cursor="Hand">
                 <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-            <Button x:Name="btnLogin" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,25,0" Grid.Row="5" VerticalAlignment="Center" Height="50" Width="200" Background="#54bf66" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="36" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnLogin_Enter">
+            <Button x:Name="btnLogin" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,25,0" Grid.Row="5" VerticalAlignment="Center" Height="50" Width="200" Background="#54bf66" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="36" FontWeight="Bold" RenderTransformOrigin="-1.338,5.067" BorderThickness="3,3,3,3" Click="btnLogin_Enter" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Aceptar" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="0,0,0,0"/>
                 </StackPanel>
