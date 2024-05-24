@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Lab_IPO"
         mc:Ignorable="d"
         Title="MainWindow" Height="425" Width="754" ResizeMode="NoResize"
-        Icon="Assets/Logo green.png">
+        Icon="Assets/Logo green.png"
+        WindowStartupLocation="CenterScreen">
     <Window.Background>
         <SolidColorBrush Color="#c3facc"/>
     </Window.Background>

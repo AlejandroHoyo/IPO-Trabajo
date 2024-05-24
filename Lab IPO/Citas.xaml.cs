@@ -26,5 +26,20 @@ namespace Lab_IPO
             InitializeComponent();
             this.mainMenu = mainMenu;
         }
+
+        private void ctxCitaAdd_Click(object sender, RoutedEventArgs e)
+        {
+            mainMenu.frameCitas.Content = new ModificarCitas(mainMenu);
+            mainMenu.mainMenuPacientes.IsEnabled = false;
+            mainMenu.mainMenuPersonal.IsEnabled = false;
+        }
+        private void ctxCitaModify_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ctxCitaDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

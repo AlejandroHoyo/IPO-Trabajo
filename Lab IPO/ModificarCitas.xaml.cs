@@ -20,9 +20,11 @@ namespace Lab_IPO
     /// </summary>
     public partial class ModificarCitas : Page
     {
-        public ModificarCitas()
+        private MainMenu mainMenu;
+        public ModificarCitas(MainMenu mainMenu)
         {
             InitializeComponent();
+            this.mainMenu = mainMenu;
         }
 
         private void btnConfirmarCambiosCita_Click(object sender, RoutedEventArgs e)

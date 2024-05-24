@@ -26,7 +26,49 @@
             <ComboBoxItem IsSelected="False" Content="Personal Sanitario"/>
             <ComboBoxItem IsSelected="False" Content="Personal de Limpieza"/>
         </ComboBox>
-        <ListBox x:Name="personalList" Grid.Column="1" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="630" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,5" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb"/>
+        <ListBox x:Name="personalList" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" Height="630" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,5" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb">
+            <ListBox.ContextMenu>
+                <ContextMenu BorderBrush="black" BorderThickness="3" Opacity="0.95">
+                    <ContextMenu.Resources>
+                        <Style TargetType="ContextMenu">
+                            <Setter Property="Background" Value="#a1f7af"/>
+                            <!-- Set your desired background color -->
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ContextMenu">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <StackPanel>
+                                                <ItemsPresenter />
+                                            </StackPanel>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="Background" Value="#a1f7af"/>
+                            <!-- Set the same background color for MenuItems -->
+                        </Style>
+                    </ContextMenu.Resources>
+
+                    <MenuItem x:Name="ctxPersonalAdd" Header="Añadir Personal Nuevo" FontSize="18" Click="ctxPersonalAdd_Click" FontWeight="Bold" FontFamily="Bahnschrift">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/Icons/correct.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="ctxPersonalModify" Header="Modificar Datos Personal" FontSize="18" Click="ctxPersonalModify_Click" FontWeight="Bold" FontFamily="Bahnschrift">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/Icons/modify.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="ctxPersonalDelete" Header="Borrar Personal" FontSize="18" Click="ctxPersonalDelete_Click" FontWeight="Bold" FontFamily="Bahnschrift">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/Icons/incorrect.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
         <Label Grid.Column="2" Content="Datos del Personal" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="36"/>
         <Grid Grid.Column="2" Grid.Row="2">
             <Grid.RowDefinitions>

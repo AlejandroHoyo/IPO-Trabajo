@@ -28,7 +28,7 @@
             <Border BorderThickness="4" BorderBrush="black" Height="400" Width="400" CornerRadius="20" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,75,0,0">
                 <Image Source="Assets/Icons/user.png"/>
             </Border>
-            <Button x:Name="cambiarFotoButton" HorizontalAlignment="Center" Margin="0,450,0,0" VerticalAlignment="center" Height="60" Width="250" Background="#86df95" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnCambiarFotoPersonal_Click" Cursor="Hand">
+            <Button x:Name="cambiarFotoPersonalButton" HorizontalAlignment="Center" Margin="0,450,0,0" VerticalAlignment="center" Height="60" Width="250" Background="#86df95" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnCambiarFotoPersonal_Click" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Assets/Icons/camera.png" Height="32" HorizontalAlignment="Center"/>
                     <TextBlock Text="Cambiar foto" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0"/>
@@ -84,6 +84,7 @@
                         <ComboBoxItem Content="Personal de Sanitario" IsSelected="True"/>
                         <ComboBoxItem Content="Personal de Limpieza"/>
                     </ComboBox>
+                    
                 </Grid>
             </GroupBox>
         </Grid>

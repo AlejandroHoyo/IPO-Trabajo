@@ -21,7 +21,49 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="pacientesList" Grid.Column="1" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="640" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,10" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb"/>
+        <ListBox x:Name="pacientesList" Grid.Column="1" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="640" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,10" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb">
+            <ListBox.ContextMenu>
+                <ContextMenu BorderBrush="black" BorderThickness="3" Opacity="0.95">
+                    <ContextMenu.Resources>
+                        <Style TargetType="ContextMenu">
+                            <Setter Property="Background" Value="#a1f7af"/>
+                            <!-- Set your desired background color -->
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ContextMenu">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <StackPanel>
+                                                <ItemsPresenter />
+                                            </StackPanel>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="Background" Value="#a1f7af"/>
+                            <!-- Set the same background color for MenuItems -->
+                        </Style>
+                    </ContextMenu.Resources>
+
+                    <MenuItem x:Name="ctxPacienteAdd" Header="Añadir Paciente Nuevo" FontSize="18" Click="ctxPacienteAdd_Click" FontWeight="Bold" FontFamily="Bahnschrift">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/Icons/correct.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="ctxPacienteModify" Header="Modificar Datos Paciente" FontSize="18" Click="ctxPacienteModify_Click" FontWeight="Bold" FontFamily="Bahnschrift">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/Icons/modify.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="ctxPacienteDelete" Header="Borrar Paciente" FontSize="18" Click="ctxPacienteDelete_Click" FontWeight="Bold" FontFamily="Bahnschrift">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/Icons/incorrect.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
         <ComboBox x:Name="tipoPacienteComboBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Center" Width="250" FontSize="20" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
             <ComboBoxItem IsSelected="True" Content="Pacientes (Todos)"/>
             <ComboBoxItem IsSelected="False" Content="Hombres"/>
@@ -45,7 +87,7 @@
                 <GroupBox Header="Citas" Grid.Column="1" Grid.Row="2" FontFamily="Bahnschrift" FontSize="16" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Margin="5,5,0,10" Background="#d0fbd7">
                     <Grid>
                     <ListBox x:Name="citasPacienteList" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="300" FontFamily="Bahnschrift" FontSize="16" Margin="2,2,2,2" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb"/>
-                    <ComboBox x:Name="tipoCitaPacienteComboBox" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="top" Width="220" FontSize="16" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
+                    <ComboBox x:Name="tipoCitaPacienteComboBox" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="top" Width="220" FontSize="16" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7" FontWeight="Normal" >
                         <ComboBoxItem IsSelected="True" Content="Citas (Todos)"/>
                             <ComboBoxItem IsSelected="False" Content="Citas Pasadas"/>
                             <ComboBoxItem IsSelected="False" Content="Citas Futuras"/>

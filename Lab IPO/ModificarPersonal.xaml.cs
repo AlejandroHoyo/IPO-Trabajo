@@ -20,9 +20,11 @@ namespace Lab_IPO
     /// </summary>
     public partial class ModificarPersonal : Page
     {
-        public ModificarPersonal()
+        public MainMenu mainMenu;
+        public ModificarPersonal(MainMenu mainMenu)
         {
             InitializeComponent();
+            this.mainMenu = mainMenu;
         }
         private void btnCambiarFotoPersonal_Click(object sender, RoutedEventArgs e)
         {

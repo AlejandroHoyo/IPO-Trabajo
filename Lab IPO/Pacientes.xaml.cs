@@ -31,5 +31,20 @@ namespace Lab_IPO
         {
 
         }
+
+        private void ctxPacienteAdd_Click(object sender, RoutedEventArgs e)
+        {
+            mainMenu.framePacientes.Content = new ModificarPacientes(mainMenu);
+            mainMenu.mainMenuCitas.IsEnabled = false;
+            mainMenu.mainMenuPersonal.IsEnabled = false;
+        }
+        private void ctxPacienteModify_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ctxPacienteDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

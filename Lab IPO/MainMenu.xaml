@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Lab_IPO"
         mc:Ignorable="d"
         Title="MainMenu" Height="778" Width="1366" ResizeMode="NoResize"
-        Icon="Assets/Logo green.png">
+        Icon="Assets/Logo green.png"
+        WindowStartupLocation="CenterScreen">
     <Window.Background>
         <SolidColorBrush Color="#c3facc"/>
     </Window.Background>
@@ -80,13 +81,17 @@
                                         <Setter TargetName="Border" Property="Background" Value="#FFBEE6FD"/>
                                         <Setter TargetName="Border" Property="BorderBrush" Value="#FF3C7FB1"/>
                                     </Trigger>
+                                    <Trigger Property="IsEnabled" Value="False" SourceName="Border">
+                                        <Setter TargetName="Border" Property="Background" Value="#81a186"/>
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="black"/>
+                                    </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style>
             </TabControl.Resources>
-            <TabItem IsSelected="True" Cursor="Hand">
+            <TabItem IsSelected="True" Cursor="Hand" x:Name="mainMenuPacientes">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Assets/Icons/patients.png" Width="30" Height="30"/>
@@ -97,7 +102,7 @@
                     <Frame x:Name="framePacientes" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Cursor="Arrow"/>
                 </Grid>
             </TabItem>
-            <TabItem Cursor="Hand">
+            <TabItem Cursor="Hand" x:Name="mainMenuPersonal">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Assets/Icons/staff.png" Width="30" Height="30"/>
@@ -108,7 +113,7 @@
                     <Frame x:Name="framePersonal" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Cursor="Arrow"/>
                 </Grid>
             </TabItem>
-            <TabItem Cursor="Hand">
+            <TabItem Cursor="Hand" x:Name="mainMenuCitas">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Assets/Icons/calendar.png" Width="30" Height="30"/>

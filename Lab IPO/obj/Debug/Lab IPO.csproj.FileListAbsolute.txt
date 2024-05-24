@@ -97,3 +97,5 @@ C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarCitas.g.cs
 C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarCitas.baml
 C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Pacientes.g.cs
 C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Pacientes.baml
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarPacientes.g.cs
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarPacientes.baml

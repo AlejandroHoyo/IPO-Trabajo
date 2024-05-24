@@ -21,10 +21,26 @@ namespace Lab_IPO
     public partial class Personal : Page
     {
         private MainMenu mainMenu;
+
         public Personal(MainMenu mainMenu)
         {
             InitializeComponent();
             this.mainMenu = mainMenu;
+        }
+
+        private void ctxPersonalAdd_Click(object sender, RoutedEventArgs e)
+        {
+            mainMenu.framePersonal.Content = new ModificarPersonal(mainMenu);
+            mainMenu.mainMenuCitas.IsEnabled = false;
+            mainMenu.mainMenuPacientes.IsEnabled = false;
+        }
+        private void ctxPersonalModify_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ctxPersonalDelete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

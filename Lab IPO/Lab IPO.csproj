@@ -87,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ModificarPacientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ModificarPersonal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +107,9 @@
   <ItemGroup>
     <Compile Include="ModificarCitas.xaml.cs">
       <DependentUpon>ModificarCitas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarPacientes.xaml.cs">
+      <DependentUpon>ModificarPacientes.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModificarPersonal.xaml.cs">
       <DependentUpon>ModificarPersonal.xaml</DependentUpon>
