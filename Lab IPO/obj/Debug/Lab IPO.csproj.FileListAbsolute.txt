@@ -91,3 +91,9 @@ C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Personal.g.cs
 C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Personal.baml
 C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarPersonal.g.cs
 C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarPersonal.baml
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Citas.g.cs
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Citas.baml
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarCitas.g.cs
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\ModificarCitas.baml
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Pacientes.g.cs
+C:\Users\pozue\Desktop\IPO-Trabajo\Lab IPO\obj\Debug\Pacientes.baml

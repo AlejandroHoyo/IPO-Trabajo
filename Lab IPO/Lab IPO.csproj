@@ -56,7 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Citas.xaml.cs">
+      <DependentUpon>Citas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
+    <Page Include="Citas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,7 +83,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ModificarCitas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ModificarPersonal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pacientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,8 +101,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModificarCitas.xaml.cs">
+      <DependentUpon>ModificarCitas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModificarPersonal.xaml.cs">
       <DependentUpon>ModificarPersonal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes.xaml.cs">
+      <DependentUpon>Pacientes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Personal.xaml.cs">
       <DependentUpon>Personal.xaml</DependentUpon>
@@ -200,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Icons\interrogacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\duration.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

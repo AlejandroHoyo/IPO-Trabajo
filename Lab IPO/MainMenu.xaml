@@ -94,7 +94,7 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid> <!-- Pacientes -->
-
+                    <Frame x:Name="framePacientes" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Cursor="Arrow"/>
                 </Grid>
             </TabItem>
             <TabItem Cursor="Hand">
@@ -116,7 +116,7 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid> <!-- Citas -->
-
+                    <Frame x:Name="frameCitas" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Cursor="Arrow"/>
                 </Grid>
             </TabItem>
         </TabControl>

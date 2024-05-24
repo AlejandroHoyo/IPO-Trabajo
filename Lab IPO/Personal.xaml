@@ -21,13 +21,13 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3"/>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="tipoPersonalcomboBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Center" Width="290" FontSize="20" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
+        <ComboBox x:Name="tipoPersonalComboBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Center" Width="290" FontSize="20" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
             <ComboBoxItem IsSelected="True" Content="Personal (Todos)"/>
             <ComboBoxItem IsSelected="False" Content="Personal Sanitario"/>
             <ComboBoxItem IsSelected="False" Content="Personal de Limpieza"/>
         </ComboBox>
         <ListBox x:Name="personalList" Grid.Column="1" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="630" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,5" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb"/>
-        <Label Grid.Column="2" Content="Ficha Técnica" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="36"/>
+        <Label Grid.Column="2" Content="Datos del Personal" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="36"/>
         <Grid Grid.Column="2" Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="225"/>

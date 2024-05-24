@@ -80,7 +80,7 @@
                     <TextBox x:Name="apellidosModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
                     <TextBox x:Name="telefonoModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
                     <TextBox x:Name="edadModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
-                    <ComboBox x:Name="tipoModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center">
+                    <ComboBox x:Name="tipoModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" Cursor="Hand">
                         <ComboBoxItem Content="Personal de Sanitario" IsSelected="True"/>
                         <ComboBoxItem Content="Personal de Limpieza"/>
                     </ComboBox>
@@ -101,7 +101,7 @@
         <Button x:Name="cancelarModificarPersonalButton" HorizontalAlignment="Center" Margin="375,0,0,0" VerticalAlignment="center" Height="60" Width="350" Background="Darkred" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnBorrarCambiosPersonal_Click" Cursor="Hand" Grid.Row="2" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Assets/Icons/delete.png" Height="32" HorizontalAlignment="Center"/>
-                <TextBlock Text="Borrar cambios" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0" Foreground="white"/>
+                <TextBlock Text="Cancelar cambios" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Margin="5,0,0,0" Foreground="white"/>
             </StackPanel>
             <Button.Resources>
                 <Style TargetType="Border">

@@ -21,12 +21,19 @@ namespace Lab_IPO
     public partial class MainMenu : Window
     {
         public Personal personalPage;
+        public Citas citasPage;
+        public Pacientes pacientesPage;
+
         public MainMenu()
         {
             InitializeComponent();
             personalPage = new Personal(this);
+            citasPage = new Citas(this);
+            pacientesPage = new Pacientes(this);
 
             framePersonal.Content = personalPage;
+            frameCitas.Content = citasPage;
+            framePacientes.Content = pacientesPage;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -49,7 +56,7 @@ namespace Lab_IPO
         }
 
         private bool isClosing = false;
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)  // Kidnap the closing function to change it's action
         {
             if (!isClosing)
             {

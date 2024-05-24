@@ -1,0 +1,149 @@
+﻿<Page x:Class="Lab_IPO.Pacientes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lab_IPO"
+      mc:Ignorable="d" 
+      d:DesignHeight="725" d:DesignWidth="1086"
+      Title="Pacientes"
+      Background="#a1f7af">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="3"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="pacientesList" Grid.Column="1" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="640" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,10" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb"/>
+        <ComboBox x:Name="tipoPacienteComboBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Center" Width="250" FontSize="20" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
+            <ComboBoxItem IsSelected="True" Content="Pacientes (Todos)"/>
+            <ComboBoxItem IsSelected="False" Content="Hombres"/>
+            <ComboBoxItem IsSelected="False" Content="Mujeres"/>
+        </ComboBox>
+        <Label Grid.Column="2" Content="Datos del Paciente" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="36"/>
+        <Grid Grid.Column="2" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="3"/>
+                </Grid.ColumnDefinitions>
+                <GroupBox Header="Citas" Grid.Column="1" Grid.Row="2" FontFamily="Bahnschrift" FontSize="16" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Margin="5,5,0,10" Background="#d0fbd7">
+                    <Grid>
+                    <ListBox x:Name="citasPacienteList" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="300" FontFamily="Bahnschrift" FontSize="16" Margin="2,2,2,2" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb"/>
+                    <ComboBox x:Name="tipoCitaPacienteComboBox" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="top" Width="220" FontSize="16" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
+                        <ComboBoxItem IsSelected="True" Content="Citas (Todos)"/>
+                            <ComboBoxItem IsSelected="False" Content="Citas Pasadas"/>
+                            <ComboBoxItem IsSelected="False" Content="Citas Futuras"/>
+                    </ComboBox>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Historiales Médicos" Grid.Column="2" Grid.Row="2" FontFamily="Bahnschrift" FontSize="16" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Margin="5,5,0,10" Background="#d0fbd7">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <ListBox x:Name="historialesPacienteList" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="top" Height="300" FontFamily="Bahnschrift" FontSize="16" Margin="2,2,2,2" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb"/>
+                        <Button x:Name="imagenesPacienteButton" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,5" Grid.Row="2" VerticalAlignment="Bottom" Height="40" Width="180" Background="#2ba13f" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnImagenesPaciente_Click" Cursor="Hand">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Assets/Icons/images.png" Height="26" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Imágenes" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Margin="5,0,0,0"/>
+                            </StackPanel>
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Border BorderThickness="2" BorderBrush="black" Grid.Column="1" Margin="3" CornerRadius="4">
+                            <ScrollViewer Margin="3" VerticalScrollBarVisibility="Auto">
+                                <StackPanel>
+                                    <GroupBox Header="Fecha" FontFamily="Bahnschrift" FontSize="10" FontWeight="Bold" BorderBrush="Black" BorderThickness="2">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                            <Image Source="Assets/Icons/calendar.png" Height="25" VerticalAlignment="center"/>
+                                            <Label Content="No hay datos" FontSize="14" FontWeight="Normal" FontFamily="Bahnschrift"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="Dolencias" FontFamily="Bahnschrift" FontSize="10" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" MinHeight="145">
+                                        <TextBlock x:Name="dolenciasPacienteTextBlock" Text="No hay datos" FontSize="14" FontWeight="Normal" FontFamily="Bahnschrift" TextWrapping="Wrap"/>
+                                    </GroupBox>
+                                    <GroupBox Header="Tratamientos" FontFamily="Bahnschrift" FontSize="10" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" MinHeight="145">
+                                        <TextBlock x:Name="tratamientosPacienteTextBlock" Text="No hay datos" FontSize="14" FontWeight="Normal" FontFamily="Bahnschrift" TextWrapping="Wrap"/>
+                                    </GroupBox>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Border>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+            <GroupBox Header="Información Personal" Grid.Row="1" FontFamily="Bahnschrift" FontSize="16" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Margin="5,0,0,0" Background="#d0fbd7">
+                <Grid Margin="0,5,0,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="black" BorderThickness="3" Width="150" Height="150" VerticalAlignment="Center" HorizontalAlignment="left" Margin="5,0,0,0" CornerRadius="3" Grid.RowSpan="7">
+                        <Image x:Name="personalImagen" Source="Assets/Icons/user.png"/>
+                    </Border>
+                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
+                        <Image Source="Assets/Icons/id.png" Height="30" VerticalAlignment="center"/>
+                        <Label x:Name="nombrePacienteLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
+                        <Image Source="Assets/Icons/id.png" Height="30" VerticalAlignment="center"/>
+                        <Label x:Name="apellidosPacienteLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
+                        <Image Source="Assets/Icons/cake.png" Height="30" VerticalAlignment="center"/>
+                        <Label x:Name="edadPacienteLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="300,0,0,0" VerticalAlignment="center">
+                        <Image Source="Assets/Icons/gender.png" Height="30" VerticalAlignment="center"/>
+                        <Label x:Name="sexoPacienteLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
+                        <Image Source="Assets/Icons/location.png" Height="30" VerticalAlignment="center"/>
+                        <Label x:Name="domicilioPacienteLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center" Grid.ColumnSpan="2">
+                        <Image Source="Assets/Icons/email.png" Height="30" VerticalAlignment="center"/>
+                        <Label x:Name="correoPacienteLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="10" Grid.Column="0" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center" Grid.ColumnSpan="2">
+                        <Image Source="Assets/Icons/phone.png" Height="30" VerticalAlignment="center"/>
+                        <Label x:Name="telefonoPacienteLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+            
+        </Grid>
+    </Grid>
+</Page>
