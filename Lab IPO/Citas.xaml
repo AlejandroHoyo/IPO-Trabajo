@@ -28,7 +28,6 @@
                     <ContextMenu.Resources>
                         <Style TargetType="ContextMenu">
                             <Setter Property="Background" Value="#a1f7af"/>
-                            <!-- Set your desired background color -->
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="ContextMenu">
@@ -43,7 +42,6 @@
                         </Style>
                         <Style TargetType="MenuItem">
                             <Setter Property="Background" Value="#a1f7af"/>
-                            <!-- Set the same background color for MenuItems -->
                         </Style>
                     </ContextMenu.Resources>
 
@@ -67,8 +65,8 @@
         </ListBox>
         <ComboBox x:Name="tipoCitaComboBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Center" Width="290" FontSize="20" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
             <ComboBoxItem IsSelected="True" Content="Citas (Todas)"/>
-            <ComboBoxItem IsSelected="False" Content="Citas Pasadas"/>
-            <ComboBoxItem IsSelected="False" Content="Citas Futuras"/>
+            <ComboBoxItem IsSelected="False" Content="Citas Completadas"/>
+            <ComboBoxItem IsSelected="False" Content="Citas Pendientes"/>
         </ComboBox>
         <Label Grid.Column="2" Content="Datos de la cita" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="36"/>
         <Grid Grid.Column="2" Grid.Row="2">

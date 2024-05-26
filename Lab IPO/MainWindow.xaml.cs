@@ -22,8 +22,8 @@ namespace Lab_IPO
     {
         private BitmapImage imagCheck = new BitmapImage(new Uri("/Assets/Icons/correct.png", UriKind.Relative));
         private BitmapImage imagCross = new BitmapImage(new Uri("/Assets/Icons/incorrect.png", UriKind.Relative));
-        private string usuario = "Jane";
-        private string password = "1234";
+        private string usuario = "";
+        private string password = "";
         public MainWindow()
         {
             InitializeComponent();

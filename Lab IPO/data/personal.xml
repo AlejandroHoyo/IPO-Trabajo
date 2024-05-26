@@ -1,0 +1,5 @@
+﻿<Personal>
+	<Personal Nombre="Óscar" Apellidos="Fernández Plaza" Telefono="612345678" Edad="42" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
+	<Personal Nombre="Alejandro" Apellidos="Hoyo Plaza" Telefono="612345678" Edad="42" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
+	<Personal Nombre="Marta" Apellidos="Llorens" Telefono="612345678" Edad="45" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
+</Personal>

@@ -20,16 +20,19 @@ namespace Lab_IPO
     /// </summary>
     public partial class MainMenu : Window
     {
-        public Personal personalPage;
+        public Staff personalPage;
         public Citas citasPage;
         public Pacientes pacientesPage;
+        public Context context;
 
         public MainMenu()
         {
             InitializeComponent();
-            personalPage = new Personal(this);
-            citasPage = new Citas(this);
-            pacientesPage = new Pacientes(this);
+
+            Context context = new Context();
+            personalPage = new Staff(this, context);
+            citasPage = new Citas(this, context);
+            pacientesPage = new Pacientes(this, context);
 
             framePersonal.Content = personalPage;
             frameCitas.Content = citasPage;

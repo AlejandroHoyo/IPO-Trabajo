@@ -1,4 +1,7 @@
 ﻿<Pacientes>
-	<Paciente Nombre="Emily" Apellidos="García" Edad="32" Sexo="Mujer" CorreoElectronico="emily.garcia@jmail.com" Direccion="123 Avenida Principal, Ciudad Falsa" Telefono="669531698" FotoPerfil="Assets/Faces/randomface3.jpeg"/>
-	<Paciente Nombre="Ramiro" Apellidos="Asuna" Edad="48" Sexo="Hombre" CorreoElectronico="ramiro.asuna@jmail.com" Direccion="123 Avenida Principal, Ciudad Falsa" Telefono="659613269" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
+	<Paciente Nombre="Santiago" Apellidos="Fernández Plaza" Edad="45" Sexo="Hombre" CorreoElectronico="santiago.fernandez@jmail.com" Direccion="456 Calle del Sol, Madrid" Telefono="612345678" FotoPerfil="Assets/Faces/randomface2.jpeg">
+		<HistorialMedico Fecha ="25/02/2024" Dolencias="Estoy jodido" Tratamientos="Palmaditas en el pecho"/>
+		<HistorialMedico Fecha ="10/02/2022" Dolencias="Estoy un poco jodido" Tratamientos="Dos Palmaditas en el pecho"/>
+	</Paciente>
+	<Paciente Nombre="Aitana" Apellidos="Ortega" Edad="22" Sexo="Mujer" CorreoElectronico="aitana.ortega@jmail.com" Direccion="789 Calle del Arroyo, Salamanca" Telefono="601234567" FotoPerfil="Assets/Faces/randomface3.jpeg"/>
 </Pacientes>

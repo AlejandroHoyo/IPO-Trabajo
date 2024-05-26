@@ -25,8 +25,8 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderThickness="4" BorderBrush="black" Height="400" Width="400" CornerRadius="20" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,75,0,0">
-                <Image Source="Assets/Icons/user.png"/>
+            <Border BorderThickness="4" BorderBrush="black" Height="400" Width="400" CornerRadius="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,75,0,0">
+                <Image x:Name="imagenPefil" Source="{Binding FotoPerfil}"/>
             </Border>
             <Button x:Name="cambiarFotoPersonalButton" HorizontalAlignment="Center" Margin="0,450,0,0" VerticalAlignment="center" Height="60" Width="250" Background="#86df95" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnCambiarFotoPersonal_Click" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
@@ -76,13 +76,13 @@
                         <Image Source="Assets/Icons/suitcase.png" Width="50" VerticalAlignment="Center" Margin="0,0,10,0"/>
                         <Label Content="Tipo: " VerticalAlignment="Center" FontSize="32" FontFamily="Bahnschrift" FontWeight="Normal"/>
                     </StackPanel>
-                    <TextBox x:Name="nombreModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
-                    <TextBox x:Name="apellidosModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
-                    <TextBox x:Name="telefonoModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
-                    <TextBox x:Name="edadModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <TextBox x:Name="nombreModificarPersonalTextbox" TextWrapping="Wrap" Text="{Binding Nombre}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <TextBox x:Name="apellidosModificarPersonalTextbox" TextWrapping="Wrap" Text="{Binding Apellidos}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <TextBox x:Name="telefonoModificarPersonalTextbox" TextWrapping="Wrap" Text="{Binding Telefono}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
+                    <TextBox x:Name="edadModificarPersonalTextbox" TextWrapping="Wrap" Text="{Binding Edad}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center"/>
                     <ComboBox x:Name="tipoModificarPersonalTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" Cursor="Hand">
-                        <ComboBoxItem Content="Personal de Sanitario" IsSelected="True"/>
-                        <ComboBoxItem Content="Personal de Limpieza"/>
+                        <ComboBoxItem Content="Sanitario" IsSelected="True"/>
+                        <ComboBoxItem Content="Limpieza"/>
                     </ComboBox>
                     
                 </Grid>

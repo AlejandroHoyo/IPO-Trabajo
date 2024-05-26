@@ -21,7 +21,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3"/>
         </Grid.RowDefinitions>
-        <GroupBox Grid.Row="1" Grid.Column="1" Header="Datos del Cliente" FontFamily="Bahnschrift" FontSize="22" FontWeight="Bold" BorderBrush="black" BorderThickness="3">
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="Datos del Paciente" FontFamily="Bahnschrift" FontSize="22" FontWeight="Bold" BorderBrush="black" BorderThickness="3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3"/>
@@ -83,19 +83,19 @@
                         <Label Content="Teléfono: " VerticalAlignment="Center" FontSize="28" FontFamily="Bahnschrift" FontWeight="Normal"/>
                     </StackPanel>
 
-                    <TextBox x:Name="nombreModificarPacienteTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
-                    <TextBox x:Name="apellidosModificarPacienteTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
-                    <TextBox x:Name="edadModificarPacienteTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
-                    <ComboBox x:Name="sexoModificarPacienteTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="7" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" Cursor="Hand">
+                    <TextBox x:Name="nombreModificarPacienteTextbox" TextWrapping="Wrap" Text="{Binding Nombre}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
+                    <TextBox x:Name="apellidosModificarPacienteTextbox" TextWrapping="Wrap" Text="{Binding Apellidos}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
+                    <TextBox x:Name="edadModificarPacienteTextbox" TextWrapping="Wrap" Text="{Binding Edad}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
+                    <ComboBox x:Name="sexoModificarPacienteComboBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="7" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" Cursor="Hand">
                         <ComboBoxItem Content="Hombre" IsSelected="True"/>
-                        <ComboBoxItem Content="Mujer de Limpieza"/>
+                        <ComboBoxItem Content="Mujer"/>
                     </ComboBox>
-                    <TextBox x:Name="domicilioModificarPacienteTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="9" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
-                    <TextBox x:Name="correoModificarPacienteTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="11" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
-                    <TextBox x:Name="telefonoModificarPacienteTextbox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="13" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
+                    <TextBox x:Name="domicilioModificarPacienteTextbox" TextWrapping="Wrap" Text="{Binding Direccion}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="9" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
+                    <TextBox x:Name="correoModificarPacienteTextbox" TextWrapping="Wrap" Text="{Binding CorreoElectronico}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="11" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
+                    <TextBox x:Name="telefonoModificarPacienteTextbox" TextWrapping="Wrap" Text="{Binding Telefono}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="13" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="28"/>
                 </Grid>
-                <Border BorderThickness="4" BorderBrush="black" Height="230" Width="230" CornerRadius="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" Grid.Column="1">
-                    <Image Source="Assets/Icons/user.png"/>
+                <Border BorderThickness="4" BorderBrush="black" Height="230" Width="230" CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70" Grid.Column="1">
+                    <Image x:Name="imagenFotoPerfil" Source="{Binding FotoPerfil}"/>
                 </Border>
                 <Button x:Name="cambiarFotoPacienteButton" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="center" Height="60" Width="250" Background="#86df95" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnCambiarFotoPaciente_Click" Cursor="Hand" Grid.Column="1">
                     <StackPanel Orientation="Horizontal">
@@ -117,13 +117,17 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <ListBox x:Name="citasPacienteList" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Center" Height="230" FontFamily="Bahnschrift" FontSize="16" Margin="2,2,2,2" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb">
+                <ListBox x:Name="historialesMedicosList" SelectionChanged="listaHistoriales_SelectionChanged"  VerticalAlignment="Center" Height="230" FontFamily="Bahnschrift" FontSize="16" Margin="2,2,2,2" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Fecha}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                     <ListBox.ContextMenu>
                         <ContextMenu BorderBrush="black" BorderThickness="3" Opacity="0.95">
                             <ContextMenu.Resources>
                                 <Style TargetType="ContextMenu">
                                     <Setter Property="Background" Value="#a1f7af"/>
-                                    <!-- Set your desired background color -->
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="ContextMenu">
@@ -158,17 +162,17 @@
                 <Border BorderThickness="2" BorderBrush="black" Grid.Column="1" Margin="3" CornerRadius="4">
                     <ScrollViewer Margin="3" VerticalScrollBarVisibility="Auto">
                         <StackPanel>
-                            <GroupBox Header="Datos del Cliente" FontFamily="Bahnschrift" FontSize="18" FontWeight="Bold" BorderBrush="black" BorderThickness="2">
+                            <GroupBox Header="Datos del Historial Médico" FontFamily="Bahnschrift" FontSize="18" FontWeight="Bold" BorderBrush="black" BorderThickness="2">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                                     <Image Source="Assets/Icons/calendar.png" Width="25" VerticalAlignment="Center" Margin="5,0,10,0"/>
-                                    <DatePicker VerticalAlignment="Stretch" FontSize="18" FontFamily="Bahnschrift" FontWeight="Normal" HorizontalAlignment="Stretch" Width="500"/>
+                                    <DatePicker x:Name="fechaHistorial" VerticalAlignment="Stretch" FontSize="18" FontFamily="Bahnschrift" FontWeight="Normal" HorizontalAlignment="Stretch" Width="500"/>
                                 </StackPanel>
                             </GroupBox>
                             <GroupBox Header="Dolencias" FontFamily="Bahnschrift" FontSize="18" FontWeight="Bold" BorderBrush="black" BorderThickness="2" MinHeight="60">
-                                <TextBox x:Name="dolenciasModificarPacienteTextBox" FontSize="18" FontWeight="Normal" FontFamily="Bahnschrift" TextWrapping="Wrap"/>
+                                <TextBox x:Name="dolenciasModificarPacienteTextBox" Text="{Binding Dolencias}" FontSize="18" FontWeight="Normal" FontFamily="Bahnschrift" TextWrapping="Wrap"/>
                             </GroupBox>
                             <GroupBox Header="Tratamientos" FontFamily="Bahnschrift" FontSize="18" FontWeight="Bold" BorderBrush="black" BorderThickness="2" MinHeight="60">
-                                <TextBox x:Name="tratamientosModificarPacienteTextBox" FontSize="18" FontWeight="Normal" FontFamily="Bahnschrift" TextWrapping="Wrap"/>
+                                <TextBox x:Name="tratamientosModificarPacienteTextBox"  Text="{Binding Tratamientos}" FontSize="18" FontWeight="Normal" FontFamily="Bahnschrift" TextWrapping="Wrap"/>
                             </GroupBox>
                             <Button x:Name="modificarHistorialPacienteButton" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="center" Height="35" Width="150" Background="#86df95" BorderBrush="Black" FontFamily="Bahnschrift" FontSize="18" FontWeight="Bold" BorderThickness="3,3,3,3" Click="btnModificarHistorialPaciente_Click" Cursor="Hand">
                                 <StackPanel Orientation="Horizontal">

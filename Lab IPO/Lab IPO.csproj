@@ -56,9 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Cita.cs" />
     <Compile Include="Citas.xaml.cs">
       <DependentUpon>Citas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Context.cs" />
     <Compile Include="Helper.cs" />
     <Page Include="Citas.xaml">
       <SubType>Designer</SubType>
@@ -76,6 +78,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Historial.cs" />
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -114,12 +117,14 @@
     <Compile Include="ModificarPersonal.xaml.cs">
       <DependentUpon>ModificarPersonal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Paciente.cs" />
     <Compile Include="Pacientes.xaml.cs">
       <DependentUpon>Pacientes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Personal.xaml.cs">
       <DependentUpon>Personal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Plantilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -231,6 +236,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Icons\duration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="data\personal.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="data\citas.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

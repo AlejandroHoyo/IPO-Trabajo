@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/personal.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/citas.xml")]
 
 
