@@ -90,20 +90,46 @@ namespace Lab_IPO
                 string fecha = node.Attributes["Fecha"]?.Value ?? string.Empty;
                 string hora = node.Attributes["Hora"]?.Value ?? string.Empty;
                 string duracion = node.Attributes["Duracion"]?.Value ?? string.Empty;
-                string estado = node.Attributes["Duracion"]?.Value ?? string.Empty;
-                string sanitario = node.Attributes["Sanitario"]?.Value ?? string.Empty;
-                string paciente = node.Attributes["Paciente"]?.Value ?? string.Empty;
+                string estado = node.Attributes["Estado"]?.Value ?? string.Empty;
+                string sanitarioNombre = node.Attributes["Sanitario"]?.Value ?? string.Empty;
+                string pacienteNombre = node.Attributes["Paciente"]?.Value ?? string.Empty;
+
+                //XmlNode sanitarioNode = node["Sanitario"];
+                //string sanitarioApellidos = sanitarioNode?.Attributes["Apellidos"]?.Value ?? string.Empty;
+                //string sanitarioTelefono = sanitarioNode?.Attributes["Telefono"]?.Value ?? string.Empty;
+                //string sanitarioFotoPerfilPath = sanitarioNode?.Attributes["FotoPerfil"]?.Value ?? "Assets/Icons/user.png";
+
+                //XmlNode pacienteNode = node["Paciente"];
+                //string pacienteApellidos = pacienteNode?.Attributes["Apellidos"]?.Value ?? string.Empty;
+                //string pacienteTelefono = pacienteNode?.Attributes["Telefono"]?.Value ?? string.Empty;
+                //string pacienteFotoPerfilPath = pacienteNode?.Attributes["FotoPerfil"]?.Value ?? "Assets/Icons/user.png";
+
+                //var nuevoSanitario = new Plantilla()
+                //{
+                //    Nombre = sanitarioNombre,
+                //    Apellidos = sanitarioApellidos,
+                //    Telefono = sanitarioTelefono,
+                //    FotoPerfil = new BitmapImage(new Uri(sanitarioFotoPerfilPath, UriKind.Relative))
+                //};
+
+                //var nuevoPaciente = new Paciente()
+                //{
+                //    Nombre = pacienteNombre,
+                //    Apellidos = pacienteApellidos,
+                //    Telefono = pacienteTelefono,
+                //    FotoPerfil = new BitmapImage(new Uri(pacienteFotoPerfilPath, UriKind.Relative))
+                //};
 
                 var nuevaCita = new Cita()
                 {
-                    Fecha = fecha, 
-                    Hora = hora, 
-                    Duracion = duracion, 
-                    Estado = estado, 
-                    Sanitario = sanitario,
-                    Paciente = paciente
+                    Fecha = fecha,
+                    Hora = hora,
+                    Duracion = duracion,
+                    Estado = estado,
+                    Sanitario = sanitarioNombre,
+                    Paciente = pacienteNombre
                 };
-                
+
                 listado.Add(nuevaCita);
             }
 

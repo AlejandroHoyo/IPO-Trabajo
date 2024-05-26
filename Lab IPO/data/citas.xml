@@ -1,4 +1,6 @@
 ﻿<Citas>
-	<Cita Fecha="27/02/2024" Hora ="23:15" Duracion="120" Estado="Pendiente" Sanitario="Alejandro Hoyo Plaza" Paciente="Santiago Fernández Plaza"/>
-	<Cita Fecha="22/02/2023" Hora ="16:15" Duracion="128" Estado="Completada" Sanitario="Óscar Fernández Plaza" Paciente="Santiago Fernández Plaza"/>
+	<Cita Fecha="27/02/2024" Hora ="23:15" Duracion="120" Estado="Pendiente" Sanitario="Alejandro" Paciente="Santiago">
+		<!--<Sanitario Apellidos="Hoyo Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
+		<Paciente  Apellidos="Fernández Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface2.jpeg"/>-->
+	</Cita>
 </Citas>

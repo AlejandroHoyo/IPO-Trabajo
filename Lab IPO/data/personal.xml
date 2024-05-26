@@ -2,4 +2,21 @@
 	<Personal Nombre="Óscar" Apellidos="Fernández Plaza" Telefono="612345678" Edad="42" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
 	<Personal Nombre="Alejandro" Apellidos="Hoyo Plaza" Telefono="612345678" Edad="42" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
 	<Personal Nombre="Marta" Apellidos="Llorens" Telefono="612345678" Edad="45" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
+	<Personal Nombre="Lucía" Apellidos="Martínez Gómez" Telefono="612345679" Edad="30" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/lucia-martinez.jpg"/>
+	<Personal Nombre="Carlos" Apellidos="Hernández Ruiz" Telefono="612345680" Edad="35" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/carlos-hernandez.jpg"/>
+	<Personal Nombre="Ana" Apellidos="López García" Telefono="612345681" Edad="28" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/ana-lopez.jpg"/>
+	<Personal Nombre="Javier" Apellidos="Sánchez Martín" Telefono="612345682" Edad="40" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/javier-sanchez.jpg"/>
+	<Personal Nombre="María" Apellidos="Pérez Rodríguez" Telefono="612345683" Edad="32" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/maria-perez.jpg"/>
+	<Personal Nombre="Raúl" Apellidos="González Díaz" Telefono="612345684" Edad="38" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/raul-gonzalez.jpg"/>
+	<Personal Nombre="Elena" Apellidos="Romero Morales" Telefono="612345685" Edad="29" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/elena-romero.jpg"/>
+	<Personal Nombre="Manuel" Apellidos="Torres López" Telefono="612345686" Edad="50" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/manuel-torres.jpg"/>
+	<Personal Nombre="Sofía" Apellidos="Ramírez Sánchez" Telefono="612345687" Edad="27" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/sofia-ramirez.jpg"/>
+	<Personal Nombre="Alberto" Apellidos="Molina Ortiz" Telefono="612345688" Edad="37" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/alberto-molina.jpg"/>
+	<Personal Nombre="Isabel" Apellidos="Muñoz Romero" Telefono="612345689" Edad="42" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/isabel-munoz.jpg"/>
+	<Personal Nombre="Antonio" Apellidos="Ortiz Torres" Telefono="612345690" Edad="45" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/antonio-ortiz.jpg"/>
+	<Personal Nombre="Laura" Apellidos="Vargas Gómez" Telefono="612345691" Edad="36" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/laura-vargas.jpg"/>
+	<Personal Nombre="Sergio" Apellidos="Iglesias Ruiz" Telefono="612345692" Edad="48" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/sergio-iglesias.jpg"/>
+	<Personal Nombre="Ernest" Apellidos="Khalimov" Telefono="612345693" Edad="52" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/ernest-khalimov.jpg"/>
+
+
 </Personal>

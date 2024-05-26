@@ -22,7 +22,12 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="citasList" Grid.Column="1" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="640" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,10" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb">
+        <ListBox x:Name="citasList" Grid.Column="1" SelectionChanged="listaCita_SelectionChanged" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" VerticalAlignment="Bottom" Height="640" FontFamily="Bahnschrift" FontSize="20" Margin="0,0,0,10" Cursor="Hand" BorderBrush="black" BorderThickness="2" Background="#e7fdeb">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding IdentificacionCita}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
             <ListBox.ContextMenu>
                 <ContextMenu BorderBrush="black" BorderThickness="3" Opacity="0.95">
                     <ContextMenu.Resources>
@@ -63,7 +68,7 @@
                 </ContextMenu>
             </ListBox.ContextMenu>
         </ListBox>
-        <ComboBox x:Name="tipoCitaComboBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Center" Width="290" FontSize="20" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
+        <ComboBox x:Name="tipoCitaComboBox" Grid.Column="1" Grid.Row="1" SelectionChanged="comboBox_TipoCita_SelectionChanged" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Center" Width="290" FontSize="20" FontFamily="Bahnschrift" SelectedIndex="0" Cursor="Hand" Background="#d0fbd7">
             <ComboBoxItem IsSelected="True" Content="Citas (Todas)"/>
             <ComboBoxItem IsSelected="False" Content="Citas Completadas"/>
             <ComboBoxItem IsSelected="False" Content="Citas Pendientes"/>
@@ -89,19 +94,35 @@
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                         <Image Source="Assets/Icons/calendar.png" Height="45" VerticalAlignment="center"/>
-                        <Label x:Name="fechaCitaLabel" Content="No asignada" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                        <Label x:Name="fechaCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                            <Label.Content>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Fecha}"/>
+                            </Label.Content>
+                        </Label>
                     </StackPanel>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                         <Image Source="Assets/Icons/clock.png" Height="45" VerticalAlignment="center"/>
-                        <Label x:Name="horaCitaLabel" Content="No asignada" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                        <Label x:Name="horaCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                            <Label.Content>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Hora}"/>
+                            </Label.Content>
+                        </Label>
                     </StackPanel>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                         <Image Source="Assets/Icons/duration.png" Height="45" VerticalAlignment="center"/>
-                        <Label x:Name="duracionCitaLabel" Content="No asignada" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                        <Label x:Name="duracionCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                            <Label.Content>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Duracion}"/>
+                            </Label.Content>
+                        </Label>
                     </StackPanel>
                     <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                         <Image Source="Assets/Icons/info.png" Height="45" VerticalAlignment="center"/>
-                        <Label x:Name="estadoCitaLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                        <Label x:Name="estadoCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                            <Label.Content>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Estado}"/>
+                            </Label.Content>
+                        </Label>
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -121,19 +142,31 @@
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                             <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
-                            <Label x:Name="pacienteNombreCitaLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                            <Label x:Name="pacienteNombreCitaLabel"  VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0" Cursor="Hand">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Paciente}"/>
+                                </Label.Content>
+                            </Label>
                         </StackPanel>
                         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                             <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
-                            <Label x:Name="pacienteApellidosCitaLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                            <Label x:Name="pacienteApellidosCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Paciente.Apellidos}"/>
+                                </Label.Content>
+                            </Label>
                         </StackPanel>
                         <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                             <Image Source="Assets/Icons/phone.png" Height="45" VerticalAlignment="center"/>
-                            <Label x:Name="pacienteTelefonoCitaCitaLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                            <Label x:Name="pacienteTelefonoCitaCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                                <Label.Content>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Paciente.Telefono}"/>
+                                </Label.Content>
+                            </Label>
                         </StackPanel>
                     </Grid>
                     <Border BorderBrush="black" BorderThickness="3" Width="150" Height="150" VerticalAlignment="Center" HorizontalAlignment="left" Margin="5,0,0,0" CornerRadius="3">
-                        <Image x:Name="citasPacienteImagen" Source="Assets/Icons/user.png" Cursor="Hand"/>
+                        <Image x:Name="citasPacienteImagen" Source="{Binding ElementName=citasList, Path=SelectedItem.Paciente.FotoPerfil}" Cursor="Hand"/>
                     </Border>
                 </Grid>
             </GroupBox>
@@ -154,19 +187,31 @@
                             </Grid.RowDefinitions>
                             <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                                 <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
-                                <Label x:Name="doctorNombreCitaLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                                <Label x:Name="doctorNombreCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0" Cursor="Hand">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Sanitario.Nombre}"/>
+                                    </Label.Content>
+                                </Label>
                             </StackPanel>
                             <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                                 <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
-                                <Label x:Name="doctorApellidosCitaLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                                <Label x:Name="doctorApellidosCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Sanitario.Apellidos}"/>
+                                    </Label.Content>
+                                </Label>
                             </StackPanel>
                             <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="center">
                                 <Image Source="Assets/Icons/phone.png" Height="45" VerticalAlignment="center"/>
-                                <Label x:Name="doctorTelefonoCitaCitaLabel" Content="Desconocido" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0"/>
+                                <Label x:Name="doctorTelefonoCitaCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
+                                    <Label.Content>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Sanitario.Telefono}"/>
+                                    </Label.Content>
+                                </Label>
                             </StackPanel>
                         </Grid>
                         <Border BorderBrush="black" BorderThickness="3" Width="150" Height="150" VerticalAlignment="Center" HorizontalAlignment="left" Margin="5,0,0,0" CornerRadius="3">
-                            <Image x:Name="citasDoctorImagen" Source="Assets/Icons/user.png" Cursor="Hand"/>
+                            <Image x:Name="citasDoctorImagen"  Source="{Binding ElementName=citasList, Path=SelectedItem.Paciente.FotoPerfil}" Cursor="Hand"/>
                         </Border>
                     </Grid>
                 </Grid>

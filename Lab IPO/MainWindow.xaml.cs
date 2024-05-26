@@ -29,16 +29,15 @@ namespace Lab_IPO
             InitializeComponent();
         }
 
-        private Boolean ComprobarEntrada(string valorIntroducido, string valorValido,
-Control componenteEntrada, Image imagenFeedBack)
+        private Boolean ComprobarEntrada(string valorIntroducido, string valorCorrecto,
+            Control componenteEntrada, Image imagenFeedBack)
         {
             Boolean valido = false;
-            if (valorIntroducido.Equals(valorValido))
+            if (valorIntroducido.Equals(valorCorrecto))
             {
-                // borde y background en verde
+              
                 componenteEntrada.BorderBrush = Brushes.Green;
                 componenteEntrada.Background = Brushes.LightGreen;
-                // imagen al lado de la entrada de usuario --> check
                 imagenFeedBack.Source = imagCheck;
                 valido = true;
             }
@@ -56,7 +55,7 @@ Control componenteEntrada, Image imagenFeedBack)
 
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            // se hará la comprobación al pulsar el "Enter"
+            
             if (e.Key == Key.Return)
             {
                 if (ComprobarEntrada(txtUsuario.Text, usuario,
@@ -111,13 +110,13 @@ Control componenteEntrada, Image imagenFeedBack)
         private void btnAyuda_Click(object sender, RoutedEventArgs e)
         {
             {
-                Helper.ShowHelp(
+                Helper.ShowAyuda(
                     "Poner vídeo y algunas instrucciones.");
             }
         }
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
-            Helper.ShowInfo("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
+            Helper.ShowInformacion("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
                 "Versión 0.1.0\n\n" +
                 "Es simplemente un prototipo para una clínica fisioterapeútica ");
         }

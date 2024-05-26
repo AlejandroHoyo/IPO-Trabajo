@@ -12,28 +12,27 @@ namespace Lab_IPO
 {
     public class Helper
     {
-        public static DialogResult ShowWarning(string message, string caption)
+        public static DialogResult ShowAdvertencia(string mensaje, string tema)
         {
-            return System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            return System.Windows.Forms.MessageBox.Show(mensaje, tema, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
         }
 
-        public static DialogResult ShowWarning(string message, string caption, MessageBoxButtons buttons)
+        public static DialogResult ShowAdvertencia(string mensaje, string tema, MessageBoxButtons buttons)
         {
-            return System.Windows.Forms.MessageBox.Show(message, caption, buttons, MessageBoxIcon.Warning);
+            return System.Windows.Forms.MessageBox.Show(mensaje, tema, buttons, MessageBoxIcon.Warning);
+        }
+        public static void ShowInformacion(string mensaje)
+        {
+            System.Windows.Forms.MessageBox.Show(mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public static void ShowAyuda(string mensaje)
+        {
+            System.Windows.Forms.MessageBox.Show(mensaje, "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public static DialogResult ShowError(string mensaje, string tema)
+        {
+            return System.Windows.Forms.MessageBox.Show(mensaje, tema, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public static DialogResult ShowError(string message, string caption)
-        {
-            return System.Windows.Forms.MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        public static void ShowHelp(string message)
-        {
-            System.Windows.Forms.MessageBox.Show(message, "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        public static void ShowInfo(string message)
-        {
-            System.Windows.Forms.MessageBox.Show(message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
     }
 }

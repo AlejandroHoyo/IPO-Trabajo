@@ -4,4 +4,76 @@
 		<HistorialMedico Fecha ="10/02/2022" Dolencias="Estoy un poco jodido" Tratamientos="Dos Palmaditas en el pecho"/>
 	</Paciente>
 	<Paciente Nombre="Aitana" Apellidos="Ortega" Edad="22" Sexo="Mujer" CorreoElectronico="aitana.ortega@jmail.com" Direccion="789 Calle del Arroyo, Salamanca" Telefono="601234567" FotoPerfil="Assets/Faces/randomface3.jpeg"/>
+	<Paciente Nombre="Luisa" Apellidos="García Martínez" Edad="55" Sexo="Mujer" CorreoElectronico="luisa.garcia@jmail.com" Direccion="789 Avenida de la Paz, Barcelona" Telefono="612345679" FotoPerfil="Assets/Faces/luisa-garcia.jpg">
+		<HistorialMedico Fecha="03/05/2023" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="15/09/2022" Dolencias="Lesión del Manguito Rotador" Tratamientos="Ejercicios de movilización del hombro, ejercicios de fortalecimiento para los músculos del manguito rotador y posiblemente terapia manual"/>
+		<HistorialMedico Fecha="27/11/2024" Dolencias="Tensión Lumbar" Tratamientos="Ejercicios de fortalecimiento del core, ejercicios de flexibilidad y técnicas de terapia manual como manipulación o movilización espinal"/>
+		<HistorialMedico Fecha="10/02/2024" Dolencias="Hombro Congelado (Capsulitis Adhesiva)" Tratamientos="Movilización articular, ejercicios de estiramiento para la cápsula del hombro y ejercicios de fortalecimiento para los músculos del hombro"/>
+	</Paciente>
+	<Paciente Nombre="Diego" Apellidos="Hernández López" Edad="32" Sexo="Hombre" CorreoElectronico="diego.hernandez@jmail.com" Direccion="123 Calle del Mar, Valencia" Telefono="612345680" FotoPerfil="Assets/Faces/diego-hernandez.jpg">
+		<HistorialMedico Fecha="12/07/2023" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="20/11/2023" Dolencias="Codo de Tenista (Epicondilitis Lateral)" Tratamientos="Ejercicios excéntricos para los músculos extensores del antebrazo, estiramientos y modalidades como ultrasonido o terapia con láser"/>
+		<HistorialMedico Fecha="18/03/2022" Dolencias="Tensión Lumbar" Tratamientos="Ejercicios de fortalecimiento del core, ejercicios de flexibilidad y técnicas de terapia manual como manipulación o movilización espinal"/>
+	</Paciente>
+	<Paciente Nombre="Carmen" Apellidos="Martínez Sánchez" Edad="68" Sexo="Mujer" CorreoElectronico="carmen.martinez@jmail.com" Direccion="567 Plaza Mayor, Sevilla" Telefono="612345681" FotoPerfil="Assets/Faces/carmen-martinez.jpg">
+		<HistorialMedico Fecha="29/08/2023" Dolencias="Lesión del Manguito Rotador" Tratamientos="Ejercicios de movilización del hombro, ejercicios de fortalecimiento para los músculos del manguito rotador y posiblemente terapia manual"/>
+		<HistorialMedico Fecha="05/12/2022" Dolencias="Fascitis Plantar" Tratamientos="Ejercicios de estiramiento para el músculo de la pantorrilla y la fascia plantar, dispositivos ortopédicos y modalidades como ultrasonido o terapia de ondas de choque"/>
+		<HistorialMedico Fecha="14/06/2024" Dolencias="Hombro Congelado (Capsulitis Adhesiva)" Tratamientos="Movilización articular, ejercicios de estiramiento para la cápsula del hombro y ejercicios de fortalecimiento para los músculos del hombro"/>
+	</Paciente>
+	<Paciente Nombre="Eva" Apellidos="González Pérez" Edad="25" Sexo="Mujer" CorreoElectronico="eva.gonzalez@jmail.com" Direccion="890 Calle de la Luna, Bilbao" Telefono="612345682" FotoPerfil="Assets/Faces/eva-gonzalez.jpg">
+		<HistorialMedico Fecha="18/09/2023" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="02/11/2023" Dolencias="Fascitis Plantar" Tratamientos="Ejercicios de estiramiento para el músculo de la pantorrilla y la fascia plantar, dispositivos ortopédicos y modalidades como ultrasonido o terapia de ondas de choque"/>
+	</Paciente>
+	<Paciente Nombre="Ana" Apellidos="Sánchez Gómez" Edad="40" Sexo="Mujer" CorreoElectronico="ana.sanchez@jmail.com" Direccion="234 Calle de las Flores, Málaga" Telefono="612345683" FotoPerfil="Assets/Faces/ana-sanchez.jpg">
+		<HistorialMedico Fecha="07/04/2023" Dolencias="Lesión del Manguito Rotador" Tratamientos="Ejercicios de movilización del hombro, ejercicios de fortalecimiento para los músculos del manguito rotador y posiblemente terapia manual"/>
+		<HistorialMedico Fecha="19/10/2022" Dolencias="Ciática" Tratamientos="Ejercicios de estiramiento para el músculo piramidal y otros músculos que puedan comprimir el nervio ciático, ejercicios de fortalecimiento del core y terapia manual"/>
+	</Paciente>
+	<Paciente Nombre="Julio" Apellidos="Díaz Martínez" Edad="50" Sexo="Hombre" CorreoElectronico="julio.diaz@jmail.com" Direccion="789 Calle de la Playa, Valencia" Telefono="612345684" FotoPerfil="Assets/Faces/julio-diaz.jpg">
+		<HistorialMedico Fecha="15/03/2023" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="20/08/2022" Dolencias="Codo de Tenista (Epicondilitis Lateral)" Tratamientos="Ejercicios excéntricos para los músculos extensores del antebrazo, estiramientos y modalidades como ultrasonido o terapia con láser"/>
+		<HistorialMedico Fecha="02/12/2024" Dolencias="Fascitis Plantar" Tratamientos="Ejercicios de estiramiento para el músculo de la pantorrilla y la fascia plantar, dispositivos ortopédicos y modalidades como ultrasonido o terapia de ondas de choque"/>
+		<HistorialMedico Fecha="10/05/2024" Dolencias="Síndrome del Túnel Carpiano" Tratamientos="Férula para inmovilizar la muñeca durante la noche, ejercicios de deslizamiento del nervio y modalidades como ultrasonido o iontoforesis"/>
+	</Paciente>
+	<Paciente Nombre="Marina" Apellidos="Ruiz García" Edad="38" Sexo="Mujer" CorreoElectronico="marina.ruiz@jmail.com" Direccion="234 Avenida del Sol, Madrid" Telefono="612345685" FotoPerfil="Assets/Faces/marina-ruiz.jpg">
+		<HistorialMedico Fecha="09/09/2023" Dolencias="Síndrome del Túnel Carpiano" Tratamientos="Férula para inmovilizar la muñeca durante la noche, ejercicios de deslizamiento del nervio y modalidades como ultrasonido o iontoforesis"/>
+		<HistorialMedico Fecha="25/11/2022" Dolencias="Tensión Cervical" Tratamientos="Ejercicios de corrección postural, movilización de la columna cervical y ejercicios de fortalecimiento para los músculos del cuello y hombro"/>
+		<HistorialMedico Fecha="14/07/2024" Dolencias="Lesión del Manguito Rotador" Tratamientos="Ejercicios de movilización del hombro, ejercicios de fortalecimiento para los músculos del manguito rotador y posiblemente terapia manual"/>
+	</Paciente>
+	<Paciente Nombre="Rosa" Apellidos="Fernández Sánchez" Edad="60" Sexo="Mujer" CorreoElectronico="rosa.fernandez@jmail.com" Direccion="567 Plaza del Carmen, Barcelona" Telefono="612345686" FotoPerfil="Assets/Faces/rosa-fernandez.jpg">
+		<HistorialMedico Fecha="21/06/2023" Dolencias="Ciática" Tratamientos="Ejercicios de estiramiento para el músculo piramidal y otros músculos que puedan comprimir el nervio ciático, ejercicios de fortalecimiento del core y terapia manual"/>
+		<HistorialMedico Fecha="30/10/2022" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="05/03/2024" Dolencias="Hombro Congelado (Capsulitis Adhesiva)" Tratamientos="Movilización articular, ejercicios de estiramiento para la cápsula del hombro y ejercicios de fortalecimiento para los músculos del hombro"/>
+	</Paciente>
+	<Paciente Nombre="Pedro" Apellidos="Gómez Martín" Edad="45" Sexo="Hombre" CorreoElectronico="pedro.gomez@jmail.com" Direccion="890 Calle de la Palma, Sevilla" Telefono="612345687" FotoPerfil="Assets/Faces/pedro-gomez.jpg">
+		<HistorialMedico Fecha="08/12/2023" Dolencias="Lesión del Manguito Rotador" Tratamientos="Ejercicios de movilización del hombro, ejercicios de fortalecimiento para los músculos del manguito rotador y posiblemente terapia manual"/>
+		<HistorialMedico Fecha="16/09/2022" Dolencias="Codo de Tenista (Epicondilitis Lateral)" Tratamientos="Ejercicios excéntricos para los músculos extensores del antebrazo, estiramientos y modalidades como ultrasonido o terapia con láser"/>
+	</Paciente>
+	<Paciente Nombre="Lucas" Apellidos="Herrera Rodríguez" Edad="28" Sexo="Hombre" CorreoElectronico="lucas.herrera@jmail.com" Direccion="456 Avenida de la Paz, Bilbao" Telefono="612345688" FotoPerfil="Assets/Faces/lucas-herrera.jpg">
+		<HistorialMedico Fecha="04/05/2023" Dolencias="Codo de Tenista (Epicondilitis Lateral)" Tratamientos="Ejercicios excéntricos para los músculos extensores del antebrazo, estiramientos y modalidades como ultrasonido o terapia con láser"/>
+		<HistorialMedico Fecha="12/10/2022" Dolencias="Fascitis Plantar" Tratamientos="Ejercicios de estiramiento para el músculo de la pantorrilla y la fascia plantar, dispositivos ortopédicos y modalidades como ultrasonido o terapia de ondas de choque"/>
+		<HistorialMedico Fecha="22/08/2024" Dolencias="Síndrome del Túnel Carpiano" Tratamientos="Férula para inmovilizar la muñeca durante la noche, ejercicios de deslizamiento del nervio y modalidades como ultrasonido o iontoforesis"/>
+	</Paciente>
+	<Paciente Nombre="Carla" Apellidos="Alonso Gutiérrez" Edad="35" Sexo="Mujer" CorreoElectronico="carla.alonso@jmail.com" Direccion="123 Calle de las Flores, Málaga" Telefono="612345689" FotoPerfil="Assets/Faces/carla-alonso.jpg">
+		<HistorialMedico Fecha="17/08/2023" Dolencias="Tensión Lumbar" Tratamientos="Ejercicios de fortalecimiento del core, ejercicios de flexibilidad y técnicas de terapia manual como manipulación o movilización espinal"/>
+		<HistorialMedico Fecha="28/04/2022" Dolencias="Fascitis Plantar" Tratamientos="Ejercicios de estiramiento para el músculo de la pantorrilla y la fascia plantar, dispositivos ortopédicos y modalidades como ultrasonido o terapia de ondas de choque"/>
+		<HistorialMedico Fecha="09/11/2024" Dolencias="Tensión Cervical" Tratamientos="Ejercicios de corrección postural, movilización de la columna cervical y ejercicios de fortalecimiento para los músculos del cuello y hombro"/>
+	</Paciente>
+	<Paciente Nombre="Paula" Apellidos="Sanz López" Edad="48" Sexo="Mujer" CorreoElectronico="paula.sanz@jmail.com" Direccion="678 Calle del Mar, Valencia" Telefono="612345690" FotoPerfil="Assets/Faces/paula-sanz.jpg">
+		<HistorialMedico Fecha="23/11/2023" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="06/07/2022" Dolencias="Ciática" Tratamientos="Ejercicios de estiramiento para el músculo piramidal y otros músculos que puedan comprimir el nervio ciático, ejercicios de fortalecimiento del core y terapia manual"/>
+		<HistorialMedico Fecha="15/02/2024" Dolencias="Tensión Lumbar" Tratamientos="Ejercicios de fortalecimiento del core, ejercicios de flexibilidad y técnicas de terapia manual como manipulación o movilización espinal"/>
+	</Paciente>
+	<Paciente Nombre="Javier" Apellidos="Martínez Rodríguez" Edad="55" Sexo="Hombre" CorreoElectronico="javier.martinez@jmail.com" Direccion="456 Calle Mayor, Madrid" Telefono="612345691" FotoPerfil="Assets/Faces/javier-martinez.jpg">
+		<HistorialMedico Fecha="12/10/2023" Dolencias="Tensión Cervical" Tratamientos="Ejercicios de corrección postural, movilización de la columna cervical y ejercicios de fortalecimiento para los músculos del cuello y hombro"/>
+		<HistorialMedico Fecha="18/06/2022" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="07/04/2024" Dolencias="Lesión del Manguito Rotador" Tratamientos="Ejercicios de movilización del hombro, ejercicios de fortalecimiento para los músculos del manguito rotador y posiblemente terapia manual"/>
+	</Paciente>
+	<Paciente Nombre="Sara" Apellidos="González Martín" Edad="30" Sexo="Mujer" CorreoElectronico="sara.gonzalez@jmail.com" Direccion="789 Calle del Río, Barcelona" Telefono="612345692" FotoPerfil="Assets/Faces/sara-gonzalez.jpg">
+		<HistorialMedico Fecha="25/09/2023" Dolencias="Tensión Lumbar" Tratamientos="Ejercicios de fortalecimiento del core, ejercicios de flexibilidad y técnicas de terapia manual como manipulación o movilización espinal"/>
+		<HistorialMedico Fecha="10/03/2022" Dolencias="Síndrome del Túnel Carpiano" Tratamientos="Férula para inmovilizar la muñeca durante la noche, ejercicios de deslizamiento del nervio y modalidades como ultrasonido o iontoforesis"/>
+	</Paciente>
+	<Paciente Nombre="Mario" Apellidos="Herrero García" Edad="42" Sexo="Hombre" CorreoElectronico="mario.herrero@jmail.com" Direccion="234 Calle de la Estrella, Sevilla" Telefono="612345693" FotoPerfil="Assets/Faces/mario-herrero.jpg">
+		<HistorialMedico Fecha="05/11/2023" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
+		<HistorialMedico Fecha="20/07/2022" Dolencias="Fascitis Plantar" Tratamientos="Ejercicios de estiramiento para el músculo de la pantorrilla y la fascia plantar, dispositivos ortopédicos y modalidades como ultrasonido o terapia de ondas de choque"/>
+	</Paciente>
 </Pacientes>

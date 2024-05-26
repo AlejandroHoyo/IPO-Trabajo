@@ -47,13 +47,13 @@ namespace Lab_IPO
         private void btnAyuda_Click(object sender, RoutedEventArgs e)
         {
             {
-                Helper.ShowHelp(
+                Helper.ShowAyuda(
                     "Poner vídeo y algunas instrucciones.");
             }
         }
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
-            Helper.ShowInfo("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
+            Helper.ShowInformacion("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
                 "Versión 0.1.0\n\n" +
                 "Es simplemente un prototipo para una clínica fisioterapeútica ");
         }
@@ -68,7 +68,7 @@ namespace Lab_IPO
 
                 Dispatcher.BeginInvoke((Action)(() =>  // Call me Gordon Ramsay because im cooking some spaguetti
                 {
-                    var result = Helper.ShowWarning("¿Está seguro de que desea cerrar sesión?", "Cerrar Sesión");
+                    var result = Helper.ShowAdvertencia("¿Está seguro de que desea cerrar sesión?", "Cerrar Sesión");
 
                     if (result != System.Windows.Forms.DialogResult.OK)
                     {

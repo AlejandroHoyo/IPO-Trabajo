@@ -112,6 +112,8 @@ namespace Lab_IPO
 
             list.Items.Refresh();
             mainMenu.pacientesPage.historialesPacienteList.Items.Refresh();
+            mainMenu.pacientesPage.ctxPacienteDelete.IsEnabled = true;
+            mainMenu.pacientesPage.ctxPacienteModify.IsEnabled = true;
         }
 
       
@@ -177,7 +179,7 @@ namespace Lab_IPO
         }
         private void btnBorrarCambiosPaciente_Click(object sender, RoutedEventArgs e)
         {
-            var question = Helper.ShowWarning("¿Seguro que quiere borrar los cambios?", "Borrar cambios");
+            var question = Helper.ShowAdvertencia("¿Seguro que quiere borrar los cambios?", "Borrar cambios");
             if (question == DialogResult.Cancel)
                 return;
             mainMenu.mainMenuCitas.IsEnabled = true;
@@ -251,7 +253,7 @@ namespace Lab_IPO
         }
         private void ctxHistorialDelete_Click(object sender, RoutedEventArgs e)
         {
-            var question = Helper.ShowWarning("¿Seguro que quiere eliminar el Historial '" + HistorialSeleccionado.Fecha + "' ?", "Sin cambios");
+            var question = Helper.ShowAdvertencia("¿Seguro que quiere eliminar el Historial '" + HistorialSeleccionado.Fecha + "' ?", "Sin cambios");
             if (question == DialogResult.Cancel)
             {
                 return;

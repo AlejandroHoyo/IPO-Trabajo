@@ -63,7 +63,7 @@ namespace Lab_IPO
             
             DataContext = plantillaTemp;
         }
-        private bool ComproprabarEspaciosVacios(string campo, System.Windows.Controls.TextBox txt)
+        private bool ComprobarEspaciosVacios(string campo, System.Windows.Controls.TextBox txt)
         {
             if (string.IsNullOrWhiteSpace(txt.Text))
             {
@@ -89,8 +89,8 @@ namespace Lab_IPO
         }
         private bool ComprobarTodos()
         {
-            return ComproprabarEspaciosVacios("Nombre", nombreModificarPersonalTextbox) && ComproprabarEspaciosVacios("Apellidos", apellidosModificarPersonalTextbox) && 
-                ComproprabarEspaciosVacios("Telefono", telefonoModificarPersonalTextbox);
+            return ComprobarEspaciosVacios("Nombre", nombreModificarPersonalTextbox) && ComprobarEspaciosVacios("Apellidos", apellidosModificarPersonalTextbox) &&
+                ComprobarEspaciosVacios("Telefono", telefonoModificarPersonalTextbox) && ComprobarEspaciosVacios("Edad", edadModificarPersonalTextbox);
 
 
         }
@@ -130,14 +130,14 @@ namespace Lab_IPO
             mainMenu.mainMenuCitas.IsEnabled = true;
             mainMenu.mainMenuPacientes.IsEnabled = true;
             list.Items.Refresh();
-
-
-
+            mainMenu.personalPage.ctxPersonalModify.IsEnabled = true;
+            mainMenu.personalPage.ctxPersonalDelete.IsEnabled = true;
         }
         private void btnBorrarCambiosPersonal_Click(object sender, RoutedEventArgs e)
         {
-            var question = Helper.ShowWarning("¿Seguro que quiere borrar los cambios?", "Borrar cambios");
-            if (question == DialogResult.Cancel) return;
+            var question = Helper.ShowAdvertencia("¿Seguro que quiere borrar los cambios?", "Borrar cambios");
+            if (question == DialogResult.Cancel)
+                return;
             mainMenu.mainMenuCitas.IsEnabled = true;
             mainMenu.mainMenuPacientes.IsEnabled = true;
             mainMenu.framePersonal.Content = mainMenu.personalPage;

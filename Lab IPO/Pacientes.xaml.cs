@@ -31,11 +31,10 @@ namespace Lab_IPO
             this.context = context;
 
             pacientesList.ItemsSource = context.ListadoPacientes;
-            // De forma predeterminada se elige este
+            // De forma predeterminada se elige el elemento 0
             pacientesList.SelectedIndex = 0;
 
         }
-
         public Paciente PacienteSeleccionado
         {
             get
@@ -58,6 +57,7 @@ namespace Lab_IPO
 
         private void btnImagenesHistorial_Click(object sender, RoutedEventArgs e)
         {
+
             // De momento le pongo disable. Debatirlo con Sergio
         }
         private void ctxPacienteAdd_Click(object sender, RoutedEventArgs e)
@@ -115,7 +115,7 @@ namespace Lab_IPO
             {
                 return;
             }
-            var question = Helper.ShowWarning("¿Estás seguro de que quiere eliminar al paciente'" + PacienteSeleccionado.NombreCompleto + "'?", "Verificar confirmación");
+            var question = Helper.ShowAdvertencia("¿Estás seguro de que quiere eliminar al paciente'" + PacienteSeleccionado.NombreCompleto + "'?", "Verificar confirmación");
             if (question != DialogResult.OK)
                 return;
 
@@ -126,7 +126,9 @@ namespace Lab_IPO
 
             if (context.ListadoPacientes.Count == 0)
             {
-                pacientesList.Visibility = Visibility.Hidden;
+                ctxPacienteModify.IsEnabled = false; 
+                ctxPacienteDelete.IsEnabled = false;
+               
             }
             else
 
@@ -134,6 +136,7 @@ namespace Lab_IPO
             {
                 pacientesList.SelectedIndex = Math.Min(removeIndex, context.ListadoPacientes.Count - 1);
             }
+
 
             // Eliminar las citas que corresponden a ese paciente
             // Un paciente tiene una lista de citas
@@ -145,8 +148,6 @@ namespace Lab_IPO
             //     .ToList();
 
             //}
-
-
         }
 
     }

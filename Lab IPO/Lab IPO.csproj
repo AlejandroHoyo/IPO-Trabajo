@@ -243,5 +243,37 @@
   <ItemGroup>
     <Resource Include="data\citas.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Faces\alberto-molina.jpg" />
+    <Resource Include="Assets\Faces\ana-lopez.jpg" />
+    <Resource Include="Assets\Faces\ana-sanchez.jpg" />
+    <Resource Include="Assets\Faces\antonio-ortiz.jpg" />
+    <Resource Include="Assets\Faces\carla-alonso.jpg" />
+    <Resource Include="Assets\Faces\carlos-hernandez.jpg" />
+    <Resource Include="Assets\Faces\carmen-martinez.jpg" />
+    <Resource Include="Assets\Faces\diego-hernandez.jpg" />
+    <Resource Include="Assets\Faces\elena-romero.jpg" />
+    <Resource Include="Assets\Faces\ernest-khalimov.jpg" />
+    <Resource Include="Assets\Faces\eva-gonzalez.jpg" />
+    <Resource Include="Assets\Faces\isabel-munoz.jpg" />
+    <Resource Include="Assets\Faces\javier-martinez.jpg" />
+    <Resource Include="Assets\Faces\javier-sanchez.jpg" />
+    <Resource Include="Assets\Faces\julio-diaz.jpg" />
+    <Resource Include="Assets\Faces\laura-vargas.jpg" />
+    <Resource Include="Assets\Faces\lucas-herrera.jpg" />
+    <Resource Include="Assets\Faces\lucia-martinez.jpg" />
+    <Resource Include="Assets\Faces\luisa-garcia.jpg" />
+    <Resource Include="Assets\Faces\manuel-torres.jpg" />
+    <Resource Include="Assets\Faces\maria-perez.jpg" />
+    <Resource Include="Assets\Faces\marina-ruiz.jpg" />
+    <Resource Include="Assets\Faces\mario-herrero.jpg" />
+    <Resource Include="Assets\Faces\paula-sanz.jpg" />
+    <Resource Include="Assets\Faces\pedro-gomez.jpg" />
+    <Resource Include="Assets\Faces\raul-gonzalez.jpg" />
+    <Resource Include="Assets\Faces\rosa-fernandez.jpg" />
+    <Resource Include="Assets\Faces\sara-gonzalez.jpg" />
+    <Resource Include="Assets\Faces\sergio-iglesias.jpg" />
+    <Resource Include="Assets\Faces\sofia-ramirez.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

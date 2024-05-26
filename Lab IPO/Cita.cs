@@ -14,10 +14,10 @@ namespace Lab_IPO
         public string Estado { get; set; }
         public string Sanitario { get; set; }
         public string Paciente { get; set; }
-    
+
         //public Plantilla Sanitario { get; set; } // Duda
 
-        // public Paciente Paciente { get; set; } // Duda
+        //public Paciente Paciente { get; set; } // Duda
         public string IdentificacionCita
         {
             get

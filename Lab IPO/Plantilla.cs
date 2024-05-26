@@ -12,10 +12,11 @@ namespace Lab_IPO
          public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Telefono { get; set; }
+
+        public BitmapImage FotoPerfil { get; set; }
         public string Edad { get; set; }
         public string TipoPersonal { get; set; }
         public List<Cita> Citas { get; set; }
-        public BitmapImage FotoPerfil { get; set; }
         public BitmapImage Logo { get; set; }
         public string NombreCompleto
         {

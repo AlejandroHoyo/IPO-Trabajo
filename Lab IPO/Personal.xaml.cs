@@ -33,7 +33,9 @@ namespace Lab_IPO
             this.context = context;
             this.mainMenu = mainMenu;
             personalList.ItemsSource = context.ListadoPersonal;
-            personalList.SelectedIndex = 0; // Primer elemento seleccionado
+
+            // Primer elemento seleccionado
+            personalList.SelectedIndex = 0; 
 
         }
 
@@ -50,6 +52,7 @@ namespace Lab_IPO
             mainMenu.framePersonal.Content = new ModificarPersonal(new Plantilla(), context, mainMenu);
             mainMenu.mainMenuCitas.IsEnabled = false;
             mainMenu.mainMenuPacientes.IsEnabled = false;
+           
         }
         private void ctxPersonalModify_Click(object sender, RoutedEventArgs e)
         {
@@ -66,11 +69,12 @@ namespace Lab_IPO
                 return;
             }
 
-            var question = Helper.ShowWarning("¿Estás seguro de que quiere eliminar al personal'" + PlantillaSeleccionado.NombreCompleto + "'?", "Verificar confirmación");
+            var question = Helper.ShowAdvertencia("¿Estás seguro de que quiere eliminar al personal'" + PlantillaSeleccionado.NombreCompleto + "'?", "Verificar confirmación");
             if (question != DialogResult.OK)
                 return;
 
             // Eliminar las citas que tengan asociados un personal sanitario (TODO)
+
             //foreach (Cita cita in ctx.ListadoCitas)
             //{
             //    // Completar para cuando no exista el tema
@@ -83,41 +87,40 @@ namespace Lab_IPO
 
             if (context.ListadoPersonal.Count == 0)
             {
-                personalList.Visibility = Visibility.Hidden;
+                ctxPersonalModify.IsEnabled = false;
+                ctxPersonalDelete.IsEnabled = false;
+     
             }
             else
-
             // Para que me indica un índice cuando se elemine uno
             {
                 personalList.SelectedIndex = Math.Min(removeIndex, context.ListadoPersonal.Count - 1);
             }
 
         }
-
         //private void DeshabilitarListas()
-        //{
-        //    //Helper.ShowWarning("Hola", "Verificar confirmación");
-        //    if (PlantillaSeleccionado.TipoPersonal.Equals("Limpiza"))
-        //    {
+        ////{
+        ////    //Helper.ShowWarning("Hola", "Verificar confirmación");
+        ////    if (PlantillaSeleccionado.TipoPersonal.Equals("Limpiza"))
+        ////    {
                 
-        //        atendidosList.IsEnabled = false;
-        //        citasPrevistasList.IsEnabled = false;
+        ////        atendidosList.IsEnabled = false;
+        ////        citasPrevistasList.IsEnabled = false;
 
-        //    }
+        ////    }
 
-        //}
-
+        ////}
 
         private void comboBox_TipoPersonal_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateListaPersonal();
             
         }
-        
         private void listaPersonal_SelectionChanged(object sender, RoutedEventArgs e)
         {
             UpdateListaPersonal();
         }
+
         public void UpdateListaPersonal()
         {
             if (personalList == null)
@@ -136,8 +139,6 @@ namespace Lab_IPO
                     personalList.SelectedIndex = 0;
                 }
                 personalList.ItemsSource = context.ListadoPersonal.Where(personal => personal.TipoPersonal.Equals("Sanitario")).ToList();
- 
-
             }
             else if ( tipoPersonalComboBox.SelectedIndex == 2)
             {
@@ -147,7 +148,7 @@ namespace Lab_IPO
                 }
                 personalList.ItemsSource = context.ListadoPersonal.Where(personal => personal.TipoPersonal.Equals("Limpieza")).ToList();
             }
-            else
+            else if (tipoPersonalComboBox.SelectedIndex == 0 && context != null) 
             {
                 personalList.ItemsSource = context.ListadoPersonal;
             }

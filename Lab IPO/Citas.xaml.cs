@@ -28,6 +28,10 @@ namespace Lab_IPO
             InitializeComponent();
             this.mainMenu = mainMenu;
             this.context = context;
+            citasList.ItemsSource = context.ListadoCitas;
+
+            // Primer elemento seleccionado
+            citasList.SelectedIndex = 0; 
         }
 
         public Cita CitaSeleccionada
@@ -52,7 +56,81 @@ namespace Lab_IPO
         }
         private void ctxCitaDelete_Click(object sender, RoutedEventArgs e)
         {
+            int removeIndex = citasList.SelectedIndex;
+
+            if (removeIndex == -1)
+            {
+                return;
+            }
+            var question = Helper.ShowAdvertencia("¿Estás seguro de que quiere eliminar la cita'" + CitaSeleccionada.IdentificacionCita + "'?", "Verificar confirmación");
+            if (question != DialogResult.OK)
+                return;
+
+            // Eliminar una cita de la lista
+            context.ListadoCitas = context.ListadoCitas.Where(cita => !cita.IdentificacionCita.Equals(CitaSeleccionada.IdentificacionCita)).ToList();
+            citasList.ItemsSource = context.ListadoCitas;
+
+            if (context.ListadoPersonal.Count == 0)
+            {
+                ctxCitaModify.IsEnabled = false;
+                ctxCitaDelete.IsEnabled = false;
+
+            }
+            else
+                // Para que me indica un índice cuando se elemine uno
+            {
+                citasList.SelectedIndex = Math.Min(removeIndex, context.ListadoPersonal.Count - 1);
+            }
 
         }
+        public void UpdateListaCitas()
+        {
+            if (citasList == null)
+            {
+                return;
+            }
+            if (citasList.SelectedIndex == -1)
+            {
+                citasList.SelectedIndex = 0;
+            }
+
+            if (tipoCitaComboBox.SelectedIndex == 1)
+            {
+               
+                if (citasList.SelectedIndex == -1)
+                {
+                    citasList.SelectedIndex = 0;
+                }
+                citasList.ItemsSource = context.ListadoCitas.Where(cita => cita.Estado.Equals("Completada")).ToList();
+            }
+            else if (tipoCitaComboBox.SelectedIndex == 2)
+            {
+                if (citasList.SelectedIndex == -1)
+                {
+                    citasList.SelectedIndex = 0;
+                }
+                citasList.ItemsSource = context.ListadoCitas.Where(cita => cita.Estado.Equals("Pendiente")).ToList();
+            }
+            else if (tipoCitaComboBox.SelectedIndex == 0 && context != null)
+            {
+                //Helper.ShowAdvertencia("Hola", "a");
+                citasList.ItemsSource = context.ListadoCitas;
+            }
+
+        }
+
+         private void comboBox_TipoCita_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateListaCitas();
+
+        }
+
+        private void listaCita_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            UpdateListaCitas();
+        }
+
+
     }
 }
+
