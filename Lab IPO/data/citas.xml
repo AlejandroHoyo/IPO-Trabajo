@@ -1,5 +1,5 @@
 ﻿<Citas>
-	<Cita Fecha="27/02/2024" Hora ="23:15" Duracion="120" Estado="Pendiente" Sanitario="Alejandro" Paciente="Santiago">
+	<Cita Fecha="27/02/2024" Hora ="23:15" Duracion="120" Estado="Pendiente" Sanitario="Alejandro Hoyo Plaza" Paciente="Santiago Fernández Plaza">
 		<!--<Sanitario Apellidos="Hoyo Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
 		<Paciente  Apellidos="Fernández Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface2.jpeg"/>-->
 	</Cita>

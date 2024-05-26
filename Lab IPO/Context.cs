@@ -91,8 +91,8 @@ namespace Lab_IPO
                 string hora = node.Attributes["Hora"]?.Value ?? string.Empty;
                 string duracion = node.Attributes["Duracion"]?.Value ?? string.Empty;
                 string estado = node.Attributes["Estado"]?.Value ?? string.Empty;
-                string sanitarioNombre = node.Attributes["Sanitario"]?.Value ?? string.Empty;
-                string pacienteNombre = node.Attributes["Paciente"]?.Value ?? string.Empty;
+                string nombreCompletoSanitario = node.Attributes["Sanitario"]?.Value ?? string.Empty;
+                string nombreCompletoPaciente = node.Attributes["Paciente"]?.Value ?? string.Empty;
 
                 //XmlNode sanitarioNode = node["Sanitario"];
                 //string sanitarioApellidos = sanitarioNode?.Attributes["Apellidos"]?.Value ?? string.Empty;
@@ -126,8 +126,8 @@ namespace Lab_IPO
                     Hora = hora,
                     Duracion = duracion,
                     Estado = estado,
-                    Sanitario = sanitarioNombre,
-                    Paciente = pacienteNombre
+                    NombreCompletoPaciente = nombreCompletoPaciente,
+                    NombreCompletoSanitario = nombreCompletoSanitario
                 };
 
                 listado.Add(nuevaCita);

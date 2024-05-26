@@ -66,7 +66,6 @@ namespace Lab_IPO
             }
 
             PonerHistorialAEstado(false);
-
             historialesMedicosList.ItemsSource = pacienteTemp.HistorialesMedicos;
 
             DataContext = pacienteTemp;
@@ -99,6 +98,10 @@ namespace Lab_IPO
                 return;
             }
 
+
+            var question = Helper.ShowAdvertencia("¿Seguro que quieres aceptar los cambios?", "Aceptar cambios");
+            if (question == DialogResult.Cancel)
+                return;
             HacerCambios();
 
             var list = mainMenu.pacientesPage.pacientesList;
@@ -203,7 +206,7 @@ namespace Lab_IPO
             }
             else
             {
-                // Comprobación de campos
+                // Comprobación de los distintos campos
                 if (!HistorialesMedicosComprobar())
                 {
                     return;
@@ -214,6 +217,10 @@ namespace Lab_IPO
                     Helper.ShowError("La Fecha del historial no puede estar vacía. Seleccione una", "Campo vacío");
                     return;
                 }
+
+                var question = Helper.ShowAdvertencia("¿Seguro que quieres aceptar los cambios?", "Aceptar cambios");
+                if (question == DialogResult.Cancel)
+                    return;
 
                 if (historialesMedicosList.SelectedItem == null)
                 {
@@ -258,8 +265,6 @@ namespace Lab_IPO
             {
                 return;
             }
-
-
             int removeIndex = historialesMedicosList.SelectedIndex;
             pacienteTemp.HistorialesMedicos.RemoveAt(removeIndex);
             historialesMedicosList.Items.Refresh();

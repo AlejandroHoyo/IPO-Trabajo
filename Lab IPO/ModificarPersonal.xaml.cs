@@ -72,7 +72,6 @@ namespace Lab_IPO
             }
             return true;
         }
-         
         private void HacerCambios()
         {
             plantillaTemp.TipoPersonal = tipoModificarPersonalTextbox.SelectedIndex == 0 ? "Sanitario" : "Limpieza";
@@ -97,7 +96,7 @@ namespace Lab_IPO
         private void btnCambiarFotoPersonal_Click(object sender, RoutedEventArgs e)
         {
             var openDialog = new OpenFileDialog();
-            openDialog.Filter = "Images|*.png;*.gif;*.jpg"; 
+            openDialog.Filter = "Images|*.png;*.gif;*.jpg;*.jpeg"; 
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -119,6 +118,10 @@ namespace Lab_IPO
             {
                 return;
             }
+
+            var question = Helper.ShowAdvertencia("¿Seguro que quieres aceptar los cambios?", "Aceptar cambios");
+            if (question == DialogResult.Cancel)
+                return;
             HacerCambios();
 
             var list = mainMenu.personalPage.personalList;

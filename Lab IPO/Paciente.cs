@@ -17,7 +17,7 @@ namespace Lab_IPO
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public List<Historial> HistorialesMedicos { get; set; }
-        public List<string> Citas { get; set; }
+        public List<Cita> Citas { get; set; }
         public BitmapImage FotoPerfil { get; set; }
         public string NombreCompleto
         {
