@@ -144,7 +144,9 @@
                             <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
                             <Label x:Name="pacienteNombreCitaLabel"  VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0" Cursor="Hand">
                                 <Label.Content>
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Paciente}"/>
+                                    <Hyperlink Click="HyperLinkPaciente_Click">
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.NombreCompletoPaciente}"/>
+                                    </Hyperlink>
                                 </Label.Content>
                             </Label>
                         </StackPanel>
@@ -189,7 +191,9 @@
                                 <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
                                 <Label x:Name="doctorNombreCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0" Cursor="Hand">
                                     <Label.Content>
-                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Sanitario.Nombre}"/>
+                                        <Hyperlink Click="HyperLinkSanitario_Click">
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.NombreCompletoSanitario}"/>
+                                        </Hyperlink>
                                     </Label.Content>
                                 </Label>
                             </StackPanel>

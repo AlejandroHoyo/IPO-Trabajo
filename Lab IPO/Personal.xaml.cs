@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,7 +36,10 @@ namespace Lab_IPO
             personalList.ItemsSource = context.ListadoPersonal;
 
             // Primer elemento seleccionado
-            personalList.SelectedIndex = 0; 
+            personalList.SelectedIndex = 0;
+            
+            atendidosList.ItemsSource = PlantillaSeleccionado.Citas.Where(atendido => atendido.Estado.Equals("Completada"));
+            citasPrevistasList.ItemsSource = PlantillaSeleccionado.Citas.Where(pendiente => pendiente.Estado.Equals("Pendiente"));
 
         }
 
@@ -45,6 +49,74 @@ namespace Lab_IPO
             {
                 return (Plantilla)personalList.SelectedItem;
             }
+        }
+
+        public void ActualizarListaPacientesAtendidos()
+        {
+            // Está vacía y no se indica nada
+            if (atendidosList == null || PlantillaSeleccionado == null)
+            {
+                return;
+            }
+            else 
+            {
+                atendidosList.ItemsSource = (PlantillaSeleccionado.Citas != null
+                ? PlantillaSeleccionado.Citas.Where(cita => cita.Estado.Equals("Completada"))
+                : Enumerable.Empty<Cita>());
+            }
+          
+        }
+
+        public void ActualizarListaCitasPrevistas()
+        {
+            if (citasPrevistasList == null || PlantillaSeleccionado == null)
+            {
+                return;
+            }
+            else 
+            {
+                citasPrevistasList.ItemsSource = (PlantillaSeleccionado.Citas != null
+                 ? PlantillaSeleccionado.Citas.Where(cita => cita.Estado.Equals("Pendiente"))
+                 : Enumerable.Empty<Cita>());
+
+            }
+
+        }
+        private void pacientesAtendidosMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // No se está seleccionando nada
+            if (atendidosList.SelectedItem == null)
+            {
+                return;
+            }
+
+            mainMenu.tabularControl.SelectedIndex = 0;
+            Pacientes pacientePagina = mainMenu.pacientesPage;
+
+            pacientePagina.tipoPacienteComboBox.SelectedIndex = 0;
+            Cita citaElegida = (Cita)atendidosList.SelectedItem;
+            int pacienteIndex = context.ListadoPacientes.FindIndex(paciente => paciente.NombreCompleto.Equals(citaElegida.NombreCompletoPaciente));
+            pacientePagina.pacientesList.SelectedIndex = pacienteIndex;
+
+        }
+
+        private void citasPrevistasMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // No se está seleccionando nada
+            if (citasPrevistasList.SelectedItem == null)
+            {
+                return;
+            }
+
+            mainMenu.tabularControl.SelectedIndex = 2;
+            Citas citasPagina = mainMenu.citasPage;
+
+            citasPagina.tipoCitaComboBox.SelectedIndex = 0;
+
+            Cita citaElegida = (Cita)citasPrevistasList.SelectedItem;
+            int citaIndex = context.ListadoCitas.FindIndex(cita => cita.IdentificacionCita.Equals(citaElegida.IdentificacionCita));
+            citasPagina.citasList.SelectedIndex = citaIndex;
+
         }
 
         private void ctxPersonalAdd_Click(object sender, RoutedEventArgs e)
@@ -92,33 +164,25 @@ namespace Lab_IPO
      
             }
             else
+
             // Para que me indica un índice cuando se elemine uno
             {
                 personalList.SelectedIndex = Math.Min(removeIndex, context.ListadoPersonal.Count - 1);
             }
 
         }
-        //private void DeshabilitarListas()
-        ////{
-        ////    //Helper.ShowWarning("Hola", "Verificar confirmación");
-        ////    if (PlantillaSeleccionado.TipoPersonal.Equals("Limpiza"))
-        ////    {
-                
-        ////        atendidosList.IsEnabled = false;
-        ////        citasPrevistasList.IsEnabled = false;
-
-        ////    }
-
-        ////}
-
+  
         private void comboBox_TipoPersonal_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateListaPersonal();
-            
+            ActualizarListaPacientesAtendidos();
+            ActualizarListaCitasPrevistas();
         }
         private void listaPersonal_SelectionChanged(object sender, RoutedEventArgs e)
         {
             UpdateListaPersonal();
+            ActualizarListaPacientesAtendidos();
+            ActualizarListaCitasPrevistas();
         }
 
         public void UpdateListaPersonal()

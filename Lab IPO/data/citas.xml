@@ -3,4 +3,5 @@
 		<!--<Sanitario Apellidos="Hoyo Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
 		<Paciente  Apellidos="Fernández Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface2.jpeg"/>-->
 	</Cita>
+	<Cita Fecha="24/02/2024" Hora ="14:15" Duracion="120" Estado="Completada" Sanitario="Alejandro Hoyo Plaza" Paciente="Luisa García Martínez"/>
 </Citas>

@@ -1,5 +1,4 @@
-﻿<Personal>
-	<Personal Nombre="Óscar" Apellidos="Fernández Plaza" Telefono="612345678" Edad="42" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
+﻿<Personales>
 	<Personal Nombre="Alejandro" Apellidos="Hoyo Plaza" Telefono="612345678" Edad="42" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
 	<Personal Nombre="Marta" Apellidos="Llorens" Telefono="612345678" Edad="45" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
 	<Personal Nombre="Lucía" Apellidos="Martínez Gómez" Telefono="612345679" Edad="30" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/lucia-martinez.jpg"/>
@@ -17,6 +16,4 @@
 	<Personal Nombre="Laura" Apellidos="Vargas Gómez" Telefono="612345691" Edad="36" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/laura-vargas.jpg"/>
 	<Personal Nombre="Sergio" Apellidos="Iglesias Ruiz" Telefono="612345692" Edad="48" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/sergio-iglesias.jpg"/>
 	<Personal Nombre="Ernest" Apellidos="Khalimov" Telefono="612345693" Edad="52" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/ernest-khalimov.jpg"/>
-
-
-</Personal>
+</Personales>

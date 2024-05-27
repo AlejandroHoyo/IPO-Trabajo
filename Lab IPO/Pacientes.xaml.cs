@@ -33,7 +33,8 @@ namespace Lab_IPO
             pacientesList.ItemsSource = context.ListadoPacientes;
             // De forma predeterminada se elige el elemento 0
             pacientesList.SelectedIndex = 0;
-
+            citasPacienteList.ItemsSource = PacienteSeleccionado.Citas;
+            
         }
         public Paciente PacienteSeleccionado
         {
@@ -47,18 +48,65 @@ namespace Lab_IPO
         {
             historialesPacienteList.SelectedIndex = 0; 
             UpdateListaPacientes();
+            ActualizarListaCitas();
 
         }
 
         private void comboBox_TipoPaciente_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateListaPacientes();
+            ActualizarListaCitas();
+        }
+
+        private void comboBoxTipoCitaPaciente_SelectionChanged(Object sender, SelectionChangedEventArgs e)
+        {
+            ActualizarListaCitas();
+        }
+
+        public void ActualizarListaCitas()
+        {
+            // Está vacía y no se indica nada
+            if (citasPacienteList == null || PacienteSeleccionado == null)
+            {
+                return;
+            }
+            if (tipoCitaPacienteComboBox.SelectedIndex == 1)
+            {
+                citasPacienteList.ItemsSource = PacienteSeleccionado.Citas.Where(cita => cita.Estado.Equals("Completada")).ToList();
+
+            } else if (tipoCitaPacienteComboBox.SelectedIndex == 2)
+            {
+               citasPacienteList.ItemsSource = PacienteSeleccionado.Citas.Where(cita => cita.Estado.Equals("Pendiente")).ToList();
+
+            } else
+            {
+                citasPacienteList.ItemsSource = PacienteSeleccionado.Citas;
+            }
         }
 
         private void btnImagenesHistorial_Click(object sender, RoutedEventArgs e)
         {
 
             // De momento le pongo disable. Debatirlo con Sergio
+        }
+
+        private void citasPacientesMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // No se está seleccionando nada
+            if (citasPacienteList.SelectedItem == null)
+            {
+                return;
+            }
+
+            mainMenu.tabularControl.SelectedIndex = 2;
+            Citas citasPagina = mainMenu.citasPage;
+
+            citasPagina.tipoCitaComboBox.SelectedIndex = 0;
+
+            Cita citaElegida = (Cita)citasPacienteList.SelectedItem;
+            int citaIndex = context.ListadoCitas.FindIndex(cita => cita.IdentificacionCita.Equals(citaElegida.IdentificacionCita));
+            citasPagina.citasList.SelectedIndex = citaIndex;
+
         }
         private void ctxPacienteAdd_Click(object sender, RoutedEventArgs e)
         {

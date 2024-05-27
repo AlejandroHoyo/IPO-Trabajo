@@ -32,19 +32,22 @@ namespace Lab_IPO
             InitializeComponent();
 
             this.mainMenu = mainMenu;
-            this.context = context; 
+            this.context = context;
+            this.citaElegida = citaElegida;
 
-            pacienteModificarPersonalCombobox.ItemsSource = context.ListadoPacientes.Select(paciente => paciente.NombreCompleto).ToList();
+            pacienteModificarCitaCombobox.ItemsSource = context.ListadoPacientes.Select(paciente => paciente.NombreCompleto).ToList();
             doctorModificarCitaCombobox.ItemsSource = context.ListadoPersonal.Where(personal => personal.TipoPersonal.Equals("Sanitario")).Select(doctor => doctor.NombreCompleto).ToList();
 
             // Se está creando uno nuevo 
             if (citaElegida.Fecha == null)
             {
-                citaTemp = new Cita();
-                pacienteModificarPersonalCombobox.SelectedIndex = 0;
+                citaTemp = new Cita
+                {
+
+                };
+                pacienteModificarCitaCombobox.SelectedIndex = 0;
                 doctorModificarCitaCombobox.SelectedIndex = 0;
-            }
-            else
+            } else
             {
                 citaTemp = new Cita
                 {
@@ -55,15 +58,14 @@ namespace Lab_IPO
                     NombreCompletoSanitario = citaElegida.NombreCompletoSanitario,
                     NombreCompletoPaciente = citaElegida.NombreCompletoPaciente
                 };
-                int index = citaElegida.Estado.Equals("Completada") ? 0 : 1;
-                estadoModificarPersonalComboBox.SelectedIndex = index;
-                Helper.ShowError(citaTemp.NombreCompletoPaciente, "Error de formato");
-                pacienteModificarPersonalCombobox.SelectedItem = citaTemp.NombreCompletoPaciente;
+
+                int index = citaElegida.Estado.Equals("Pendiente") ? 0 : 1;
+                estadoModificarCitaComboBox.SelectedIndex = index;
+                pacienteModificarCitaCombobox.SelectedItem = citaTemp.NombreCompletoPaciente;
                 doctorModificarCitaCombobox.SelectedItem = citaTemp.NombreCompletoSanitario;
                 fechaModificarCitaDate.SelectedDate = DateTime.ParseExact(citaTemp.Fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
 
-            this.citaElegida = citaElegida;
             DataContext = citaTemp;
 
         }
@@ -78,11 +80,21 @@ namespace Lab_IPO
         }
         private void HacerCambios()
         {
-            citaTemp.Estado = estadoModificarPersonalComboBox.SelectedIndex == 0 ? "Completada" : "Pendiente";
+            citaTemp.NombreCompletoPaciente = pacienteModificarCitaCombobox.SelectedValue.ToString();
+            citaTemp.NombreCompletoSanitario = doctorModificarCitaCombobox.SelectedValue.ToString();
+            citaTemp.Fecha = ((DateTime)(fechaModificarCitaDate.SelectedDate)).ToString("dd/MM/yyyy");
+            citaTemp.Estado = estadoModificarCitaComboBox.SelectedIndex == 0 ? "Pendiente" : "Completada";
             int referencia = context.ListadoCitas.FindIndex(cita => cita.IdentificacionCita.Equals(citaElegida.IdentificacionCita));
             if (referencia != -1)
             {
                 context.ListadoCitas[referencia] = citaTemp;
+                Plantilla doctorSeleccionado = context.ListadoPersonal.Find(doctor => doctor.NombreCompleto.Equals(citaTemp.NombreCompletoSanitario));
+                doctorSeleccionado.Citas = context.ListadoCitas.FindAll(cita => cita.NombreCompletoSanitario.Contains(doctorSeleccionado.NombreCompleto));
+
+                Paciente pacienteSeleccionado = context.ListadoPacientes.Find(paciente => paciente.NombreCompleto.Equals(citaTemp.NombreCompletoPaciente));
+                pacienteSeleccionado.Citas = context.ListadoCitas.FindAll(cita => cita.NombreCompletoPaciente.Contains(pacienteSeleccionado.NombreCompleto));
+
+    
             }
             else
             {
@@ -94,14 +106,19 @@ namespace Lab_IPO
         {
             return ComprobarEspaciosVacios("Hora", horaModificarCitaTextbox) && ComprobarEspaciosVacios("Duracion", duracionModificarCitaTextbox);
         }
-
-
         private void btnConfirmarCambiosCita_Click(object sender, RoutedEventArgs e)
         {
             if (!ComprobarTodos())
             {
                 return;
             }
+
+            if (fechaModificarCitaDate.SelectedDate == null)
+            {
+                Helper.ShowError("La Fecha del historial no puede estar vacía. Seleccione una", "Campo vacío");
+                return;
+            }
+
             var question = Helper.ShowAdvertencia("¿Seguro que quieres aceptar los cambios?", "Aceptar cambios");
             if (question == DialogResult.Cancel)
                 return;
@@ -116,6 +133,7 @@ namespace Lab_IPO
             mainMenu.mainMenuPacientes.IsEnabled = true;
             mainMenu.mainMenuPersonal.IsEnabled = true;
             mainMenu.frameCitas.Content = mainMenu.citasPage;
+
 
             list.Items.Refresh();
             mainMenu.citasPage.ctxCitaDelete.IsEnabled = true;

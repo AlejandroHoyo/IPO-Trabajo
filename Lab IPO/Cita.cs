@@ -15,9 +15,9 @@ namespace Lab_IPO
         public string NombreCompletoPaciente{ get; set; }
         public string NombreCompletoSanitario{ get; set; }
 
-        public Plantilla Doctor { get; set; } // Duda
+        //public Plantilla Doctor { get; set; } // Duda
 
-        public Paciente Cliente { get; set; } // Duda
+        //public Paciente Cliente { get; set; } // Duda
         public string IdentificacionCita
         {
             get

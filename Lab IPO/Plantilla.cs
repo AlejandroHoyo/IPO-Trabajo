@@ -16,8 +16,9 @@ namespace Lab_IPO
         public BitmapImage FotoPerfil { get; set; }
         public string Edad { get; set; }
         public string TipoPersonal { get; set; }
-        public List<Cita> Citas { get; set; }
         public BitmapImage Logo { get; set; }
+
+        public List<Cita> Citas { get; set; }
         public string NombreCompleto
         {
             get

@@ -91,11 +91,11 @@
                 <DatePicker x:Name="fechaModificarCitaDate" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26" SelectedDateFormat="Short"/>
                 <TextBox x:Name="horaModificarCitaTextbox" TextWrapping="Wrap" Text="{Binding Hora}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26"/>
                 <TextBox x:Name="duracionModificarCitaTextbox" TextWrapping="Wrap" Text="{Binding Duracion}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26"/>
-                <ComboBox x:Name="estadoModificarPersonalComboBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="6" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26" Cursor="Hand">
+                <ComboBox x:Name="estadoModificarCitaComboBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="6" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26" Cursor="Hand">
                     <ComboBoxItem Content="Pendiente" IsSelected="True"/>
                     <ComboBoxItem Content="Completada"/>
                 </ComboBox>
-                <ComboBox x:Name="pacienteModificarPersonalCombobox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="8" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26" Cursor="Hand">
+                <ComboBox x:Name="pacienteModificarCitaCombobox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="8" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26" Cursor="Hand">
                 </ComboBox>
                 <ComboBox x:Name="doctorModificarCitaCombobox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Grid.Row="10" Height="55" Margin="0,0,10,0" FontFamily="Banshrift" FontWeight="Normal" VerticalContentAlignment="center" FontSize="26" Cursor="Hand">
                 </ComboBox>

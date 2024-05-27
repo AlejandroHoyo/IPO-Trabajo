@@ -18,11 +18,11 @@ namespace Lab_IPO
 
         public Context()
         {
+            ListadoCitas = CargarCitas();
             ListadoPacientes = CargarPacientes();
             ListadoPersonal = CargarPersonal();
-            ListadoCitas = CargarCitas();
         }
-        private XmlDocument LoadDoc(string uri)
+        private XmlDocument CargarDocumento(string uri)
         {
             XmlDocument doc = new XmlDocument();
             var fichero = Application.GetResourceStream(new Uri(uri, UriKind.Relative));
@@ -32,7 +32,7 @@ namespace Lab_IPO
         private List<Paciente> CargarPacientes()
         {
             List<Paciente> listado = new List<Paciente>();
-            XmlDocument doc = LoadDoc("data/pacientes.xml");
+            XmlDocument doc = CargarDocumento("data/pacientes.xml");
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
 
@@ -74,17 +74,50 @@ namespace Lab_IPO
                         historiales.Add(nuevoHistorial);
                     }
                 }
+                nuevoPaciente.Citas = ListadoCitas.FindAll(cita => cita.NombreCompletoPaciente.Equals(nuevoPaciente.NombreCompleto));
                 nuevoPaciente.HistorialesMedicos = historiales;
+
                 listado.Add(nuevoPaciente);
 
             }
             return listado;
         }
+        private List<Plantilla> CargarPersonal()
+        {
+            List<Plantilla> listado = new List<Plantilla>();
+            
+            XmlDocument doc = CargarDocumento("data/personal.xml");
 
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                string nombre = node.Attributes["Nombre"]?.Value ?? string.Empty;
+                string apellidos = node.Attributes["Apellidos"]?.Value ?? string.Empty;
+                string telefono = node.Attributes["Telefono"]?.Value ?? string.Empty;
+                string edad = node.Attributes["Edad"]?.Value ?? string.Empty;
+                string tipoPersonal = node.Attributes["TipoPersonal"]?.Value ?? string.Empty;
+                string fotoPerfilPath = node.Attributes["FotoPerfil"]?.Value ?? "Assets/Icons/user.png";
+                string logoPath = tipoPersonal.Equals("Sanitario") ? "Assets/Icons/farmacia.png" : "Assets/Icons/escoba.png";
+
+                var nuevoPersonal = new Plantilla()
+                {
+                    Nombre = nombre,
+                    Apellidos = apellidos,
+                    Telefono = telefono,
+                    Edad = edad,
+                    TipoPersonal = tipoPersonal,
+                    FotoPerfil = new BitmapImage(new Uri(fotoPerfilPath, UriKind.Relative)),
+                    Logo = new BitmapImage(new Uri(logoPath, UriKind.Relative))
+                };
+
+                nuevoPersonal.Citas = ListadoCitas.FindAll(cita => cita.NombreCompletoSanitario.Equals(nuevoPersonal.NombreCompleto));
+                listado.Add(nuevoPersonal);
+            }
+            return listado;
+        }
         private List<Cita> CargarCitas()
         {
             List<Cita> listado = new List<Cita>();
-            XmlDocument doc = LoadDoc("data/citas.xml");
+            XmlDocument doc = CargarDocumento("data/citas.xml");
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
                 string fecha = node.Attributes["Fecha"]?.Value ?? string.Empty;
@@ -131,37 +164,6 @@ namespace Lab_IPO
                 };
 
                 listado.Add(nuevaCita);
-            }
-
-            return listado;
-        }
-        private List<Plantilla> CargarPersonal()
-        {
-            List<Plantilla> listado = new List<Plantilla>();
-            XmlDocument doc = LoadDoc("data/personal.xml");
-
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                string nombre = node.Attributes["Nombre"]?.Value ?? string.Empty;
-                string apellidos = node.Attributes["Apellidos"]?.Value ?? string.Empty;
-                string telefono = node.Attributes["Telefono"]?.Value ?? string.Empty;
-                string edad = node.Attributes["Edad"]?.Value ?? string.Empty;
-                string tipoPersonal = node.Attributes["TipoPersonal"]?.Value ?? string.Empty;
-                string fotoPerfilPath = node.Attributes["FotoPerfil"]?.Value ?? "Assets/Icons/user.png";
-                string logoPath = tipoPersonal.Equals("Sanitario") ? "Assets/Icons/farmacia.png" : "Assets/Icons/escoba.png";
-
-                var nuevoPersonal = new Plantilla()
-                {
-                    Nombre = nombre,
-                    Apellidos = apellidos,
-                    Telefono = telefono,
-                    Edad = edad,
-                    TipoPersonal = tipoPersonal,
-                    FotoPerfil = new BitmapImage(new Uri(fotoPerfilPath, UriKind.Relative)),
-                    Logo = new BitmapImage(new Uri(logoPath, UriKind.Relative))
-                };
-
-                listado.Add(nuevoPersonal);
             }
 
             return listado;

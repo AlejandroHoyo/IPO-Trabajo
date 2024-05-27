@@ -40,7 +40,8 @@ namespace Lab_IPO
                 pacienteTemp = new Paciente
                 {
                     FotoPerfil = new BitmapImage(new Uri("Assets/Icons/user.png", UriKind.Relative)),
-                    HistorialesMedicos = new List<Historial>()
+                    HistorialesMedicos = new List<Historial>(),
+                    Citas = new List<Cita>()
                 };
             }
             else
@@ -55,7 +56,8 @@ namespace Lab_IPO
                     Direccion = pacienteElegido.Direccion, 
                     Telefono = pacienteElegido.Telefono,
                     HistorialesMedicos = new List<Historial>(pacienteElegido.HistorialesMedicos),
-                    FotoPerfil = pacienteElegido.FotoPerfil
+                    FotoPerfil = pacienteElegido.FotoPerfil,
+                    Citas = new List<Cita>(pacienteElegido.Citas)
                 };
             }
 
@@ -84,6 +86,10 @@ namespace Lab_IPO
             if (referencia != -1)
             {
                 context.ListadoPacientes[referencia] = pacienteTemp;
+                foreach (Cita cita in pacienteElegido.Citas)
+                {
+                    cita.NombreCompletoPaciente = pacienteTemp.NombreCompleto;
+                }
             }
             else
             {
@@ -98,10 +104,10 @@ namespace Lab_IPO
                 return;
             }
 
-
             var question = Helper.ShowAdvertencia("¿Seguro que quieres aceptar los cambios?", "Aceptar cambios");
             if (question == DialogResult.Cancel)
                 return;
+
             HacerCambios();
 
             var list = mainMenu.pacientesPage.pacientesList;
@@ -183,12 +189,13 @@ namespace Lab_IPO
         private void btnBorrarCambiosPaciente_Click(object sender, RoutedEventArgs e)
         {
             var question = Helper.ShowAdvertencia("¿Seguro que quiere borrar los cambios?", "Borrar cambios");
+
             if (question == DialogResult.Cancel)
                 return;
+
             mainMenu.mainMenuCitas.IsEnabled = true;
             mainMenu.mainMenuPersonal.IsEnabled = true;
             mainMenu.framePacientes.Content = mainMenu.pacientesPage;
-
         }
         private void listaHistoriales_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

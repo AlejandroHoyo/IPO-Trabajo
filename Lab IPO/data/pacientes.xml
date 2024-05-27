@@ -3,7 +3,6 @@
 		<HistorialMedico Fecha ="25/02/2024" Dolencias="Estoy jodido" Tratamientos="Palmaditas en el pecho"/>
 		<HistorialMedico Fecha ="10/02/2022" Dolencias="Estoy un poco jodido" Tratamientos="Dos Palmaditas en el pecho"/>
 	</Paciente>
-	<Paciente Nombre="Aitana" Apellidos="Ortega" Edad="22" Sexo="Mujer" CorreoElectronico="aitana.ortega@jmail.com" Direccion="789 Calle del Arroyo, Salamanca" Telefono="601234567" FotoPerfil="Assets/Faces/randomface3.jpeg"/>
 	<Paciente Nombre="Luisa" Apellidos="García Martínez" Edad="55" Sexo="Mujer" CorreoElectronico="luisa.garcia@jmail.com" Direccion="789 Avenida de la Paz, Barcelona" Telefono="612345679" FotoPerfil="Assets/Faces/luisa-garcia.jpg">
 		<HistorialMedico Fecha="03/05/2023" Dolencias="Esguince de Tobillo" Tratamientos="Protocolo RICE (Descanso, Hielo, Compresión, Elevación), seguido de ejercicios de fortalecimiento y movilidad"/>
 		<HistorialMedico Fecha="15/09/2022" Dolencias="Lesión del Manguito Rotador" Tratamientos="Ejercicios de movilización del hombro, ejercicios de fortalecimiento para los músculos del manguito rotador y posiblemente terapia manual"/>

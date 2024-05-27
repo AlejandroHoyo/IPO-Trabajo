@@ -39,7 +39,8 @@ namespace Lab_IPO
                 plantillaTemp = new Plantilla
                 {
                     // La imagen es la default
-                   FotoPerfil = new BitmapImage(new Uri("Assets/Icons/user.png", UriKind.Relative))
+                    FotoPerfil = new BitmapImage(new Uri("Assets/Icons/user.png", UriKind.Relative)),
+                    Citas = new List<Cita>()
 
                 };
              } else
@@ -52,7 +53,8 @@ namespace Lab_IPO
                     Edad = plantillaElegido.Edad,
                     TipoPersonal = plantillaElegido.TipoPersonal,
                     FotoPerfil = plantillaElegido.FotoPerfil,
-                    Logo = plantillaElegido.Logo
+                    Logo = plantillaElegido.Logo,
+                    Citas = new List<Cita>(plantillaElegido.Citas)
                 };
 
                 int index = plantillaElegido.TipoPersonal.Equals("Sanitario") ? 0 : 1;
@@ -126,12 +128,13 @@ namespace Lab_IPO
 
             var list = mainMenu.personalPage.personalList;
             list.Items.Refresh();
-            list.SelectedIndex = context.ListadoPersonal.FindIndex(plantila => plantila.NombreCompleto.Equals(plantillaTemp.NombreCompleto));
+            list.SelectedIndex = context.ListadoPersonal.FindIndex(plantilla => plantilla.NombreCompleto.Equals(plantillaTemp.NombreCompleto));
             list.Focus();
 
             mainMenu.framePersonal.Content = mainMenu.personalPage;
             mainMenu.mainMenuCitas.IsEnabled = true;
             mainMenu.mainMenuPacientes.IsEnabled = true;
+
             list.Items.Refresh();
             mainMenu.personalPage.ctxPersonalModify.IsEnabled = true;
             mainMenu.personalPage.ctxPersonalDelete.IsEnabled = true;
