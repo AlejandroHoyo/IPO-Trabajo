@@ -124,6 +124,17 @@ namespace Lab_IPO
                 string hora = node.Attributes["Hora"]?.Value ?? string.Empty;
                 string duracion = node.Attributes["Duracion"]?.Value ?? string.Empty;
                 string estado = node.Attributes["Estado"]?.Value ?? string.Empty;
+
+                //string nombrePaciente = node.Attributes["NombrePaciente"]?.Value ?? string.Empty;
+                //string apellidosPaciente = node.Attributes["ApellidosPaciente"]?.Value ?? string.Empty;
+                //string telefonoPaciente = node.Attributes["TelefonoPaciente"]?.Value ?? string.Empty;
+                //string fotoPerfilPacientePath = node.Attributes["FotoPerfilPaciente"]?.Value ?? "Assets/Icons/user.png";
+                //string nombreSanitario = node.Attributes["NombreSanitario"]?.Value ?? string.Empty;
+                //string apellidosSanitario = node.Attributes["ApellidosPaciente"]?.Value ?? string.Empty;
+                //string telefonoSanitario = node.Attributes["TelefonoSanitario"]?.Value ?? string.Empty;
+                //string fotoPerfilSanitarioPath = node.Attributes["FotoPerfilSanitario"]?.Value ?? "Assets/Icons/user.png";
+
+
                 string nombreCompletoSanitario = node.Attributes["Sanitario"]?.Value ?? string.Empty;
                 string nombreCompletoPaciente = node.Attributes["Paciente"]?.Value ?? string.Empty;
 

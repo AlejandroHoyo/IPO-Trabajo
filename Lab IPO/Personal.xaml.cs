@@ -145,12 +145,10 @@ namespace Lab_IPO
             if (question != DialogResult.OK)
                 return;
 
-            // Eliminar las citas que tengan asociados un personal sanitario (TODO)
+            // Eliminar las citas que tengan asociados un personal sanitario
+            context.ListadoCitas = context.ListadoCitas.Where(cita => !cita.NombreCompletoSanitario.Equals(PlantillaSeleccionado.NombreCompleto)).ToList();
+            mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
 
-            //foreach (Cita cita in ctx.ListadoCitas)
-            //{
-            //    // Completar para cuando no exista el tema
-            //}
 
 
             // Eliminar un personal de la lista 

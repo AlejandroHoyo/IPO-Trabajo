@@ -86,10 +86,14 @@ namespace Lab_IPO
             if (referencia != -1)
             {
                 context.ListadoPacientes[referencia] = pacienteTemp;
+
                 foreach (Cita cita in pacienteElegido.Citas)
                 {
                     cita.NombreCompletoPaciente = pacienteTemp.NombreCompleto;
+                    // Añadir más atributos
                 }
+                mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
+
             }
             else
             {
@@ -110,6 +114,8 @@ namespace Lab_IPO
 
             HacerCambios();
 
+           
+
             var list = mainMenu.pacientesPage.pacientesList;
             list.Items.Refresh();
             list.SelectedIndex = context.ListadoPacientes.FindIndex(paciente => paciente.NombreCompleto.Equals(pacienteTemp.NombreCompleto));
@@ -118,6 +124,8 @@ namespace Lab_IPO
             mainMenu.mainMenuCitas.IsEnabled = true;
             mainMenu.mainMenuPersonal.IsEnabled = true;
             mainMenu.framePacientes.Content = mainMenu.pacientesPage;
+
+            mainMenu.citasPage.UpdateListaCitas();
 
             list.Items.Refresh();
             mainMenu.pacientesPage.historialesPacienteList.Items.Refresh();
@@ -147,7 +155,7 @@ namespace Lab_IPO
         private void btnCambiarFotoPaciente_Click(object sender, RoutedEventArgs e)
         {
             var openDialog = new OpenFileDialog();
-            openDialog.Filter = "Images|*.png;*.gif;*.jpg";
+            openDialog.Filter = "Images|*.png;*.gif;*.jpg;*.jpeg";
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 try

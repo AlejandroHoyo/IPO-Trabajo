@@ -82,6 +82,13 @@ namespace Lab_IPO
             int referencia = context.ListadoPersonal.FindIndex(plantilla => plantilla.NombreCompleto.Equals(plantillaElegido.NombreCompleto));
             if (referencia != -1) {
                 context.ListadoPersonal[referencia] = plantillaTemp;
+
+                foreach (Cita cita in plantillaElegido.Citas)
+                {
+                    cita.NombreCompletoSanitario = plantillaElegido.NombreCompleto;
+                    // Añadir más atributos
+                }
+                mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
             }
             else
             {
@@ -131,6 +138,7 @@ namespace Lab_IPO
             list.SelectedIndex = context.ListadoPersonal.FindIndex(plantilla => plantilla.NombreCompleto.Equals(plantillaTemp.NombreCompleto));
             list.Focus();
 
+            
             mainMenu.framePersonal.Content = mainMenu.personalPage;
             mainMenu.mainMenuCitas.IsEnabled = true;
             mainMenu.mainMenuPacientes.IsEnabled = true;

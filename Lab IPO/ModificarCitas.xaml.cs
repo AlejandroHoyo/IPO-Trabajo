@@ -93,7 +93,6 @@ namespace Lab_IPO
 
                 Paciente pacienteSeleccionado = context.ListadoPacientes.Find(paciente => paciente.NombreCompleto.Equals(citaTemp.NombreCompletoPaciente));
                 pacienteSeleccionado.Citas = context.ListadoCitas.FindAll(cita => cita.NombreCompletoPaciente.Contains(pacienteSeleccionado.NombreCompleto));
-
     
             }
             else
@@ -134,11 +133,24 @@ namespace Lab_IPO
             mainMenu.mainMenuPersonal.IsEnabled = true;
             mainMenu.frameCitas.Content = mainMenu.citasPage;
 
+            foreach (Paciente paciente in context.ListadoPacientes)
+            {
+                paciente.Citas = context.ListadoCitas.FindAll((cita => cita.NombreCompletoPaciente.Equals(paciente.NombreCompleto)));
+            }
+            mainMenu.pacientesPage.ActualizarListaCitas();
+
+            foreach (Plantilla doctor in context.ListadoPersonal)
+            {
+                doctor.Citas = context.ListadoCitas.FindAll((cita => cita.NombreCompletoSanitario.Equals(doctor.NombreCompleto)));
+            }
+            mainMenu.personalPage.ActualizarListaCitasPrevistas();
+            mainMenu.personalPage.ActualizarListaPacientesAtendidos();
 
             list.Items.Refresh();
             mainMenu.citasPage.ctxCitaDelete.IsEnabled = true;
             mainMenu.citasPage.ctxCitaModify.IsEnabled = true;
         }
+
         private void btnBorrarCambiosCita_Click(object sender, RoutedEventArgs e)
         {
             var question = Helper.ShowAdvertencia("¿Seguro que quiere borrar los cambios?", "Borrar cambios");

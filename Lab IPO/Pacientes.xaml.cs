@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -167,35 +168,31 @@ namespace Lab_IPO
             if (question != DialogResult.OK)
                 return;
 
-            // Eliminar un paciente de la lista
+            // Eliminar las citas que le correspondían a ese paciente
+            context.ListadoCitas = context.ListadoCitas.Where(cita => !cita.NombreCompletoPaciente.Equals(PacienteSeleccionado.NombreCompleto)).ToList();
+            mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
+          
 
+            // Eliminar un paciente de la lista
             context.ListadoPacientes = context.ListadoPacientes.Where(paciente => !paciente.NombreCompleto.Equals(PacienteSeleccionado.NombreCompleto)).ToList();
             pacientesList.ItemsSource = context.ListadoPacientes;
 
+
+
+
             if (context.ListadoPacientes.Count == 0)
             {
-                ctxPacienteModify.IsEnabled = false; 
+                ctxPacienteModify.IsEnabled = false;
                 ctxPacienteDelete.IsEnabled = false;
-               
+
             }
             else
 
             // Para que me indica un índice cuando se elemine uno
             {
                 pacientesList.SelectedIndex = Math.Min(removeIndex, context.ListadoPacientes.Count - 1);
+
             }
-
-
-            // Eliminar las citas que corresponden a ese paciente
-            // Un paciente tiene una lista de citas
-
-            //foreach (Cita cita in context.ListadoCitas)
-            //{
-            //    cita.Rutas = ctx.ListadoRutas
-            //     .Where(paciente => paciente.ExcursionistasApuntados.Contains(exc.NombreCompleto))
-            //     .ToList();
-
-            //}
         }
 
     }

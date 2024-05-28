@@ -74,8 +74,16 @@ namespace Lab_IPO
             }
             mainMenu.pacientesPage.ActualizarListaCitas();
 
-            if (context.ListadoPersonal.Count == 0)
+            foreach (Plantilla doctor in context.ListadoPersonal)
             {
+                doctor.Citas = context.ListadoCitas.FindAll((cita => cita.NombreCompletoSanitario.Equals(doctor.NombreCompleto)));
+            }
+            mainMenu.personalPage.ActualizarListaCitasPrevistas();
+            mainMenu.personalPage.ActualizarListaPacientesAtendidos();
+
+            if (context.ListadoCitas.Count == 0)
+            {
+
                 ctxCitaModify.IsEnabled = false;
                 ctxCitaDelete.IsEnabled = false;
 

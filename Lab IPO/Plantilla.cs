@@ -9,10 +9,9 @@ namespace Lab_IPO
 {
     public class Plantilla
     {
-         public string Nombre { get; set; }
+        public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Telefono { get; set; }
-
         public BitmapImage FotoPerfil { get; set; }
         public string Edad { get; set; }
         public string TipoPersonal { get; set; }
