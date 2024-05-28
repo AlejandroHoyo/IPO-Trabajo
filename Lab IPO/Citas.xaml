@@ -145,7 +145,7 @@
                             <Label x:Name="pacienteNombreCitaLabel"  VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0" Cursor="Hand">
                                 <Label.Content>
                                     <Hyperlink Click="HyperLinkPaciente_Click">
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.NombreCompletoPaciente}"/>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.NombrePaciente}"/>
                                     </Hyperlink>
                                 </Label.Content>
                             </Label>
@@ -154,7 +154,9 @@
                             <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
                             <Label x:Name="pacienteApellidosCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
                                 <Label.Content>
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Paciente.Apellidos}"/>
+                                    <Hyperlink Click="HyperLinkPaciente_Click">
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.ApellidosPaciente}"/>
+                                </Hyperlink>
                                 </Label.Content>
                             </Label>
                         </StackPanel>
@@ -162,13 +164,13 @@
                             <Image Source="Assets/Icons/phone.png" Height="45" VerticalAlignment="center"/>
                             <Label x:Name="pacienteTelefonoCitaCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
                                 <Label.Content>
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Paciente.Telefono}"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.TelefonoPaciente}"/>
                                 </Label.Content>
                             </Label>
                         </StackPanel>
                     </Grid>
                     <Border BorderBrush="black" BorderThickness="3" Width="150" Height="150" VerticalAlignment="Center" HorizontalAlignment="left" Margin="5,0,0,0" CornerRadius="3">
-                        <Image x:Name="citasPacienteImagen" Source="{Binding ElementName=citasList, Path=SelectedItem.Paciente.FotoPerfil}" Cursor="Hand"/>
+                        <Image x:Name="citasPacienteImagen" Cursor="Hand" Source="{Binding ElementName=citasList, Path=SelectedItem.FotoPerfilPaciente}" />
                     </Border>
                 </Grid>
             </GroupBox>
@@ -192,7 +194,7 @@
                                 <Label x:Name="doctorNombreCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0" Cursor="Hand">
                                     <Label.Content>
                                         <Hyperlink Click="HyperLinkSanitario_Click">
-                                            <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.NombreCompletoSanitario}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.NombreSanitario}"/>
                                         </Hyperlink>
                                     </Label.Content>
                                 </Label>
@@ -201,7 +203,9 @@
                                 <Image Source="Assets/Icons/id.png" Height="45" VerticalAlignment="center"/>
                                 <Label x:Name="doctorApellidosCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
                                     <Label.Content>
-                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Sanitario.Apellidos}"/>
+                                        <Hyperlink Click="HyperLinkSanitario_Click">
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.ApellidosSanitario}"/>
+                                        </Hyperlink>
                                     </Label.Content>
                                 </Label>
                             </StackPanel>
@@ -209,13 +213,13 @@
                                 <Image Source="Assets/Icons/phone.png" Height="45" VerticalAlignment="center"/>
                                 <Label x:Name="doctorTelefonoCitaCitaLabel" VerticalAlignment="center" FontWeight="Bold" FontFamily="Bahnschrift" FontSize="22" Margin="10,0,0,0">
                                     <Label.Content>
-                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.Sanitario.Telefono}"/>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding ElementName=citasList, Path=SelectedItem.TelefonoSanitario}"/>
                                     </Label.Content>
                                 </Label>
                             </StackPanel>
                         </Grid>
                         <Border BorderBrush="black" BorderThickness="3" Width="150" Height="150" VerticalAlignment="Center" HorizontalAlignment="left" Margin="5,0,0,0" CornerRadius="3">
-                            <Image x:Name="citasDoctorImagen"  Source="{Binding ElementName=citasList, Path=SelectedItem.Paciente.FotoPerfil}" Cursor="Hand"/>
+                            <Image x:Name="citasDoctorImagen"  Source="{Binding ElementName=citasList, Path=SelectedItem.FotoPerfilSanitario}"/>
                         </Border>
                     </Grid>
                 </Grid>

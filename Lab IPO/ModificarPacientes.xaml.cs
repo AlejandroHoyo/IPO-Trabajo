@@ -89,8 +89,11 @@ namespace Lab_IPO
 
                 foreach (Cita cita in pacienteElegido.Citas)
                 {
-                    cita.NombreCompletoPaciente = pacienteTemp.NombreCompleto;
-                    // Añadir más atributos
+                    cita.NombrePaciente = pacienteTemp.Nombre;
+                    cita.ApellidosPaciente = pacienteTemp.Apellidos;
+                    cita.TelefonoPaciente = pacienteTemp.Telefono;
+                    cita.FotoPerfilPaciente = pacienteTemp.FotoPerfil;
+                   
                 }
                 mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
 
@@ -98,7 +101,7 @@ namespace Lab_IPO
             else
             {
                 context.ListadoPacientes.Add(pacienteTemp);
-                // Igual para añadir lo del tema de citas
+                
             }
         }
         private void btnConfirmarCambiosPaciente_Click(object sender, RoutedEventArgs e)

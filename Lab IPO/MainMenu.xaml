@@ -25,7 +25,7 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TabControl x:Name="tabularControl" SelectionChanged="tabularControl_SelectionChanged" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" TabStripPlacement="Left" FontFamily="Bahnschrift"
+        <TabControl x:Name="tabularControl" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" TabStripPlacement="Left" FontFamily="Bahnschrift"
                     Padding="0" Grid.RowSpan="2">
             <TabControl.Template>
                 <ControlTemplate TargetType="TabControl">

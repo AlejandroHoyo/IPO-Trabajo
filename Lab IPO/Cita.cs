@@ -14,39 +14,37 @@ namespace Lab_IPO
         public string Duracion { get; set; }
         public string Estado { get; set; }
 
-        public string NombreCompletoPaciente { get; set; }
+        //public string NombreCompletoPaciente { get; set; }
 
-        public string NombreCompletoSanitario { get; set; }
+        //public string NombreCompletoSanitario { get; set; }
 
-        //// Atributos de paciente
-        //public string NombrePaciente;
-        //public string ApellidosPaciente;
-        //public string TelefonoPaciente;
-        //public BitmapImage FotoPerfilPaciente;
+        // Atributos de paciente
+        public string NombrePaciente { get; set; }
+        public string ApellidosPaciente { get; set; }
+        public string TelefonoPaciente { get; set; }
+        public BitmapImage FotoPerfilPaciente { get; set; }
 
-        //// Atributos del sanitario
-        //public string NombreSanitario;
-        //public string ApellidosSanitario;
-        //public string TelefonoSanitario;
-        //public BitmapImage FotoPerfilSanitario;
+        // Atributos del sanitario
+        public string NombreSanitario { get; set; }
+        public string ApellidosSanitario { get; set; }
+        public string TelefonoSanitario { get; set; }
+        public BitmapImage FotoPerfilSanitario { get; set; }
 
+        public string NombreCompletoPaciente
+        {
+            get
+            {
+                return NombrePaciente + " " + ApellidosPaciente;
+            }
+        }
 
-
-        //public string NombreCompletoPaciente
-        //{
-        //    get
-        //    {
-        //        return NombrePaciente + " " + ApellidosPaciente; 
-        //    }
-        //}
-
-        //public string NombreCompletoSanitario
-        //{
-        //    get
-        //    {
-        //        return NombreSanitario + " " + ApellidosSanitario;
-        //    }
-        //}
+        public string NombreCompletoSanitario
+        {
+            get
+            {
+                return NombreSanitario + " " + ApellidosSanitario;
+            }
+        }
         public string IdentificacionCita
         {
             get

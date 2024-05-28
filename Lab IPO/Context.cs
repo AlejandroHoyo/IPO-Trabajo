@@ -125,44 +125,14 @@ namespace Lab_IPO
                 string duracion = node.Attributes["Duracion"]?.Value ?? string.Empty;
                 string estado = node.Attributes["Estado"]?.Value ?? string.Empty;
 
-                //string nombrePaciente = node.Attributes["NombrePaciente"]?.Value ?? string.Empty;
-                //string apellidosPaciente = node.Attributes["ApellidosPaciente"]?.Value ?? string.Empty;
-                //string telefonoPaciente = node.Attributes["TelefonoPaciente"]?.Value ?? string.Empty;
-                //string fotoPerfilPacientePath = node.Attributes["FotoPerfilPaciente"]?.Value ?? "Assets/Icons/user.png";
-                //string nombreSanitario = node.Attributes["NombreSanitario"]?.Value ?? string.Empty;
-                //string apellidosSanitario = node.Attributes["ApellidosPaciente"]?.Value ?? string.Empty;
-                //string telefonoSanitario = node.Attributes["TelefonoSanitario"]?.Value ?? string.Empty;
-                //string fotoPerfilSanitarioPath = node.Attributes["FotoPerfilSanitario"]?.Value ?? "Assets/Icons/user.png";
-
-
-                string nombreCompletoSanitario = node.Attributes["Sanitario"]?.Value ?? string.Empty;
-                string nombreCompletoPaciente = node.Attributes["Paciente"]?.Value ?? string.Empty;
-
-                //XmlNode sanitarioNode = node["Sanitario"];
-                //string sanitarioApellidos = sanitarioNode?.Attributes["Apellidos"]?.Value ?? string.Empty;
-                //string sanitarioTelefono = sanitarioNode?.Attributes["Telefono"]?.Value ?? string.Empty;
-                //string sanitarioFotoPerfilPath = sanitarioNode?.Attributes["FotoPerfil"]?.Value ?? "Assets/Icons/user.png";
-
-                //XmlNode pacienteNode = node["Paciente"];
-                //string pacienteApellidos = pacienteNode?.Attributes["Apellidos"]?.Value ?? string.Empty;
-                //string pacienteTelefono = pacienteNode?.Attributes["Telefono"]?.Value ?? string.Empty;
-                //string pacienteFotoPerfilPath = pacienteNode?.Attributes["FotoPerfil"]?.Value ?? "Assets/Icons/user.png";
-
-                //var nuevoSanitario = new Plantilla()
-                //{
-                //    Nombre = sanitarioNombre,
-                //    Apellidos = sanitarioApellidos,
-                //    Telefono = sanitarioTelefono,
-                //    FotoPerfil = new BitmapImage(new Uri(sanitarioFotoPerfilPath, UriKind.Relative))
-                //};
-
-                //var nuevoPaciente = new Paciente()
-                //{
-                //    Nombre = pacienteNombre,
-                //    Apellidos = pacienteApellidos,
-                //    Telefono = pacienteTelefono,
-                //    FotoPerfil = new BitmapImage(new Uri(pacienteFotoPerfilPath, UriKind.Relative))
-                //};
+                string nombrePaciente = node.Attributes["NombrePaciente"]?.Value ?? string.Empty;
+                string apellidosPaciente = node.Attributes["ApellidosPaciente"]?.Value ?? string.Empty;
+                string telefonoPaciente = node.Attributes["TelefonoPaciente"]?.Value ?? string.Empty;
+                string fotoPerfilPacientePath = node.Attributes["FotoPerfilPaciente"]?.Value ?? "Assets/Icons/user.png";
+                string nombreSanitario = node.Attributes["NombreSanitario"]?.Value ?? string.Empty;
+                string apellidosSanitario = node.Attributes["ApellidosSanitario"]?.Value ?? string.Empty;
+                string telefonoSanitario = node.Attributes["TelefonoSanitario"]?.Value ?? string.Empty;
+                string fotoPerfilSanitarioPath = node.Attributes["FotoPerfilSanitario"]?.Value ?? "Assets/Icons/user.png";
 
                 var nuevaCita = new Cita()
                 {
@@ -170,8 +140,14 @@ namespace Lab_IPO
                     Hora = hora,
                     Duracion = duracion,
                     Estado = estado,
-                    NombreCompletoPaciente = nombreCompletoPaciente,
-                    NombreCompletoSanitario = nombreCompletoSanitario
+                    NombrePaciente = nombrePaciente,
+                    ApellidosPaciente = apellidosPaciente,
+                    TelefonoPaciente = telefonoPaciente,
+                    FotoPerfilPaciente = new BitmapImage(new Uri(fotoPerfilPacientePath, UriKind.Relative)),
+                    NombreSanitario = nombreSanitario,
+                    ApellidosSanitario = apellidosSanitario,
+                    TelefonoSanitario = telefonoSanitario,
+                    FotoPerfilSanitario = new BitmapImage(new Uri(fotoPerfilSanitarioPath, UriKind.Relative))
                 };
 
                 listado.Add(nuevaCita);

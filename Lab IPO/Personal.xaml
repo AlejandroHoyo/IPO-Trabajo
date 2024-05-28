@@ -147,7 +147,7 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <GroupBox Header="Pacientes Atendidos" Grid.Column="0" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="16" BorderBrush="black" BorderThickness="2" Margin="5,5,5,5">
+                <GroupBox Header="Pacientes Atendidos" Grid.Column="0" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="18" BorderBrush="black" BorderThickness="2" Margin="5,5,5,5">
                     <ListBox x:Name="atendidosList" MouseDoubleClick="pacientesAtendidosMouseDoubleClick"  d:ItemsSource="{d:SampleData ItemCount=5}" Background="#e7fdeb">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -156,7 +156,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </GroupBox>
-                <GroupBox Header="Citas Previstas" Grid.Column="1" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="16" BorderBrush="black" BorderThickness="2" Margin="5,5,5,5">
+                <GroupBox Header="Citas Previstas" Grid.Column="1" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="18" BorderBrush="black" BorderThickness="2" Margin="5,5,5,5">
                     <ListBox x:Name="citasPrevistasList"  MouseDoubleClick ="citasPrevistasMouseDoubleClick"  d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#e7fdeb">
                         <ListBox.ItemTemplate>
                             <DataTemplate>

@@ -1,7 +1,6 @@
 ﻿<Citas>
-	<Cita Fecha="27/02/2024" Hora ="23:15" Duracion="120" Estado="Pendiente" Sanitario="Alejandro Hoyo Plaza" Paciente="Santiago Fernández Plaza">
-		<!--<Sanitario Apellidos="Hoyo Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
-		<Paciente  Apellidos="Fernández Plaza" Telefono="612345678" FotoPerfil="Assets/Faces/randomface2.jpeg"/>-->
-	</Cita>
-	<Cita Fecha="24/02/2024" Hora ="14:15" Duracion="120" Estado="Completada" Sanitario="Alejandro Hoyo Plaza" Paciente="Luisa García Martínez"/>
+	<Cita Fecha="27/02/2024" Hora ="23:15" Duracion="120" Estado="Pendiente" NombrePaciente = "Santiago" ApellidosPaciente="Fernández Plaza" TelefonoPaciente ="612345678" FotoPerfilPaciente="Assets/Faces/carmen-martinez.jpg"
+		NombreSanitario="Alejandro" ApellidosSanitario="Hoyo Plaza" TelefonoSanitario="612345678" FotoPerfilSanitario="Assets/Faces/randomface2.jpeg"/>
+	<Cita Fecha="24/02/2024" Hora ="14:15" Duracion="120" Estado="Completada" NombrePaciente = "Luisa" ApellidosPaciente="García Martínez" TelefonoPaciente ="612345679" FotoPerfilPaciente="Assets/Faces/luisa-garcia.jpg"
+		NombreSanitario="Alejandro" ApellidosSanitario="Hoyo Plaza" TelefonoSanitario="612345678" FotoPerfilSanitario="Assets/Faces/randomface2.jpeg"/>
 </Citas>

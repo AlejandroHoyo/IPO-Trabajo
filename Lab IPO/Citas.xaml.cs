@@ -39,6 +39,7 @@ namespace Lab_IPO
                 return (Cita)citasList.SelectedItem;
             }
         }
+
         private void ctxCitaAdd_Click(object sender, RoutedEventArgs e)
         {
             mainMenu.frameCitas.Content = new ModificarCitas(new Cita(), context, mainMenu);
@@ -94,6 +95,8 @@ namespace Lab_IPO
                 citasList.SelectedIndex = Math.Min(removeIndex, context.ListadoPersonal.Count - 1);
             }
         }
+
+
         private void HyperLinkPaciente_Click(object sender, RoutedEventArgs e)
         {
             mainMenu.tabularControl.SelectedIndex = 0;

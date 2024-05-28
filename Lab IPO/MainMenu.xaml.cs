@@ -39,26 +39,6 @@ namespace Lab_IPO
             frameCitas.Content = citasPage;
             framePacientes.Content = pacientesPage;
         }
-
-        private void tabularControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //if ( tabularControl.SelectedIndex != 2 && citasPage != null)
-            //{
-            //    // Se actualiza la lista de citas de la página citas
-            //    citasPage.UpdateListaCitas();
-            //} else if ( tabularControl.SelectedIndex != 1 && personalPage != null)
-            //{
-            //    // Se actualiza lista de citas previstas y listas de los pacientes atendidos de la página personal
-            //    personalPage.ActualizarListaCitasPrevistas();
-            //    personalPage.ActualizarListaPacientesAtendidos();
-            //} else if ( tabularControl.SelectedIndex != 0 && pacientesPage != null)
-            //{
-            //    // Actualizar la lista de citas de paciente
-            //    pacientesPage.ActualizarListaCitas();
-
-            //}
-        }
-
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -68,17 +48,15 @@ namespace Lab_IPO
         {
             {
                 Helper.ShowAyuda(
-                    "Poner vídeo y algunas instrucciones.");
+                    "Las instrucciones sobre cómo se debe de usar la interfaz se encuentran en el siguiente enlace: <url>");
             }
         }
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
             Helper.ShowInformacion("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
-                "Versión 0.1.0\n\n" +
+                "Versión Definitiva\n" +
                 "Es simplemente un prototipo para una clínica fisioterapeútica ");
         }
-
-
 
         private bool isClosing = false;
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)  // Kidnap the closing function to change it's action

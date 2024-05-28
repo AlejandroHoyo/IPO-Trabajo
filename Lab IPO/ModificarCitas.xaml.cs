@@ -27,16 +27,21 @@ namespace Lab_IPO
         private MainMenu mainMenu;
         private Cita citaElegida;
         private Cita citaTemp;
+        private Plantilla plantillaTemp;
+        private Paciente pacienteTemp;
         public ModificarCitas(Cita citaElegida, Context context, MainMenu mainMenu)
         {
             InitializeComponent();
-
+            this.plantillaTemp = new Plantilla();
+            this.pacienteTemp = new Paciente();
             this.mainMenu = mainMenu;
             this.context = context;
             this.citaElegida = citaElegida;
 
-            pacienteModificarCitaCombobox.ItemsSource = context.ListadoPacientes.Select(paciente => paciente.NombreCompleto).ToList();
-            doctorModificarCitaCombobox.ItemsSource = context.ListadoPersonal.Where(personal => personal.TipoPersonal.Equals("Sanitario")).Select(doctor => doctor.NombreCompleto).ToList();
+            pacienteModificarCitaCombobox.ItemsSource = context.ListadoPacientes;
+            pacienteModificarCitaCombobox.DisplayMemberPath = "NombreCompleto";
+            doctorModificarCitaCombobox.ItemsSource = context.ListadoPersonal.Where(personal => personal.TipoPersonal.Equals("Sanitario"));
+            doctorModificarCitaCombobox.DisplayMemberPath = "NombreCompleto";
 
             // Se está creando uno nuevo 
             if (citaElegida.Fecha == null)
@@ -55,14 +60,38 @@ namespace Lab_IPO
                     Hora = citaElegida.Hora,
                     Duracion = citaElegida.Duracion,
                     Estado = citaElegida.Estado,
-                    NombreCompletoSanitario = citaElegida.NombreCompletoSanitario,
-                    NombreCompletoPaciente = citaElegida.NombreCompletoPaciente
+                    NombrePaciente = citaElegida.NombrePaciente,
+                    ApellidosPaciente = citaElegida.ApellidosPaciente,
+                    TelefonoPaciente = citaElegida.TelefonoPaciente,
+                    FotoPerfilPaciente = citaElegida.FotoPerfilPaciente,
+                    NombreSanitario = citaElegida.NombreSanitario,
+                    ApellidosSanitario = citaElegida.ApellidosSanitario,
+                    TelefonoSanitario = citaElegida.TelefonoSanitario,
+                    FotoPerfilSanitario = citaElegida.FotoPerfilSanitario
                 };
 
                 int index = citaElegida.Estado.Equals("Pendiente") ? 0 : 1;
                 estadoModificarCitaComboBox.SelectedIndex = index;
-                pacienteModificarCitaCombobox.SelectedItem = citaTemp.NombreCompletoPaciente;
-                doctorModificarCitaCombobox.SelectedItem = citaTemp.NombreCompletoSanitario;
+              
+                foreach (var item in pacienteModificarCitaCombobox.Items)
+                {
+                    Paciente paciente = item as Paciente;
+                    if (paciente != null && paciente.NombreCompleto == citaTemp.NombreCompletoPaciente)
+                    {
+                        pacienteModificarCitaCombobox.SelectedItem = paciente;
+                        break;
+                    }
+                }
+                foreach (var item in doctorModificarCitaCombobox.Items)
+                {
+                    Plantilla doctor = item as Plantilla;
+                    if (doctor != null && doctor.NombreCompleto == citaTemp.NombreCompletoSanitario)
+                    {
+                        doctorModificarCitaCombobox.SelectedItem = doctor;
+                        break;
+                    }
+
+                }
                 fechaModificarCitaDate.SelectedDate = DateTime.ParseExact(citaTemp.Fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
 
@@ -80,8 +109,21 @@ namespace Lab_IPO
         }
         private void HacerCambios()
         {
-            citaTemp.NombreCompletoPaciente = pacienteModificarCitaCombobox.SelectedValue.ToString();
-            citaTemp.NombreCompletoSanitario = doctorModificarCitaCombobox.SelectedValue.ToString();
+            
+            pacienteTemp = (Paciente)pacienteModificarCitaCombobox.SelectedValue;
+            plantillaTemp = (Plantilla)doctorModificarCitaCombobox.SelectedValue;
+
+            // Asignar valores 
+            citaTemp.NombrePaciente = pacienteTemp.Nombre;
+            citaTemp.ApellidosPaciente = pacienteTemp.Apellidos;
+            citaTemp.TelefonoPaciente = pacienteTemp.Telefono;
+            citaTemp.FotoPerfilPaciente = pacienteTemp.FotoPerfil;
+
+            citaTemp.NombreSanitario = plantillaTemp.Nombre;
+            citaTemp.ApellidosSanitario = plantillaTemp.Apellidos;
+            citaTemp.TelefonoSanitario = plantillaTemp.Telefono;
+            citaTemp.FotoPerfilSanitario = plantillaTemp.FotoPerfil;
+
             citaTemp.Fecha = ((DateTime)(fechaModificarCitaDate.SelectedDate)).ToString("dd/MM/yyyy");
             citaTemp.Estado = estadoModificarCitaComboBox.SelectedIndex == 0 ? "Pendiente" : "Completada";
             int referencia = context.ListadoCitas.FindIndex(cita => cita.IdentificacionCita.Equals(citaElegida.IdentificacionCita));

@@ -128,7 +128,6 @@ namespace Lab_IPO
             {
                 return;
             }
-
             if (pacientesList.SelectedIndex == -1)
             {
                 pacientesList.SelectedIndex = 0;
@@ -155,7 +154,6 @@ namespace Lab_IPO
             {
                 pacientesList.ItemsSource = context.ListadoPacientes;
             }
-
         }
         private void ctxPacienteDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -172,12 +170,12 @@ namespace Lab_IPO
             context.ListadoCitas = context.ListadoCitas.Where(cita => !cita.NombreCompletoPaciente.Equals(PacienteSeleccionado.NombreCompleto)).ToList();
             mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
           
-
             // Eliminar un paciente de la lista
             context.ListadoPacientes = context.ListadoPacientes.Where(paciente => !paciente.NombreCompleto.Equals(PacienteSeleccionado.NombreCompleto)).ToList();
             pacientesList.ItemsSource = context.ListadoPacientes;
 
-
+            
+            //mainMenu.personalPage.atendidosList.ItemsSource = context.ListadoPacientes;
 
 
             if (context.ListadoPacientes.Count == 0)
@@ -187,8 +185,7 @@ namespace Lab_IPO
 
             }
             else
-
-            // Para que me indica un índice cuando se elemine uno
+            // Para que me indica un índice cuando se elimine uno
             {
                 pacientesList.SelectedIndex = Math.Min(removeIndex, context.ListadoPacientes.Count - 1);
 

@@ -85,8 +85,10 @@ namespace Lab_IPO
 
                 foreach (Cita cita in plantillaElegido.Citas)
                 {
-                    cita.NombreCompletoSanitario = plantillaElegido.NombreCompleto;
-                    // Añadir más atributos
+                    cita.NombreSanitario = plantillaTemp.Nombre;
+                    cita.ApellidosSanitario = plantillaTemp.Apellidos;
+                    cita.TelefonoSanitario = plantillaTemp.Telefono;
+                    cita.FotoPerfilSanitario = plantillaTemp.FotoPerfil;
                 }
                 mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
             }
