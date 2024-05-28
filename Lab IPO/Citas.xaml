@@ -170,7 +170,7 @@
                         </StackPanel>
                     </Grid>
                     <Border BorderBrush="black" BorderThickness="3" Width="150" Height="150" VerticalAlignment="Center" HorizontalAlignment="left" Margin="5,0,0,0" CornerRadius="3">
-                        <Image x:Name="citasPacienteImagen" Cursor="Hand" Source="{Binding ElementName=citasList, Path=SelectedItem.FotoPerfilPaciente}" />
+                        <Image x:Name="citasPacienteImagen" Source="{Binding ElementName=citasList, Path=SelectedItem.FotoPerfilPaciente}" />
                     </Border>
                 </Grid>
             </GroupBox>

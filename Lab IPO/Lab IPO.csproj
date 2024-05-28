@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ImagenHistorial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +83,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Historial.cs" />
+    <Compile Include="ImagenHistorial.xaml.cs">
+      <DependentUpon>ImagenHistorial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -274,6 +281,9 @@
     <Resource Include="Assets\Faces\sara-gonzalez.jpg" />
     <Resource Include="Assets\Faces\sergio-iglesias.jpg" />
     <Resource Include="Assets\Faces\sofia-ramirez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="data\Sprained_foot.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

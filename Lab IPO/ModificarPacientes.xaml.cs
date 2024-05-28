@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -13,7 +14,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Lab_IPO
 {
@@ -78,7 +78,6 @@ namespace Lab_IPO
             return ComprobarEspaciosVacios("Nombre", nombreModificarPacienteTextbox) && ComprobarEspaciosVacios("Apellidos", apellidosModificarPacienteTextbox) && ComprobarEspaciosVacios("Edad", edadModificarPacienteTextbox)
                 && ComprobarEspaciosVacios("Direccion", domicilioModificarPacienteTextbox) && ComprobarEspaciosVacios("CorreoElectronico", correoModificarPacienteTextbox) && ComprobarEspaciosVacios("Teléfono", telefonoModificarPacienteTextbox);
         }
-
         public void HacerCambios()
         {
             pacienteTemp.Sexo = sexoModificarPacienteComboBox.SelectedIndex == 0 ? "Hombre" : "Mujer";
@@ -96,7 +95,6 @@ namespace Lab_IPO
                    
                 }
                 mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
-
             }
             else
             {
@@ -117,8 +115,6 @@ namespace Lab_IPO
 
             HacerCambios();
 
-           
-
             var list = mainMenu.pacientesPage.pacientesList;
             list.Items.Refresh();
             list.SelectedIndex = context.ListadoPacientes.FindIndex(paciente => paciente.NombreCompleto.Equals(pacienteTemp.NombreCompleto));
@@ -135,8 +131,6 @@ namespace Lab_IPO
             mainMenu.pacientesPage.ctxPacienteDelete.IsEnabled = true;
             mainMenu.pacientesPage.ctxPacienteModify.IsEnabled = true;
         }
-
-      
         private bool ComprobarEspaciosVacios(string campo, System.Windows.Controls.TextBox txt)
         {
             if (string.IsNullOrWhiteSpace(txt.Text))
@@ -146,19 +140,22 @@ namespace Lab_IPO
             }
             return true;
         }
-
         private void PonerHistorialAEstado(bool state)
         {
             fechaHistorial.IsEnabled = state;
             dolenciasModificarPacienteTextBox.IsEnabled = state;
             tratamientosModificarPacienteTextBox.IsEnabled = state;
-
         }
-
         private void btnCambiarFotoPaciente_Click(object sender, RoutedEventArgs e)
         {
             var openDialog = new OpenFileDialog();
             openDialog.Filter = "Images|*.png;*.gif;*.jpg;*.jpeg";
+            string currentFolder = Directory.GetCurrentDirectory();
+            string parentFolder = Directory.GetParent(currentFolder).FullName;
+            string imagesFolder = Directory.GetParent(parentFolder).FullName;
+            string defintiveFolder = Path.Combine(imagesFolder, "Assets");
+            string defintiveFolder2 = Path.Combine(defintiveFolder, "Faces");
+            openDialog.InitialDirectory = defintiveFolder2;
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -172,7 +169,6 @@ namespace Lab_IPO
                     Helper.ShowError("No ha sido posbile cargar la imagen", "Error :(");
                 }
             }
-
         }
         public Historial HistorialSeleccionado
         {
@@ -181,7 +177,6 @@ namespace Lab_IPO
                 return (Historial)historialesMedicosList.SelectedItem;
             }
         }
-
         public void updateHistorialesMedicos()
         {
             if (HistorialSeleccionado == null)
@@ -190,7 +185,6 @@ namespace Lab_IPO
             fechaHistorial.Text = HistorialSeleccionado.Fecha;
             dolenciasModificarPacienteTextBox.Text = HistorialSeleccionado.Dolencias;
             tratamientosModificarPacienteTextBox.Text = HistorialSeleccionado.Tratamientos;
-
         }
 
         private bool HistorialesMedicosComprobar()
@@ -265,7 +259,6 @@ namespace Lab_IPO
                 modificarHistorialBotonTexto.Text = "Modificar";
             }
     }
-
         private void ctxHistorialAdd_Click(object sender, RoutedEventArgs e)
         {
             historialesMedicosList.SelectedIndex = -1;
@@ -274,8 +267,8 @@ namespace Lab_IPO
             dolenciasModificarPacienteTextBox.Text = "";
             tratamientosModificarPacienteTextBox.Text = "";
             historialesMedicosList.Items.Refresh();
-
         }
+
         private void ctxHistorialDelete_Click(object sender, RoutedEventArgs e)
         {
             var question = Helper.ShowAdvertencia("¿Seguro que quiere eliminar el Historial '" + HistorialSeleccionado.Fecha + "' ?", "Sin cambios");

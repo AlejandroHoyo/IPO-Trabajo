@@ -129,3 +129,5 @@ C:\Users\Alex\Desktop\Proyecto_IPO\IPO-Trabajo\Lab IPO\obj\Debug\Lab IPO.csproj.
 C:\Users\Alex\Desktop\Proyecto_IPO\IPO-Trabajo\Lab IPO\obj\Debug\Lab IPO.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Desktop\Proyecto_IPO\IPO-Trabajo\Lab IPO\obj\Debug\Lab IPO.exe
 C:\Users\Alex\Desktop\Proyecto_IPO\IPO-Trabajo\Lab IPO\obj\Debug\Lab IPO.pdb
+C:\Users\Alex\Desktop\Proyecto_IPO\IPO-Trabajo\Lab IPO\obj\Debug\ImagenHistorial.g.cs
+C:\Users\Alex\Desktop\Proyecto_IPO\IPO-Trabajo\Lab IPO\obj\Debug\ImagenHistorial.baml

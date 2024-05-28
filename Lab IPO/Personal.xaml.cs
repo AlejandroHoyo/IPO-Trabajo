@@ -42,7 +42,6 @@ namespace Lab_IPO
             citasPrevistasList.ItemsSource = PlantillaSeleccionado.Citas.Where(pendiente => pendiente.Estado.Equals("Pendiente"));
 
         }
-
         public Plantilla PlantillaSeleccionado
         {
             get
@@ -63,10 +62,8 @@ namespace Lab_IPO
                 atendidosList.ItemsSource = (PlantillaSeleccionado.Citas != null
                 ? PlantillaSeleccionado.Citas.Where(cita => cita.Estado.Equals("Completada"))
                 : Enumerable.Empty<Cita>());
-            }
-          
+            } 
         }
-
         public void ActualizarListaCitasPrevistas()
         {
             if (citasPrevistasList == null || PlantillaSeleccionado == null)
@@ -80,7 +77,6 @@ namespace Lab_IPO
                  : Enumerable.Empty<Cita>());
 
             }
-
         }
         private void pacientesAtendidosMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -99,7 +95,6 @@ namespace Lab_IPO
             pacientePagina.pacientesList.SelectedIndex = pacienteIndex;
 
         }
-
         private void citasPrevistasMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             // No se está seleccionando nada
@@ -118,7 +113,6 @@ namespace Lab_IPO
             citasPagina.citasList.SelectedIndex = citaIndex;
 
         }
-
         private void ctxPersonalAdd_Click(object sender, RoutedEventArgs e)
         {
             mainMenu.framePersonal.Content = new ModificarPersonal(new Plantilla(), context, mainMenu);
@@ -149,8 +143,6 @@ namespace Lab_IPO
             context.ListadoCitas = context.ListadoCitas.Where(cita => !cita.NombreCompletoSanitario.Equals(PlantillaSeleccionado.NombreCompleto)).ToList();
             mainMenu.citasPage.citasList.ItemsSource = context.ListadoCitas;
 
-
-
             // Eliminar un personal de la lista 
             context.ListadoPersonal = context.ListadoPersonal.Where(personal => !personal.NombreCompleto.Equals(PlantillaSeleccionado.NombreCompleto)).ToList();
             personalList.ItemsSource = context.ListadoPersonal;
@@ -167,9 +159,7 @@ namespace Lab_IPO
             {
                 personalList.SelectedIndex = Math.Min(removeIndex, context.ListadoPersonal.Count - 1);
             }
-
         }
-  
         private void comboBox_TipoPersonal_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateListaPersonal();
@@ -182,7 +172,6 @@ namespace Lab_IPO
             ActualizarListaPacientesAtendidos();
             ActualizarListaCitasPrevistas();
         }
-
         public void UpdateListaPersonal()
         {
             if (personalList == null)
@@ -214,9 +203,6 @@ namespace Lab_IPO
             {
                 personalList.ItemsSource = context.ListadoPersonal;
             }
-
         }
-   
-
     }
 }

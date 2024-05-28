@@ -16,7 +16,6 @@ namespace Lab_IPO
         {
             return System.Windows.Forms.MessageBox.Show(mensaje, tema, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
         }
-
         public static DialogResult ShowAdvertencia(string mensaje, string tema, MessageBoxButtons buttons)
         {
             return System.Windows.Forms.MessageBox.Show(mensaje, tema, buttons, MessageBoxIcon.Warning);

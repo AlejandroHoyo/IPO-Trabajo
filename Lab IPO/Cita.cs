@@ -14,10 +14,6 @@ namespace Lab_IPO
         public string Duracion { get; set; }
         public string Estado { get; set; }
 
-        //public string NombreCompletoPaciente { get; set; }
-
-        //public string NombreCompletoSanitario { get; set; }
-
         // Atributos de paciente
         public string NombrePaciente { get; set; }
         public string ApellidosPaciente { get; set; }
@@ -37,7 +33,6 @@ namespace Lab_IPO
                 return NombrePaciente + " " + ApellidosPaciente;
             }
         }
-
         public string NombreCompletoSanitario
         {
             get

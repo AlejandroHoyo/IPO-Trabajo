@@ -44,7 +44,6 @@ namespace Lab_IPO
                 return (Paciente)pacientesList.SelectedItem;
             }
         }
-
         private void listaPacientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             historialesPacienteList.SelectedIndex = 0; 
@@ -52,7 +51,6 @@ namespace Lab_IPO
             ActualizarListaCitas();
 
         }
-
         private void comboBox_TipoPaciente_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateListaPacientes();
@@ -67,6 +65,7 @@ namespace Lab_IPO
         public void ActualizarListaCitas()
         {
             // Está vacía y no se indica nada
+
             if (citasPacienteList == null || PacienteSeleccionado == null)
             {
                 return;
@@ -87,18 +86,20 @@ namespace Lab_IPO
 
         private void btnImagenesHistorial_Click(object sender, RoutedEventArgs e)
         {
-
-            // De momento le pongo disable. Debatirlo con Sergio
+            ImagenHistorial imagenHistorial = new ImagenHistorial(mainMenu);
+            imagenHistorial.Topmost = true;
+            imagenHistorial.Show();
+            mainMenu.IsEnabled = false;
+           
         }
-
         private void citasPacientesMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             // No se está seleccionando nada
+
             if (citasPacienteList.SelectedItem == null)
             {
                 return;
             }
-
             mainMenu.tabularControl.SelectedIndex = 2;
             Citas citasPagina = mainMenu.citasPage;
 
@@ -107,7 +108,6 @@ namespace Lab_IPO
             Cita citaElegida = (Cita)citasPacienteList.SelectedItem;
             int citaIndex = context.ListadoCitas.FindIndex(cita => cita.IdentificacionCita.Equals(citaElegida.IdentificacionCita));
             citasPagina.citasList.SelectedIndex = citaIndex;
-
         }
         private void ctxPacienteAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -173,11 +173,7 @@ namespace Lab_IPO
             // Eliminar un paciente de la lista
             context.ListadoPacientes = context.ListadoPacientes.Where(paciente => !paciente.NombreCompleto.Equals(PacienteSeleccionado.NombreCompleto)).ToList();
             pacientesList.ItemsSource = context.ListadoPacientes;
-
-            
-            //mainMenu.personalPage.atendidosList.ItemsSource = context.ListadoPacientes;
-
-
+          
             if (context.ListadoPacientes.Count == 0)
             {
                 ctxPacienteModify.IsEnabled = false;

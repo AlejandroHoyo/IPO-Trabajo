@@ -1,6 +1,36 @@
 ﻿<Citas>
-	<Cita Fecha="27/02/2024" Hora ="23:15" Duracion="120" Estado="Pendiente" NombrePaciente = "Santiago" ApellidosPaciente="Fernández Plaza" TelefonoPaciente ="612345678" FotoPerfilPaciente="Assets/Faces/carmen-martinez.jpg"
-		NombreSanitario="Alejandro" ApellidosSanitario="Hoyo Plaza" TelefonoSanitario="612345678" FotoPerfilSanitario="Assets/Faces/randomface2.jpeg"/>
-	<Cita Fecha="24/02/2024" Hora ="14:15" Duracion="120" Estado="Completada" NombrePaciente = "Luisa" ApellidosPaciente="García Martínez" TelefonoPaciente ="612345679" FotoPerfilPaciente="Assets/Faces/luisa-garcia.jpg"
-		NombreSanitario="Alejandro" ApellidosSanitario="Hoyo Plaza" TelefonoSanitario="612345678" FotoPerfilSanitario="Assets/Faces/randomface2.jpeg"/>
+	<Cita Fecha="05/03/2024" Hora="10:00" Duracion="60 Minutos" Estado="Pendiente" NombrePaciente="Diego" ApellidosPaciente="Hernández López" TelefonoPaciente="612345680" FotoPerfilPaciente="Assets/Faces/diego-hernandez.jpg"
+        NombreSanitario="Lucía" ApellidosSanitario="Martínez Gómez" TelefonoSanitario="612345679" FotoPerfilSanitario="Assets/Faces/lucia-martinez.jpg"/>
+	<Cita Fecha="10/03/2023" Hora="11:30" Duracion="90 Minutos" Estado="Completada" NombrePaciente="Carmen" ApellidosPaciente="Martínez Sánchez" TelefonoPaciente="612345681" FotoPerfilPaciente="Assets/Faces/carmen-martinez.jpg"
+        NombreSanitario="Carlos" ApellidosSanitario="Hernández Ruiz" TelefonoSanitario="612345680" FotoPerfilSanitario="Assets/Faces/carlos-hernandez.jpg"/>
+	<Cita Fecha="14/03/2023" Hora="14:00" Duracion="60 Minutos" Estado="Completada" NombrePaciente="Eva" ApellidosPaciente="González Pérez" TelefonoPaciente="612345682" FotoPerfilPaciente="Assets/Faces/eva-gonzalez.jpg"
+        NombreSanitario="Ana" ApellidosSanitario="López García" TelefonoSanitario="612345681" FotoPerfilSanitario="Assets/Faces/ana-lopez.jpg"/>
+	<Cita Fecha="20/03/2024" Hora="09:00" Duracion="30 Minutos" Estado="Pendiente" NombrePaciente="Ana" ApellidosPaciente="Sánchez Gómez" TelefonoPaciente="612345683" FotoPerfilPaciente="Assets/Faces/ana-sanchez.jpg"
+        NombreSanitario="Javier" ApellidosSanitario="Sánchez Martín" TelefonoSanitario="612345682" FotoPerfilSanitario="Assets/Faces/javier-sanchez.jpg"/>
+	<Cita Fecha="22/03/2024" Hora="15:00" Duracion="45 Minutos" Estado="Pendiente" NombrePaciente="Julio" ApellidosPaciente="Díaz Martínez" TelefonoPaciente="612345684" FotoPerfilPaciente="Assets/Faces/julio-diaz.jpg"
+        NombreSanitario="Raúl" ApellidosSanitario="González Díaz" TelefonoSanitario="612345684" FotoPerfilSanitario="Assets/Faces/raul-gonzalez.jpg"/>
+	<Cita Fecha="25/03/2024" Hora="13:00" Duracion="60 Minutos" Estado="Pendiente" NombrePaciente="Marina" ApellidosPaciente="Ruiz García" TelefonoPaciente="612345685" FotoPerfilPaciente="Assets/Faces/marina-ruiz.jpg"
+        NombreSanitario="Elena" ApellidosSanitario="Romero Morales" TelefonoSanitario="612345685" FotoPerfilSanitario="Assets/Faces/elena-romero.jpg"/>
+	<Cita Fecha="30/03/2023" Hora="16:00" Duracion="120 Minutos" Estado="Completada" NombrePaciente="Rosa" ApellidosPaciente="Fernández Sánchez" TelefonoPaciente="612345686" FotoPerfilPaciente="Assets/Faces/rosa-fernandez.jpg"
+        NombreSanitario="Manuel" ApellidosSanitario="Torres López" TelefonoSanitario="612345686" FotoPerfilSanitario="Assets/Faces/manuel-torres.jpg"/>
+	<Cita Fecha="02/04/2023" Hora="17:30" Duracion="90 Minutos" Estado="Completada" NombrePaciente="Pedro" ApellidosPaciente="Gómez Martín" TelefonoPaciente="612345687" FotoPerfilPaciente="Assets/Faces/pedro-gomez.jpg"
+        NombreSanitario="Sofía" ApellidosSanitario="Ramírez Sánchez" TelefonoSanitario="612345687" FotoPerfilSanitario="Assets/Faces/sofia-ramirez.jpg"/>
+	<Cita Fecha="06/04/2024" Hora="11:00" Duracion="60 Minutos" Estado="Pendiente" NombrePaciente="Lucas" ApellidosPaciente="Herrera Rodríguez" TelefonoPaciente="612345688" FotoPerfilPaciente="Assets/Faces/lucas-herrera.jpg"
+        NombreSanitario="Alberto" ApellidosSanitario="Molina Ortiz" TelefonoSanitario="612345688" FotoPerfilSanitario="Assets/Faces/alberto-molina.jpg"/>
+	<Cita Fecha="09/04/2024" Hora="10:30" Duracion="45 Minutos" Estado="Pendiente" NombrePaciente="Carla" ApellidosPaciente="Alonso Gutiérrez" TelefonoPaciente="612345689" FotoPerfilPaciente="Assets/Faces/carla-alonso.jpg"
+        NombreSanitario="Sofía" ApellidosSanitario="Ramírez Sánchez" TelefonoSanitario="612345687" FotoPerfilSanitario="Assets/Faces/sofia-ramirez.jpg"/>
+	<Cita Fecha="12/04/2023" Hora="12:00" Duracion="30 Minutos" Estado="Completada" NombrePaciente="Paula" ApellidosPaciente="Sanz López" TelefonoPaciente="612345690" FotoPerfilPaciente="Assets/Faces/paula-sanz.jpg"
+        NombreSanitario="Ernest" ApellidosSanitario="Khalimov" TelefonoSanitario="612345693" FotoPerfilSanitario="Assets/Faces/ernest-khalimov.jpg"/>
+	<Cita Fecha="15/04/2024" Hora="14:30" Duracion="60 Minutos" Estado="Pendiente" NombrePaciente="Javier" ApellidosPaciente="Martínez Rodríguez" TelefonoPaciente="612345691" FotoPerfilPaciente="Assets/Faces/javier-martinez.jpg"
+        NombreSanitario="Javier" ApellidosSanitario="Sánchez Martín" TelefonoSanitario="612345682" FotoPerfilSanitario="Assets/Faces/javier-sanchez.jpg"/>
+	<Cita Fecha="18/04/2024" Hora="09:30" Duracion="90 Minutos" Estado="Pendiente" NombrePaciente="Sara" ApellidosPaciente="González Martín" TelefonoPaciente="612345692" FotoPerfilPaciente="Assets/Faces/sara-gonzalez.jpg"
+        NombreSanitario="Lucía" ApellidosSanitario="Iglesias Ruiz" TelefonoSanitario="612345692" FotoPerfilSanitario="Assets/Faces/sergio-iglesias.jpg"/>
+	<Cita Fecha="22/04/2023" Hora="08:00" Duracion="45 Minutos" Estado="Completada" NombrePaciente="Mario" ApellidosPaciente="Herrero García" TelefonoPaciente="612345693" FotoPerfilPaciente="Assets/Faces/mario-herrero.jpg"
+        NombreSanitario="Ernest" ApellidosSanitario="Khalimov" TelefonoSanitario="612345693" FotoPerfilSanitario="Assets/Faces/ernest-khalimov.jpg"/>
+	<Cita Fecha="25/04/2024" Hora="13:45" Duracion="60 Minutos" Estado="Pendiente" NombrePaciente="Carmen" ApellidosPaciente="Martínez Sánchez" TelefonoPaciente="612345681" FotoPerfilPaciente="Assets/Faces/carmen-martinez.jpg"
+        NombreSanitario="Carlos" ApellidosSanitario="Hernández Ruiz" TelefonoSanitario="612345680" FotoPerfilSanitario="Assets/Faces/carlos-hernandez.jpg"/>
+	<Cita Fecha="27/04/2023" Hora="11:15" Duracion="45 Minutos" Estado="Completada" NombrePaciente="Diego" ApellidosPaciente="Hernández López" TelefonoPaciente="612345680" FotoPerfilPaciente="Assets/Faces/diego-hernandez.jpg"
+        NombreSanitario="Lucía" ApellidosSanitario="Martínez Gómez" TelefonoSanitario="612345679" FotoPerfilSanitario="Assets/Faces/lucia-martinez.jpg"/>
+	<Cita Fecha="30/04/2023" Hora="10:00" Duracion="30 Minutos" Estado="Completada" NombrePaciente="Ana" ApellidosPaciente="Sánchez Gómez" TelefonoPaciente="612345683" FotoPerfilPaciente="Assets/Faces/ana-sanchez.jpg"
+        NombreSanitario="Javier" ApellidosSanitario="Sánchez Martín" TelefonoSanitario="612345682" FotoPerfilSanitario="Assets/Faces/javier-sanchez.jpg"/>
 </Citas>

@@ -39,7 +39,6 @@ namespace Lab_IPO
                 return (Cita)citasList.SelectedItem;
             }
         }
-
         private void ctxCitaAdd_Click(object sender, RoutedEventArgs e)
         {
             mainMenu.frameCitas.Content = new ModificarCitas(new Cita(), context, mainMenu);
@@ -68,7 +67,6 @@ namespace Lab_IPO
             context.ListadoCitas = context.ListadoCitas.Where(cita => !cita.IdentificacionCita.Equals(CitaSeleccionada.IdentificacionCita)).ToList();
             citasList.ItemsSource = context.ListadoCitas;
 
-
             foreach (Paciente paciente in context.ListadoPacientes)
             {
                 paciente.Citas = context.ListadoCitas.FindAll((cita => cita.NombreCompletoPaciente.Equals(paciente.NombreCompleto)));
@@ -95,8 +93,6 @@ namespace Lab_IPO
                 citasList.SelectedIndex = Math.Min(removeIndex, context.ListadoPersonal.Count - 1);
             }
         }
-
-
         private void HyperLinkPaciente_Click(object sender, RoutedEventArgs e)
         {
             mainMenu.tabularControl.SelectedIndex = 0;
@@ -144,13 +140,11 @@ namespace Lab_IPO
             {
                 citasList.ItemsSource = context.ListadoCitas;
             }
-
         }
          private void comboBox_TipoCita_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+         {
             UpdateListaCitas();
-
-        }
+         }
         private void listaCita_SelectionChanged(object sender, RoutedEventArgs e)
         {
             UpdateListaCitas();

@@ -1,6 +1,4 @@
 ﻿<Personales>
-	<Personal Nombre="Alejandro" Apellidos="Hoyo Plaza" Telefono="612345678" Edad="42" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/randomface2.jpeg"/>
-	<Personal Nombre="Marta" Apellidos="Llorens" Telefono="612345678" Edad="45" TipoPersonal="Limpieza" FotoPerfil="Assets/Faces/randomface1.jpeg"/>
 	<Personal Nombre="Lucía" Apellidos="Martínez Gómez" Telefono="612345679" Edad="30" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/lucia-martinez.jpg"/>
 	<Personal Nombre="Carlos" Apellidos="Hernández Ruiz" Telefono="612345680" Edad="35" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/carlos-hernandez.jpg"/>
 	<Personal Nombre="Ana" Apellidos="López García" Telefono="612345681" Edad="28" TipoPersonal="Sanitario" FotoPerfil="Assets/Faces/ana-lopez.jpg"/>

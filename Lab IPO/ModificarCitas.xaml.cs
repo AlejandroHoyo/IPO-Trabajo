@@ -94,7 +94,6 @@ namespace Lab_IPO
                 }
                 fechaModificarCitaDate.SelectedDate = DateTime.ParseExact(citaTemp.Fecha, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
-
             DataContext = citaTemp;
 
         }

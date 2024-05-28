@@ -152,7 +152,6 @@ namespace Lab_IPO
 
                 listado.Add(nuevaCita);
             }
-
             return listado;
         }
 

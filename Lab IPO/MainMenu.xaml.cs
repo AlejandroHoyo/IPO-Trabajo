@@ -43,7 +43,6 @@ namespace Lab_IPO
         {
             this.Close();
         }
-
         private void btnAyuda_Click(object sender, RoutedEventArgs e)
         {
             {
@@ -66,7 +65,7 @@ namespace Lab_IPO
                 e.Cancel = true;
                 isClosing = true;
 
-                Dispatcher.BeginInvoke((Action)(() =>  // Call me Gordon Ramsay because im cooking some spaguetti
+                Dispatcher.BeginInvoke((Action)(() =>  
                 {
                     var result = Helper.ShowAdvertencia("¿Está seguro de que desea cerrar sesión?", "Cerrar Sesión");
 

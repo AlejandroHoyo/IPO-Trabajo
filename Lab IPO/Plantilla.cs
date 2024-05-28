@@ -16,7 +16,6 @@ namespace Lab_IPO
         public string Edad { get; set; }
         public string TipoPersonal { get; set; }
         public BitmapImage Logo { get; set; }
-
         public List<Cita> Citas { get; set; }
         public string NombreCompleto
         {

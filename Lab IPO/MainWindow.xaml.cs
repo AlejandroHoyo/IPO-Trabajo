@@ -20,10 +20,10 @@ namespace Lab_IPO
     /// </summary>
     public partial class MainWindow : Window
     {
-        private BitmapImage imagCheck = new BitmapImage(new Uri("/Assets/Icons/correct.png", UriKind.Relative));
-        private BitmapImage imagCross = new BitmapImage(new Uri("/Assets/Icons/incorrect.png", UriKind.Relative));
-        private string usuario = "";
-        private string password = "";
+        private BitmapImage imageCheck = new BitmapImage(new Uri("/Assets/Icons/correct.png", UriKind.Relative));
+        private BitmapImage imageCross = new BitmapImage(new Uri("/Assets/Icons/incorrect.png", UriKind.Relative));
+        private string usuario = "Marta";
+        private string password = "hola1234";
         public MainWindow()
         {
             InitializeComponent();
@@ -38,38 +38,34 @@ namespace Lab_IPO
               
                 componenteEntrada.BorderBrush = Brushes.Green;
                 componenteEntrada.Background = Brushes.LightGreen;
-                imagenFeedBack.Source = imagCheck;
+                imagenFeedBack.Source = imageCheck;
                 valido = true;
             }
             else
             {
-                // marcamos borde en rojo
+            
                 componenteEntrada.BorderBrush = Brushes.Red;
                 componenteEntrada.Background = Brushes.LightCoral;
-                // imagen al lado de la entrada de usuario --> cross
-                imagenFeedBack.Source = imagCross;
+                imagenFeedBack.Source = imageCross;
                 valido = false;
             }
             return valido;
         }
 
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            
+        {   
             if (e.Key == Key.Return)
             {
                 if (ComprobarEntrada(txtUsuario.Text, usuario,
                 txtUsuario, imgCheckUsuario))
                 {
-                    // habilitar entrada de contraseña y pasarle el foco
+                    
                     passContrasena.IsEnabled = true;
                     passContrasena.Focus();
-                    // deshabilitar entrada de login
                     txtUsuario.IsEnabled = false;
                 }
             }
         }
-
         private void btnLogin_Enter(object sender, RoutedEventArgs e)
         {
             // La comprobación ya lleva implícita que las entradas
@@ -99,7 +95,6 @@ namespace Lab_IPO
                 txtUsuario.Text = (string)Application.Current.FindResource("current_user");
                 Application.Current.Resources["current_user"] = txtUsuario.Text;
             }
-
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -117,8 +112,8 @@ namespace Lab_IPO
         private void btnInfo_Click(object sender, RoutedEventArgs e)
         {
             Helper.ShowInformacion("Aplicación realizada por Alejandro del Hoyo y Sergio Pozuelo\n" +
-                "Versión 0.1.0\n\n" +
-                "Es simplemente un prototipo para una clínica fisioterapeútica ");
+                "Versión Final\n\n" +
+                "Es simplemente un prototipo de para una clínica fisioterapeútica ");
         }
 
     }

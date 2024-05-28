@@ -11,6 +11,5 @@ namespace Lab_IPO
         public string Fecha { get; set; }
         public string Dolencias { get; set; }
         public string Tratamientos { get; set; }
-
     }
 }

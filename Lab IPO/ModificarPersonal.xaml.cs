@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Lab_IPO
 {
@@ -102,12 +103,18 @@ namespace Lab_IPO
             return ComprobarEspaciosVacios("Nombre", nombreModificarPersonalTextbox) && ComprobarEspaciosVacios("Apellidos", apellidosModificarPersonalTextbox) &&
                 ComprobarEspaciosVacios("Telefono", telefonoModificarPersonalTextbox) && ComprobarEspaciosVacios("Edad", edadModificarPersonalTextbox);
 
-
         }
         private void btnCambiarFotoPersonal_Click(object sender, RoutedEventArgs e)
         {
             var openDialog = new OpenFileDialog();
-            openDialog.Filter = "Images|*.png;*.gif;*.jpg;*.jpeg"; 
+            openDialog.Filter = "Images|*.png;*.gif;*.jpg;*.jpeg";
+            string currentFolder = Directory.GetCurrentDirectory();
+            string parentFolder = Directory.GetParent(currentFolder).FullName;
+            string imagesFolder = Directory.GetParent(parentFolder).FullName;
+            string defintiveFolder = Path.Combine(imagesFolder, "Assets");
+            string defintiveFolder2 = Path.Combine(defintiveFolder, "Faces");
+            openDialog.InitialDirectory = defintiveFolder2;
+
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 try
